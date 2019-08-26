@@ -1,0 +1,9 @@
+.thumbnail{
+    box-shadow: 0 2px 5px 0px rgba(0,0,0,.15);
+}
+.thumbnail:hover{
+    box-shadow: 0 5px 10px 0px rgba(0,0,0,.30)
+}
+.img-main{
+    box-shadow: 0 3px 8px 0 rgba(0,0,0,.2);
+}

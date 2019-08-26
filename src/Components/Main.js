@@ -1,24 +1,24 @@
 import React, {useState,useRef} from 'react';
 import './Main.css';
-import ScreenShot from './screenshot.js'
-import GeckoImages from './GeckoImages.js'
 import Project from './Project.js'
-import ImageView from './ImageView.js'
+import Nav from './Nav.js'
 
 const Main = ()=> {
-
-    let 
-
-function toggleImageView(){
-
-}
+    
 
     return(
         <div>
-            // Gecko Notes
-                <ImageView></ImageView>
-                <Project></Project>
-            // Atomist    
+            <div className='container-fluid'>
+                <div className='row'>
+                    <div className='col-1'>
+                        <Nav/>
+                    </div>
+                    <div className='col-11'>
+                        <Project/>
+                     </div>
+                </div>
+            </div>
+            
         </div>
 
     )

@@ -1,0 +1,24 @@
+.nav-primary{
+    /* background-color: aliceblue; */
+    margin: 10px 10px 10px 10px;
+    width: 40px;
+    white-space: nowrap;
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+}
+.menu-lv1{
+    margin-left: 10px;
+}
+.child-project{
+    
+}
+.child-project-hidden{
+    position: absolute;
+    visibility: hidden;
+}
+.menu-lv2{
+    margin-left: 10px;
+}
+.logo{
+
+}
