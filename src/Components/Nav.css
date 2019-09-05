@@ -1,13 +1,18 @@
+.nav-wrapper{
+    position:fixed;
+    width: 100%;
+    height: auto;
+    z-index: 100;
+}
 .nav-primary{
-    /* background-color: aliceblue; */
     margin: 10px 10px 10px 10px;
-    width: 40px;
-    white-space: nowrap;
+
     /* overflow: hidden; */
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis; */
+    z-index: 100;
 }
 .menu-lv1{
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 .child-project{
     
@@ -16,9 +21,71 @@
     position: absolute;
     visibility: hidden;
 }
-.menu-lv2{
-    margin-left: 10px;
+.nav-container{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: start;
 }
+.nav-container-special{
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    align-items: center;
+}
+.menu-lv2{
+    /* margin-left: 20px; */
+    background-color: rgba(240,248,255,.8);
+    border: .1px solid rgba(0,0,0,.15);
+    box-shadow: 0 2px 2px 0px rgba(0,0,0,.10);
+    margin-top: 5px;
+    border-radius: 3%;
+    transition: box-shadow .2s ease-in-out;
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.menu-lv2:hover{
+    box-shadow: 0 5px 8px 0px rgba(0,0,0,.15)
+}
+
+.collapsed{
+    
+}
+
+ @media screen and (min-width: 480px){
+    .nav-wrapper{
+        
+    }
+}
+@media screen and (min-width: 600px){
+    .nav-wrapper{
+        max-width: 600px;
+        margin-left: 10%;
+        margin-right: auto;
+    }
+}
+@media screen and (min-width: 768px){
+    .nav-wrapper{
+        max-width: 600px;
+        margin-left: 10%;
+        margin-right: auto;
+    }
+}
+@media screen and (min-width: 992px){
+    .nav-wrapper{
+        max-width: 800px;
+        margin-left: 10%;
+        margin-right: auto;
+    }
+}
+@media screen and (min-width: 1382px){
+    .nav-wrapper{
+        max-width: 1200px;
+        margin-left: 10%;
+        margin-right: auto;
+    }
+} 
 .logo{
 
 }

@@ -11,9 +11,12 @@ const Project =(props)=>{
             <div>
                 <Gecko></Gecko>
             </div>
+            <div className='spacer mt-3 mx-auto'></div>
             <div className='mt-5'>
                 <Atomist></Atomist>
             </div>
+            <div className='spacer mt-3 mx-auto'></div>
+
         </div>
     )
 }

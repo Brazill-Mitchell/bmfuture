@@ -64,11 +64,11 @@ const Gecko=forwardRef((props,ref)=> {
           </div>
       </div>
 
-
+      {/* Thumbnails */}
       <div className='row mt-3' onMouseLeave={imgDefault}>
         {geckoThumbnailList.map((thumbnail,i) =>(
-          <div className='col-2 mx-auto thumbnail' onMouseOver={() => thumbnailHover(thumbnail)} key={i}>
-            <img className='img-fluid' src={thumbnail.image}></img>
+          <div className='mx-auto thumbnail' onMouseOver={() => thumbnailHover(thumbnail)} key={i}>
+            <img className='img' src={thumbnail.image}></img>
           </div>        
         ))}
 

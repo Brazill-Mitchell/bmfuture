@@ -64,8 +64,8 @@ const AtomistProject=forwardRef((props,ref)=> {
           {/* Thumbnails */}
           <div className='row mt-3' onMouseLeave={imgDefault}>
               {atomistThumbnailList.map((thumbnail,i) =>(
-                <div className='col-3 mx-auto thumbnail' onMouseOver={() => thumbnailHover(thumbnail)} key={i}>
-                  <img className='img-fluid' src={thumbnail.image}></img>
+                <div className='mx-auto thumbnail' onMouseOver={() => thumbnailHover(thumbnail)} key={i}>
+                  <img className='img' src={thumbnail.image}></img>
                 </div>
               ))}
           </div>

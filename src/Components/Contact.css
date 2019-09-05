@@ -1,0 +1,21 @@
+.contact-menu{
+    z-index: 100;
+}
+.contact-menu-list{
+    background-color: rgba(239, 241, 241, 0.7);
+    border: .5px solid rgba(0,0,0,.1);
+    border-radius: 5%;
+    box-shadow: 2px 5px 5px 0 rgba(0,0,0,.1);
+    max-width: 200px;
+}
+.contact-label{
+    flex: 1;
+}
+.contact-img{
+    position: relative;
+    max-width: 20px;
+    flex: 1;
+}
+.label{
+
+}
