@@ -1,10 +1,22 @@
 import React, {useState,useRef,useEffect} from 'react';
 import { useTransition, animated } from 'react-spring'
 import Contact from './Contact.js'
+import Projects from './Projects.js'
 import './Nav.css';
 import { useMediaQuery } from '@material-ui/core';
 
 const Nav = ()=> {
+//Keep track of which menu is currently seleced
+//Close Menus that aren't selected
+    let [menu,setMenu] = useState('none')
+    function toggleMenu(menu){
+        setMenu(menu)
+        console.log(menu)
+    }
+    function closeMenus(menu){ 
+        // toggleMenu(menu)
+        // console.log(menu)
+    }
 
     let [isListDisplayed, setIsListDisplayed] = useState(true)
 
@@ -16,7 +28,7 @@ const Nav = ()=> {
 //Make Nav Menu Responsive 
     function handleCollapse(){
         // setIsListDisplayed(false)
-        collapseSize? console.log(collapseSize.window) : console.log(collapseSize.valueOf)
+        // collapseSize? console.log(collapseSize.window) : console.log(collapseSize.valueOf)
     }
 
     useEffect(() => {
@@ -31,37 +43,13 @@ const Nav = ()=> {
         leave: {opacity:0}
     })
 
-    const Projects = (props)=> {
-        return(
-            <div className={menuItemStyle}>
-                {/* 
-                    Here is the section that should be animated
-                    A toggle function controls the state for 'isListDisplayed 
-                */}
-                {dropMenuTransitions.map(({item: project, key, props}) => 
-                    isListDisplayed
-                    // This is what shows when the item is toggled on
-                    ?    <animated.div className='nav-container' style={props} key={key}>
-                            <div className='nav-container-special'>
-                                <div className='col menu-lv2'>
-                                    <span className=''>{project}</span>
-                                </div>
-                            </div>
-                        </animated.div>
-                        
-                    // This is what shows when the item is toggled off
-                    :<div></div>
-                )}             
-            </div>   
-        )
-    }
 // Toggle the selected Menu's items
     function toggleProjectsDisplay(){
         if (isListDisplayed){
-            console.log("Displayed, hiding projects")
+            // console.log("Displayed, hiding projects")
             setIsListDisplayed(false)
         }else{
-            console.log('Hidden, displaying projects')
+            // console.log('Hidden, displaying projects')
             setIsListDisplayed(true)
         }
     }
@@ -73,21 +61,15 @@ const Nav = ()=> {
                 <div className='row'>
                 {/* Filler Item */}
                     <div className='col-3 menu-lv1'>
-                        <div>Home</div>
+                        <div >Home</div>
                     </div>
                 {/* Projects */}
-                    <div className='col-3 menu-lv1' onClick={toggleProjectsDisplay}>Projects
-                        <div className='container-fluid child-project'>
-                            <div className='row'>
-                            {/* Project List */}
-                                <Projects></Projects>
-                            </div>
-                            
-                        </div>
+                    <div className='col-3 menu-lv1' onClick={toggleProjectsDisplay}>
+                        <Projects menu={menu}></Projects>                            
                     </div>
                 {/* Contact */}
                     <div className='col-3 menu-lv1'>
-                        <Contact></Contact>
+                        <Contact menu={menu} toggleMenu={toggleMenu} closeMenus={closeMenus}></Contact>
                     </div>
                 {/* Filler Item */}
                     <div className='col-3 menu-lv1'>

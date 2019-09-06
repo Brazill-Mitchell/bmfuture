@@ -5,17 +5,28 @@ import gmailImg from '../images/gmail.png'
 import './Contact.css'
 import './Nav.css'
 
-const Contact= ()=> {
+const Contact= (props)=> {
 
 let [displayOptions,setDisplayOptions] = useState(true)
-
+let [navMenu,setNavMenu] = useState("none")
+// Let the Nav Bar know this menu has been selected
     function toggleMenu(){
         setDisplayOptions(!displayOptions)
+        // props.closeMenus("sdhfb")
+        props.toggleMenu('contact')
+        
     }
+
+    //Check for changes to Nav Bar's currently set menu
+    useEffect(() => {
+            // setNavMenu(props.menu)
+            console.log("Contact UseEffect:" + props.menu)
+    })
 
     return(
 
         <div>
+            {/* <div>{props.menu}</div> */}
             <div className='container'>
                 <div className='row'>
                     <div className='col contact-menu' onClick={toggleMenu}>Contact
