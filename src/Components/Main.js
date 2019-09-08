@@ -1,5 +1,4 @@
 import React, {useState,useMedia, useEffect} from 'react';
-import { useMediaQuery } from '@material-ui/core';
 import './Main.css';
 import Project from './Project.js'
 import Nav from './Nav.js'
@@ -13,11 +12,13 @@ const Main = ()=> {
     const mediaLg = '(min-width:1200px)'
     const mqList = [mediaSm,mediaMd,mediaLg]
 
-
+    let [activeSection,setActiveSection] = useState('none')
+    function updateSection(element){
+        setActiveSection(element)
+        console.log(activeSection)
+    }
 
     let expanded = 'col-lg-2 col-md-3 col-sm-3'
-    let [navClass,setNavClass] = useState(expanded)
-
 
     // Match current screen size to list of sizes
     function handleScreen(){
@@ -30,34 +31,58 @@ const Main = ()=> {
         // collapseSize? setNavClass('') : setNavClass('menu-collapsed')
     }
 
+
     useEffect(() => {
         
         window.addEventListener('resize',handleScreen)
         return() => window.removeEventListener('resize',handleScreen)
     },handleScreen)
 
-    return(
-        
-        <div>
-            {/* <div>Media{mediaMd}</div> */}
-            <div className='container-fluid'>
-                <Nav></Nav>
-                <div className='row top-spacer'></div>
+    //Give the body an onClick Handler
+    const BodyWrapper= (props)=> {
+
+        return(
+            <div>
+            
+                <Body></Body>
+            
+            </div>
+        )
+        }
+
+    const Body= (props)=> {
+        function setBodyActive(){
+            updateSection('body')
+        }
+        return(
+        <div onClick={setBodyActive}>
+            <div className='row top-spacer'></div>
                 <div className='row'>
                     <div className='col-10 top-divider mx-auto'></div>
                 </div>
-                {/* <div className='row' */}
                 <div className='row'>                   
                     
                     <div className='col'>
                         <Project/>
-                     </div>
+                    </div>
                 </div>
+        </div>
+    )
+    }
+    
+    function setNavActive(){
+        updateSection('nav')
+    }
+    return (
+        <div>
+            <div className='container-fluid'>
+                <Nav activeSection={activeSection} updateSection={updateSection} onClick={setNavActive} />
+                <BodyWrapper />
             </div>
             
         </div>
-
     )
+  
 }
 
 export default Main

@@ -7,21 +7,33 @@ import './Nav.css'
 
 const Contact= (props)=> {
 
-let [displayOptions,setDisplayOptions] = useState(true)
-let [navMenu,setNavMenu] = useState("none")
+let [isListDisplayed,setIsListDisplayed] = useState(true)
 // Let the Nav Bar know this menu has been selected
-    function toggleMenu(){
-        setDisplayOptions(!displayOptions)
-        // props.closeMenus("sdhfb")
-        props.toggleMenu('contact')
-        
-    }
 
     //Check for changes to Nav Bar's currently set menu
     useEffect(() => {
-            // setNavMenu(props.menu)
-            console.log("Contact UseEffect:" + props.menu)
+        checkMenu()
     })
+
+//Keep track of which menu is currently seleced
+//Close Menus that aren't selected
+    function handleClick(){
+        if (!isListDisplayed){
+            props.toggleMenu('contact')
+        }else if(isListDisplayed){
+            props.toggleMenu('none')
+        }
+        
+    }
+    //Close contact menu if another element is active
+    function checkMenu(){
+        if (props.menu != 'contact' || props.navState == false){
+            setIsListDisplayed(false)
+            
+        }else if(props.menu == 'contact'){
+            setIsListDisplayed(true)
+        }
+    }
 
     return(
 
@@ -29,8 +41,8 @@ let [navMenu,setNavMenu] = useState("none")
             {/* <div>{props.menu}</div> */}
             <div className='container'>
                 <div className='row'>
-                    <div className='col contact-menu' onClick={toggleMenu}>Contact
-                        {displayOptions
+                    <div className='col contact-menu' onClick={handleClick}>Contact
+                        {isListDisplayed
                             ?<div className='container-fluid menu-lv1'>
                                 <div className='nav-container'>
                                         <div className='nav-container-special menu-lv2'>

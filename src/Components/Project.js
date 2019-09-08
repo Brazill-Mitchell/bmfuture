@@ -1,4 +1,4 @@
-import React, {useState,useRef} from 'react';
+import React, {useEffect} from 'react';
 import './Project.css';
 import Gecko from './Gecko.js'
 import Atomist from './Atomist.js'
@@ -6,8 +6,18 @@ import Atomist from './Atomist.js'
 
 const Project =(props)=>{
 
+    //Set the body as the active element and close the menus each time it is clicked
+    function setActive(){
+        props.setActiveElement('body')
+        console.log("Project: Active Element: " + props.isNavActive)
+    }
+
+    useEffect(() => {
+        // window.addEventListener('click',setActive)
+    })
+
     return(
-        <div>
+        <div className=''>
             <div>
                 <Gecko></Gecko>
             </div>

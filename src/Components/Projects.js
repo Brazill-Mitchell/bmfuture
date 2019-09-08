@@ -1,17 +1,41 @@
 import React, {useState,useRef,useEffect} from 'react';
 import { useTransition, animated } from 'react-spring'
-import Contact from './Contact.js'
 import './Nav.css';
 import { useMediaQuery } from '@material-ui/core';
 
 const Projects = (props)=> {
 
-    let [isListDisplayed, setIsListDisplayed] = useState(true)
+    let [isListDisplayed, setIsListDisplayed] = useState(false)
 
     let projectList = ['Gecko Notes','Atomist','Connect X','Paint']
     let [menuItemStyle, setMenuItemStyle] = useState('col-lg-8 col-md-10 col-sm-12 mx-auto')
 
     const collapseSize = useMediaQuery('(min-width: 100px)')
+
+    //Close this menu if another menu is selected
+    //Close other menus when this menu is selected
+    function handleClick(){
+        if (!isListDisplayed){
+            props.toggleMenu('projects')
+        }else if(isListDisplayed){
+            props.toggleMenu('none')
+        }
+        
+    }
+    //Close projects menu if another element is active
+    function checkMenu(){
+        if (props.menu != 'projects' || props.navState == false){
+            setIsListDisplayed(false)
+            
+        }else if(props.menu == 'projects'){
+            setIsListDisplayed(true)
+            
+        }
+    }
+    useEffect(() => {
+        checkMenu()
+    })
+
     
 //Make Nav Menu Responsive 
     function handleCollapse(){
@@ -23,10 +47,6 @@ const Projects = (props)=> {
     //     window.addEventListener('resize',handleCollapse)
     //     return() => window.removeEventListener('resize',handleCollapse)
     // },handleCollapse)
-    
-    useEffect(() => {
-        console.log("Projects: Selected Menu: " + props.menu)
-    })
 
     let dropMenuTransitions = useTransition(projectList, project => project, {
         from: {opacity:0},
@@ -58,23 +78,14 @@ const Projects = (props)=> {
             </div>   
         )
     }
-// Toggle the selected Menu's items
-    function toggleProjectsDisplay(){
-        if (isListDisplayed){
-            // console.log("Displayed, hiding projects")
-            setIsListDisplayed(false)
-        }else{
-            // console.log('Hidden, displaying projects')
-            setIsListDisplayed(true)
-        }
-    }
+
 
     return(
         
-            <div className='container-fluid nav-primary position'>
+            <div className='container-fluid'>
                 <div className='row'>
                 {/* Projects */}
-                    <div className='col menu-lv1' onClick={toggleProjectsDisplay}>Projects
+                    <div className='col menu-lv1' onClick={handleClick}>Projects
                         <div className='container-fluid child-project'>
                             <div className='row'>
                             {/* Project List */}
