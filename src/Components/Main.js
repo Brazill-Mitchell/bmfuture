@@ -1,7 +1,8 @@
 import React, {useState,useMedia,useEffect,useRef} from 'react';
 import './Main.css';
 import Project from './Project.js'
-import Nav from './Nav.js'
+// import Nav from './Nav.js'
+import NavSide from './NavSide.js'
 
 
 const Main = ()=> {
@@ -84,7 +85,7 @@ const Main = ()=> {
     return (
         <div>
             <div className='container-fluid'>
-                <Nav refs={refList} activeSection={activeSection} updateSection={updateSection} onClick={setNavActive} />
+                <NavSide refs={refList} activeSection={activeSection} updateSection={updateSection} onClick={setNavActive} />
                 <BodyWrapper />
             </div>
             

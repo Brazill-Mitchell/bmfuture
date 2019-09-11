@@ -1,0 +1,99 @@
+.nav-wrap{
+    position:fixed;
+    width: 20%;
+    height: 50%;
+    z-index: 100;
+    margin: 0px;
+    padding: 0px;
+    background-color:rgb(66, 98, 110);
+    margin: 0px 10px 10px 10px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}
+.nav-item{
+    
+}
+.nav-spacer{
+    flex:1;
+}
+.nav-item-container{
+    display: flex;
+    flex-direction: row;
+}
+.menu-lv1{
+    position: relative;
+    margin-top: 5px;
+    color: white;
+    font-weight: 500;
+}
+.drop-menu{
+    position: absolute;
+    left: 96%;
+    background-image: linear-gradient(to right,rgba(66,98,110,1),rgba(66,98,110,.7));
+    border-radius: 3px;
+    padding-right: 5px;
+}
+.logo{
+    position: relative;
+    left:20px;
+}
+/* Container for drop down menu items */
+.child-project{
+    /* background-color:rgb(66, 98, 110); */
+    background-image: linear-gradient(to bottom,rgba(66,98,110,1),rgba(66,98,110,.7));
+    /* border: 2px solid rgb(66, 98, 110); */
+    border-radius: 3px;
+    padding-top: 7px;
+    padding-bottom: 5px;
+}
+.child-project-hidden{
+    position: absolute;
+    visibility: hidden;
+}
+
+
+.menu-lv2{
+    position: relative;
+    background-color: rgba(240,248,255,.8);
+    border: .1px solid rgba(0,0,0,.15);
+    box-shadow: 0 2px 2px 0px rgba(0,0,0,.10);
+    margin-top: 5px;
+    border-radius: 3%;
+    transition: all .2s ease-in-out;
+    flex: 1;
+    /* overflow: hidden; */
+    white-space: nowrap;
+    color:rgba(8, 49, 88, 0.6);
+    -webkit-text-stroke-width: .3px;
+    border-radius: 3px;
+}
+.menu-lv2:hover{
+    box-shadow: 0 6px 10px 0px rgba(36, 68, 109, .4);
+    transform: scale(1.05);
+}
+
+/* Contact */
+
+.contact-menu{
+    z-index: 100;
+}
+.contact-menu-list{
+    background-color: rgba(239, 241, 241, 0.7);
+    border: .5px solid rgba(0,0,0,.1);
+    border-radius: 5%;
+    box-shadow: 2px 5px 5px 0 rgba(0,0,0,.1);
+    max-width: 200px;
+}
+.contact-img{
+    position: relative;
+    max-width: 20px;
+    flex: 1;
+    margin-left: 6px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+}
+.label{
+
+}

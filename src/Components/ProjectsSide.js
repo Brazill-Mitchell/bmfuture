@@ -11,7 +11,7 @@ const Projects = (props)=> {
 
     // let projectList = ['Gecko Notes','Atomist','Connect X','Paint']
 let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','connectX'],['Paint','paint']]
-    let [menuItemStyle, setMenuItemStyle] = useState('col-12 mx-auto')
+    let [menuItemStyle, setMenuItemStyle] = useState('drop-menu')
 
     const collapseSize = useMediaQuery('(min-width: 100px)')
 
@@ -73,7 +73,7 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
                 {dropMenuTransitions.map(({item: project, key, props}) => 
                     isListDisplayed
                     // This is what shows when the item is toggled on
-                    ?    <animated.div className='nav-container' style={props} key={key}>
+                    ?    <animated.div className='' style={props} key={key}>
                             <div className='nav-container-special'>
                                 <a href={getTargetId}>
                                     <div className='col menu-lv2'>
@@ -95,20 +95,15 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
 
     return(
         
-            <div className='container-fluid'>
-                <div className='row'>
+                <div className='nav-item-container'>
                 {/* Projects */}
-                    <div className='col' onClick={handleClick}>Projects
-                        <div className='container-fluid child-project'>
-                            <div className='row'>
+                    <div className='menu-lv1' onClick={handleClick}>Projects</div>
                             {/* Project List */}
-                                <ProjectList></ProjectList>
-                            </div>
+                    <ProjectList></ProjectList>
                             
-                        </div>
-                    </div>
+                        
+                    
                 </div>
-            </div>
     )
 }
 
