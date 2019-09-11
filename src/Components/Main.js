@@ -1,10 +1,18 @@
-import React, {useState,useMedia, useEffect} from 'react';
+import React, {useState,useMedia,useEffect,useRef} from 'react';
 import './Main.css';
 import Project from './Project.js'
 import Nav from './Nav.js'
 
 
 const Main = ()=> {
+
+    // Use Refs to navigate to each project section
+    let refGecko = useRef(null)
+    let refAtomist = useRef(null)
+    let refList = {
+        'gecko':refGecko,
+        'atomist':refAtomist,
+    }
 
     // const collapseSize = useMediaQuery('(min-width: 600px)')
     const mediaSm = '(min-width:400px)'
@@ -63,7 +71,7 @@ const Main = ()=> {
                 <div className='row'>                   
                     
                     <div className='col'>
-                        <Project/>
+                        <Project refs={refList}/>
                     </div>
                 </div>
         </div>
@@ -76,7 +84,7 @@ const Main = ()=> {
     return (
         <div>
             <div className='container-fluid'>
-                <Nav activeSection={activeSection} updateSection={updateSection} onClick={setNavActive} />
+                <Nav refs={refList} activeSection={activeSection} updateSection={updateSection} onClick={setNavActive} />
                 <BodyWrapper />
             </div>
             

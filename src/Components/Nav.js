@@ -2,6 +2,7 @@ import React, {useState,useRef,useEffect} from 'react';
 import { useTransition, animated } from 'react-spring'
 import Contact from './Contact.js'
 import Projects from './Projects.js'
+import Logo from './Logo.js'
 import './Nav.css';
 import { useMediaQuery } from '@material-ui/core';
 import { getThemeProps } from '@material-ui/styles';
@@ -42,30 +43,32 @@ const Nav = (props)=> {
     
     return(
         
-        <nav className='nav-wrapper' onClick={handleClick}>
-        <div>{navState}</div>
-            <div className='container-fluid nav-primary position'>
-                <div className='row'>
+        
+            <div className='container-fluid nav-wrap'>
+                <div className='row' onClick={handleClick}>
+                <Logo className='logo'/>
+                <div className='nav-spacer'></div>
                 {/* Filler Item */}
-                    <div className='col-3 menu-lv1'>
+                    <div className='menu-lv1'>
                         <div toggleMenu={toggleMenu}>Home</div>
                     </div>
                 {/* Projects */}
-                    <div className='col-3 menu-lv1'>
-                        <Projects navState={navState} menu={menu} toggleMenu={toggleMenu}></Projects>                            
+                    <div className='menu-lv1'>
+                        <Projects refs={props.refs} navState={navState} menu={menu} toggleMenu={toggleMenu}></Projects>                            
                     </div>
                 {/* Contact */}
-                    <div className='col-3 menu-lv1'>
+                    <div className='menu-lv1'>
                         <Contact navState={navState} menu={menu} toggleMenu={toggleMenu}></Contact>
                     </div>
                 {/* Filler Item */}
-                    <div className='col-3 menu-lv1'>
+                    <div className='menu-lv1'>
                             <div toggleMenu={toggleMenu}>About</div>
                     </div>
+                    <div className='nav-spacer'></div>
                 </div>
             </div>
 
-        </nav>
+        
 
     )
 }

@@ -50,7 +50,7 @@ const Gecko=forwardRef((props,ref)=> {
       <div className='row'>
 
       {/* Main Image */}
-          <div className='col-sm-12 col-md-12 col-lg-6'>
+          <div ref={props.refs.refGecko} id='gecko' className='col-sm-12 col-md-12 col-lg-6'>
             <a href='https://geckonotes.firebaseapp.com' target='_blank'>
               <img className='img-main mx-auto w-75 mb-3' src={displayImage}></img>
             </a>

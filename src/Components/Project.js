@@ -19,11 +19,11 @@ const Project =(props)=>{
     return(
         <div className=''>
             <div>
-                <Gecko></Gecko>
+                <Gecko  refs={props.refs}></Gecko>
             </div>
             <div className='spacer mt-3 mx-auto'></div>
             <div className='mt-5'>
-                <Atomist></Atomist>
+                <Atomist refs={props.refs}></Atomist>
             </div>
             <div className='spacer mt-3 mx-auto'></div>
 

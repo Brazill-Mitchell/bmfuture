@@ -1,4 +1,6 @@
 import React, {useState,useRef,useEffect} from 'react';
+// import {HashLink as Link} from 'react-router-hash-link'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 import { useTransition, animated } from 'react-spring'
 import './Nav.css';
 import { useMediaQuery } from '@material-ui/core';
@@ -7,8 +9,9 @@ const Projects = (props)=> {
 
     let [isListDisplayed, setIsListDisplayed] = useState(false)
 
-    let projectList = ['Gecko Notes','Atomist','Connect X','Paint']
-    let [menuItemStyle, setMenuItemStyle] = useState('col-lg-8 col-md-10 col-sm-12 mx-auto')
+    // let projectList = ['Gecko Notes','Atomist','Connect X','Paint']
+let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','connectX'],['Paint','paint']]
+    let [menuItemStyle, setMenuItemStyle] = useState('col-12 mx-auto')
 
     const collapseSize = useMediaQuery('(min-width: 100px)')
 
@@ -21,6 +24,12 @@ const Projects = (props)=> {
             props.toggleMenu('none')
         }
         
+    }
+    function getTargetId(){
+        console.log("Target")
+        return(
+            '#atomist'
+        )
     }
     //Close projects menu if another element is active
     function checkMenu(){
@@ -66,9 +75,13 @@ const Projects = (props)=> {
                     // This is what shows when the item is toggled on
                     ?    <animated.div className='nav-container' style={props} key={key}>
                             <div className='nav-container-special'>
-                                <div className='col menu-lv2'>
-                                    <span className=''>{project}</span>
-                                </div>
+                                <a href={getTargetId}>
+                                    <div className='col menu-lv2'>
+                                        {project[0]}
+                                    </div>
+                                </a>
+                                
+                            
                             </div>
                         </animated.div>
                         
@@ -85,7 +98,7 @@ const Projects = (props)=> {
             <div className='container-fluid'>
                 <div className='row'>
                 {/* Projects */}
-                    <div className='col menu-lv1' onClick={handleClick}>Projects
+                    <div className='col' onClick={handleClick}>Projects
                         <div className='container-fluid child-project'>
                             <div className='row'>
                             {/* Project List */}
