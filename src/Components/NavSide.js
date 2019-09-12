@@ -1,13 +1,11 @@
 import React, {useState,useRef,useEffect} from 'react';
 import { useTransition, animated } from 'react-spring'
-import Contact from './Contact.js'
+import ContactSide from './ContactSide.js'
 import ProjectsSide from './ProjectsSide.js'
 import Logo from './Logo.js'
 import './NavSide.css';
-import { useMediaQuery } from '@material-ui/core';
-import { getThemeProps } from '@material-ui/styles';
 
-const Nav = (props)=> {
+const NavSide = (props)=> {
 //Keep track of which menu is currently seleced
 //Close Menus that aren't selected
     let [navState,setNavState] = useState(false)
@@ -16,14 +14,12 @@ const Nav = (props)=> {
     function toggleMenu(menu){
         setMenu(menu)
     }  
-
-    const collapseSize = useMediaQuery('(min-width: 100px)')
-    
-//Make Nav Menu Responsive 
-    function handleCollapse(){
-        // setIsListDisplayed(false)
-        // collapseSize? console.log(collapseSize.window) : console.log(collapseSize.valueOf)
+// Handle Collapse
+    let [isNavCollapsed,setIsNavCollapsed] = useState(false)
+    function toggleNav(){
+        setIsNavCollapsed(!isNavCollapsed)
     }
+    
     function checkActiveSection(){
         if (props.activeSection != 'nav'){
             setNavState(false)
@@ -42,12 +38,14 @@ const Nav = (props)=> {
     })
     
     return(
-        
-        
-            <div className='nav-wrap' onClick={handleClick}>
+        <div>
+        {isNavCollapsed
+            ?<div className='nav-collapsed' onClick={toggleNav}>Nav</div>
+            
+            :<div className='nav-wrap' onClick={handleClick}>
                 {/* Filler Item */}
                     <div className='nav-item'>
-                        <div toggleMenu={toggleMenu}>Home</div>
+                        <div toggleMenu={toggleMenu} onClick={toggleNav}>Menu Icon</div>
                     </div>
                 {/* Projects */}
                     <div className='nav-item'>
@@ -55,17 +53,20 @@ const Nav = (props)=> {
                     </div>
                 {/* Contact */}
                     <div className='nav-item'>
-                        <Contact navState={navState} menu={menu} toggleMenu={toggleMenu}></Contact>
+                        <ContactSide navState={navState} menu={menu} toggleMenu={toggleMenu}></ContactSide>
                     </div>
                 {/* Filler Item */}
                     <div className='nav-item'>
                             <div toggleMenu={toggleMenu}>About</div>
                     </div>
             </div>
+        }
+        </div>
+            
 
         
 
     )
 }
 
-export default Nav
+export default NavSide

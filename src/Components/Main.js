@@ -1,7 +1,8 @@
 import React, {useState,useMedia,useEffect,useRef} from 'react';
+import { useMediaQuery } from '@material-ui/core';
 import './Main.css';
 import Project from './Project.js'
-// import Nav from './Nav.js'
+import Nav from './Nav.js'
 import NavSide from './NavSide.js'
 
 
@@ -15,11 +16,22 @@ const Main = ()=> {
         'atomist':refAtomist,
     }
 
-    // const collapseSize = useMediaQuery('(min-width: 600px)')
+    
     const mediaSm = '(min-width:400px)'
-    const mediaMd = '(min-width:800px)'
+    const menuCollapseSize = '(max-width:600px)'
+    const menuFullSize = '(min-width:800px)'
     const mediaLg = '(min-width:1200px)'
-    const mqList = [mediaSm,mediaMd,mediaLg]
+    const mqList = [mediaSm,menuFullSize,mediaLg]
+
+    let [isNavCollapsed,setIsNavCollapsed] = useState(false)
+    
+    function toggleNav(){
+         if (window.matchMedia(menuCollapseSize).matches){
+             setIsNavCollapsed(true)
+         }else{
+             setIsNavCollapsed(false)
+         }
+    }
 
     let [activeSection,setActiveSection] = useState('none')
     function updateSection(element){
@@ -31,13 +43,7 @@ const Main = ()=> {
 
     // Match current screen size to list of sizes
     function handleScreen(){
-        for (let q = 0; q < mqList.length; q++){
-            if (window.matchMedia(mqList[q]).matches){
-                console.log("Screen Size: " + mqList[q])
-            }
-        }
-        // const match = window.matchMedia(mqList[1]).matches
-        // collapseSize? setNavClass('') : setNavClass('menu-collapsed')
+        toggleNav()
     }
 
 
@@ -49,15 +55,13 @@ const Main = ()=> {
 
     //Give the body an onClick Handler
     const BodyWrapper= (props)=> {
-
         return(
             <div>
             
                 <Body></Body>
             
             </div>
-        )
-        }
+        )}
 
     const Body= (props)=> {
         function setBodyActive(){
@@ -76,8 +80,7 @@ const Main = ()=> {
                     </div>
                 </div>
         </div>
-    )
-    }
+    )}
     
     function setNavActive(){
         updateSection('nav')
@@ -85,7 +88,10 @@ const Main = ()=> {
     return (
         <div>
             <div className='container-fluid'>
-                <NavSide refs={refList} activeSection={activeSection} updateSection={updateSection} onClick={setNavActive} />
+                {isNavCollapsed
+                    ?<NavSide refs={refList} activeSection={activeSection} updateSection={updateSection} onClick={setNavActive} />
+                    :<Nav refs={refList} activeSection={activeSection} updateSection={updateSection} onClick={setNavActive} />
+                }
                 <BodyWrapper />
             </div>
             

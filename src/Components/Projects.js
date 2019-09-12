@@ -1,6 +1,6 @@
 import React, {useState,useRef,useEffect} from 'react';
 // import {HashLink as Link} from 'react-router-hash-link'
-import { BrowserRouter as Router, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link as Link} from 'react-router-dom'
 import { useTransition, animated } from 'react-spring'
 import './NavSide.css';
 import { useMediaQuery } from '@material-ui/core';
@@ -28,7 +28,7 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
     function getTargetId(){
         console.log("Target")
         return(
-            '#atomist'
+            '/atomist'
         )
     }
     //Close projects menu if another element is active
@@ -77,7 +77,11 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
                             <div className='nav-container-special'>
                                 <a href={getTargetId}>
                                     <div className='col menu-lv2'>
-                                        {project[0]}
+                                    {/* Continue Here */}
+                                        <Link to='test'>
+                                            {project[0]}
+                                        </Link>
+                                        
                                     </div>
                                 </a>
                                 

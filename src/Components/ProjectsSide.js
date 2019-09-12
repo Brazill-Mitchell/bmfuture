@@ -74,7 +74,7 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
                     isListDisplayed
                     // This is what shows when the item is toggled on
                     ?    <animated.div className='' style={props} key={key}>
-                            <div className='nav-container-special'>
+                            <div className=''>
                                 <a href={getTargetId}>
                                     <div className='col menu-lv2'>
                                         {project[0]}

@@ -5,7 +5,6 @@ import Projects from './Projects.js'
 import Logo from './Logo.js'
 import './Nav.css';
 import { useMediaQuery } from '@material-ui/core';
-import { getThemeProps } from '@material-ui/styles';
 
 const Nav = (props)=> {
 //Keep track of which menu is currently seleced

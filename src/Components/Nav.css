@@ -71,36 +71,6 @@
     transform: scale(1.05);
 }
 
-.collapsed{
-    
-}
-
- /* @media screen and (min-width: 480px){
-    .nav-wrapper{
-        
-    }
-}
-@media screen and (min-width: 600px){
-    .nav-wrapper{
-        max-width: 600px;
-    }
-}
-@media screen and (min-width: 768px){
-    .nav-wrapper{
-        max-width: 600px;
-    }
-}
-@media screen and (min-width: 992px){
-    .nav-wrapper{
-        max-width: 800px;
-        margin-right: auto;
-    }
-}
-@media screen and (min-width: 1382px){
-    .nav-wrapper{
-        max-width: 1200px;
-    }
-}  */
 .logo{
 
 }
@@ -125,7 +95,4 @@
     margin-right: 5px;
     margin-bottom: 2px;
     border-radius: 4px;
-}
-.label{
-
 }
