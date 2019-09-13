@@ -3,8 +3,6 @@ import { useTransition, animated } from 'react-spring'
 import Contact from './Contact.js'
 import Projects from './Projects.js'
 import Logo from './Logo.js'
-import './Nav.css';
-import { useMediaQuery } from '@material-ui/core';
 
 const Nav = (props)=> {
 //Keep track of which menu is currently seleced
@@ -16,13 +14,6 @@ const Nav = (props)=> {
         setMenu(menu)
     }  
 
-    const collapseSize = useMediaQuery('(min-width: 100px)')
-    
-//Make Nav Menu Responsive 
-    function handleCollapse(){
-        // setIsListDisplayed(false)
-        // collapseSize? console.log(collapseSize.window) : console.log(collapseSize.valueOf)
-    }
     function checkActiveSection(){
         if (props.activeSection != 'nav'){
             setNavState(false)

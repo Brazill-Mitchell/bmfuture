@@ -3,7 +3,6 @@ import { useTransition, animated } from 'react-spring'
 import ContactSide from './ContactSide.js'
 import ProjectsSide from './ProjectsSide.js'
 import Logo from './Logo.js'
-import './NavSide.css';
 
 const NavSide = (props)=> {
 //Keep track of which menu is currently seleced
@@ -42,7 +41,7 @@ const NavSide = (props)=> {
         {isNavCollapsed
             ?<div className='nav-collapsed' onClick={toggleNav}>Nav</div>
             
-            :<div className='nav-wrap' onClick={handleClick}>
+            :<div className='nav-wrap-side' onClick={handleClick}>
                 {/* Filler Item */}
                     <div className='nav-item'>
                         <div toggleMenu={toggleMenu} onClick={toggleNav}>Menu Icon</div>

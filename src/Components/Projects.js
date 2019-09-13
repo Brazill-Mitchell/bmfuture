@@ -1,9 +1,6 @@
 import React, {useState,useRef,useEffect} from 'react';
 // import {HashLink as Link} from 'react-router-hash-link'
-import { BrowserRouter as Router, Route, Link as Link} from 'react-router-dom'
 import { useTransition, animated } from 'react-spring'
-import './NavSide.css';
-import { useMediaQuery } from '@material-ui/core';
 
 const Projects = (props)=> {
 
@@ -12,8 +9,6 @@ const Projects = (props)=> {
     // let projectList = ['Gecko Notes','Atomist','Connect X','Paint']
 let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','connectX'],['Paint','paint']]
     let [menuItemStyle, setMenuItemStyle] = useState('col-12 mx-auto')
-
-    const collapseSize = useMediaQuery('(min-width: 100px)')
 
     //Close this menu if another menu is selected
     //Close other menus when this menu is selected
@@ -25,12 +20,16 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
         }
         
     }
-    function getTargetId(){
-        console.log("Target")
-        return(
-            '/atomist'
-        )
+
+//Jump to selected project
+    function scrollToProject(project){
+        try{
+                    window.scrollTo(0,props.refs[project].current.offsetTop)
+        }catch(error){
+            console.log("Could not scroll to element. \n" + error)
+        }
     }
+
     //Close projects menu if another element is active
     function checkMenu(){
         if (props.menu != 'projects' || props.navState == false){
@@ -75,15 +74,13 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
                     // This is what shows when the item is toggled on
                     ?    <animated.div className='nav-container' style={props} key={key}>
                             <div className='nav-container-special'>
-                                <a href={getTargetId}>
-                                    <div className='col menu-lv2'>
+                                    <div className='col menu-lv2' onClick={()=> scrollToProject(project[1])}>
                                     {/* Continue Here */}
-                                        <Link to='test'>
+                                        <div>
                                             {project[0]}
-                                        </Link>
+                                        </div>
                                         
                                     </div>
-                                </a>
                                 
                             
                             </div>

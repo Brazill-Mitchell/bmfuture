@@ -1,9 +1,7 @@
 import React, {useState,useRef,useEffect} from 'react';
 // import {HashLink as Link} from 'react-router-hash-link'
-import { BrowserRouter as Router, Route} from 'react-router-dom'
 import { useTransition, animated } from 'react-spring'
 import './NavSide.css';
-import { useMediaQuery } from '@material-ui/core';
 
 const Projects = (props)=> {
 
@@ -12,8 +10,6 @@ const Projects = (props)=> {
     // let projectList = ['Gecko Notes','Atomist','Connect X','Paint']
 let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','connectX'],['Paint','paint']]
     let [menuItemStyle, setMenuItemStyle] = useState('drop-menu')
-
-    const collapseSize = useMediaQuery('(min-width: 100px)')
 
     //Close this menu if another menu is selected
     //Close other menus when this menu is selected

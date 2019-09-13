@@ -1,5 +1,4 @@
 import React, {useState,useMedia,useEffect,useRef} from 'react';
-import { useMediaQuery } from '@material-ui/core';
 import './Main.css';
 import Project from './Project.js'
 import Nav from './Nav.js'

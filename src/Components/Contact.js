@@ -45,22 +45,22 @@ let [isListDisplayed,setIsListDisplayed] = useState(true)
                         {isListDisplayed
                             ?<div className='container-fluid menu-lv1 child-project'>
                                 <div className='nav-container'>
-                                        <div className='nav-container-special menu-lv2'>
+                                        <a href='https://www.linkedin.com/in/brazill-mitchell-42601188/' target='_blank' className='nav-container-special menu-lv2'>
                                             <div className='contact-label'>LinkedIn</div>
                                             <div className='contact-item'>
                                                 <img className='contact-img' src={linkedInImg}></img>
                                             </div>
-                                        </div>
+                                        </a>
+                                        <a href='https://github.com/brazill91' target='_blank' className='nav-container-special menu-lv2'>
+                                            <div className='contact-label'>Github</div>
+                                            <div className='contact-item'>
+                                                <img className='contact-img' src={gitImg}></img>
+                                            </div>
+                                        </a>
                                         <div className='nav-container-special menu-lv2'>
                                             <div className='contact-label'>Email</div>
                                             <div className='contact-item'>
                                                 <img className='contact-img' src={gmailImg}></img>
-                                            </div>
-                                        </div>
-                                        <div className='nav-container-special menu-lv2'>
-                                            <div className='contact-label'>Github</div>
-                                            <div className='contact-item'>
-                                                <img className='contact-img' src={gitImg}></img>
                                             </div>
                                         </div>
                                 </div>
