@@ -8,23 +8,30 @@ const Projects = (props)=> {
 
     // let projectList = ['Gecko Notes','Atomist','Connect X','Paint']
 let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','connectX'],['Paint','paint']]
-    let [menuItemStyle, setMenuItemStyle] = useState('col-12 mx-auto')
+    let [menuItemStyle, setMenuItemStyle] = useState('col-12 mx-auto drop-menu')
 
     //Close this menu if another menu is selected
     //Close other menus when this menu is selected
-    function handleClick(){
-        if (!isListDisplayed){
-            props.toggleMenu('projects')
-        }else if(isListDisplayed){
-            props.toggleMenu('none')
-        }
+    // function handleClick(){
+    //     if (!isListDisplayed){
+    //         props.toggleMenu('projects')
+    //     }else if(isListDisplayed){
+    //         props.toggleMenu('none')
+    //     }
         
+    // }
+    function handleMouseOver(){
+        props.setNavActive()
+        props.toggleMenu('projects')
+    }
+    function handleMouseLeave(){
+        props.toggleMenu('none')
     }
 
 //Jump to selected project
     function scrollToProject(project){
         try{
-                    window.scrollTo(0,props.refs[project].current.offsetTop)
+                    window.scrollTo(0,(props.refs[project].current.offsetTop)+430)
         }catch(error){
             console.log("Could not scroll to element. \n" + error)
         }
@@ -99,8 +106,8 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
             <div className='container-fluid'>
                 <div className='row'>
                 {/* Projects */}
-                    <div className='col' onClick={handleClick}>Projects
-                        <div className='container-fluid child-project'>
+                    <div className='col' onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>Projects
+                        <div className='container-fluid'>
                             <div className='row'>
                             {/* Project List */}
                                 <ProjectList></ProjectList>

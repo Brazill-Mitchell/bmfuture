@@ -16,13 +16,19 @@ let [isListDisplayed,setIsListDisplayed] = useState(true)
 
 //Keep track of which menu is currently seleced
 //Close Menus that aren't selected
-    function handleClick(){
-        if (!isListDisplayed){
-            props.toggleMenu('contact')
-        }else if(isListDisplayed){
-            props.toggleMenu('none')
-        }
-        
+    // function handleClick(){
+    //     if (!isListDisplayed){
+    //         props.toggleMenu('contact')
+    //     }else if(isListDisplayed){
+    //         props.toggleMenu('none')
+    //     }
+    // }
+    function handleMouseOver(){
+        props.setNavActive()
+        props.toggleMenu('contact')
+    }
+    function handleMouseLeave(){
+        props.toggleMenu('none')
     }
     //Close contact menu if another element is active
     function checkMenu(){
@@ -38,27 +44,27 @@ let [isListDisplayed,setIsListDisplayed] = useState(true)
 
         <div>
             <div className='nav-item-container'>                    
-                <div className='menu-lv1' onClick={handleClick}>Contact</div>
+                <div className='menu-lv1' onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>Contact</div>
                     <div>
                         {isListDisplayed
-                            ?<div className='drop-menu'>
+                            ?<div className='drop-menu-side'>
                                 <div className='nav-container'>
-                                        <div className='nav-container-special menu-lv2'>
+                                        <a href='https://www.linkedin.com/in/brazill-mitchell-42601188/' target='_blank' className='nav-container-special menu-lv2'>
                                             <div className=''>LinkedIn</div>
                                             <div className=''>
                                                 <img className='contact-img' src={linkedInImg}></img>
                                             </div>
-                                        </div>
+                                        </a>
+                                        <a href='https://github.com/brazill91' target='_blank' className='nav-container-special menu-lv2'>
+                                            <div className=''>Github</div>
+                                            <div className=''>
+                                                <img className='contact-img' src={gitImg}></img>
+                                            </div>
+                                        </a>
                                         <div className='nav-container-special menu-lv2'>
                                             <div className=''>Email</div>
                                             <div className=''>
                                                 <img className='contact-img' src={gmailImg}></img>
-                                            </div>
-                                        </div>
-                                        <div className='nav-container-special menu-lv2'>
-                                            <div className=''>Github</div>
-                                            <div className=''>
-                                                <img className='contact-img' src={gitImg}></img>
                                             </div>
                                         </div>
                                 </div>

@@ -1,4 +1,5 @@
 import React, {useState,useRef,forwardRef} from 'react';
+import phila from './images/phila.jpg'
 import geckoLandingImage from './images/gecko/geckoLanding.jpg'
 import webPostImage from './images/gecko/webPost.jpg'
 import geckoMainImage from './images/gecko/geckoMain.jpg'
@@ -9,7 +10,7 @@ import './Projects.css';
 
 let geckoLanding = {
   "image":geckoLandingImage,
-  "description":"Landing Image Description"
+  "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 }
 let signIn = {
   "image":signInImage,
@@ -47,6 +48,7 @@ const Gecko=forwardRef((props,ref)=> {
   return (
 
     <div ref={props.refs.gecko} id='gecko' className='container-fluid h-50 mt-3'>
+      {/* <div className='bg-container'><img className='bg-project' src={phila}/></div> */}
       <div className='row'>
 
       {/* Main Image */}
@@ -57,10 +59,10 @@ const Gecko=forwardRef((props,ref)=> {
             
           </div>
       {/* Description */}
-          <div className='my-auto col-sm-12 col-md-12 col-lg-6 mt-2'>
-            <span className=''>
+          <div className='project-desc-container my-auto col-sm-12 col-md-12 col-lg-6 mt-2'>
+            <div className='project-desc my-auto'>
               {displayImageDescription}
-            </span>
+            </div>
           </div>
       </div>
 

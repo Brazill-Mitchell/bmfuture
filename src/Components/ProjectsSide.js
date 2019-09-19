@@ -9,18 +9,25 @@ const Projects = (props)=> {
 
     // let projectList = ['Gecko Notes','Atomist','Connect X','Paint']
 let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','connectX'],['Paint','paint']]
-    let [menuItemStyle, setMenuItemStyle] = useState('drop-menu')
+    let [menuItemStyle, setMenuItemStyle] = useState('drop-menu-side')
 
     //Close this menu if another menu is selected
     //Close other menus when this menu is selected
-    function handleClick(){
-        if (!isListDisplayed){
-            props.toggleMenu('projects')
-        }else if(isListDisplayed){
-            props.toggleMenu('none')
-        }
-        
+    // function handleClick(){
+    //     if (!isListDisplayed){
+    //         props.toggleMenu('projects')
+    //     }else if(isListDisplayed){
+    //         props.toggleMenu('none')
+    //     }
+    // }
+    function handleMouseOver(){
+        props.setNavActive()
+        props.toggleMenu('projects')
     }
+    function handleMouseLeave(){
+        props.toggleMenu('none')
+    }
+    
     function getTargetId(){
         console.log("Target")
         return(
@@ -93,7 +100,7 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
         
                 <div className='nav-item-container'>
                 {/* Projects */}
-                    <div className='menu-lv1' onClick={handleClick}>Projects</div>
+                    <div className='menu-lv1' onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>Projects</div>
                             {/* Project List */}
                     <ProjectList></ProjectList>
                             

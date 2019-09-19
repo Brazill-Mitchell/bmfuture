@@ -2,7 +2,10 @@ import React, {useState,useRef,useEffect} from 'react';
 import { useTransition, animated } from 'react-spring'
 import Contact from './Contact.js'
 import Projects from './Projects.js'
+import Skills from './Skills.js'
 import Logo from './Logo.js'
+import fillerLogo from './images/fillerLogo.png'
+
 
 const Nav = (props)=> {
 //Keep track of which menu is currently seleced
@@ -23,6 +26,10 @@ const Nav = (props)=> {
         setNavState(true)
         props.onClick()
     }
+    function setNavActive(){
+        props.updateSection('nav')
+        setNavState(true)
+    }
 
     useEffect(() => {
         checkActiveSection()
@@ -35,20 +42,24 @@ const Nav = (props)=> {
         
         
             <div className='container-fluid nav-wrap'>
-                <div className='row' onClick={handleClick}>
-                <Logo className='logo'/>
-                <div className='nav-spacer'></div>
+                <div className='row h-100' onClick={handleClick}>
+                    <Logo className=''/>
+                    <div className='nav-spacer'></div>
                 {/* Filler Item */}
                     <div className='menu-lv1'>
                         <div toggleMenu={toggleMenu}>Home</div>
                     </div>
                 {/* Projects */}
                     <div className='menu-lv1'>
-                        <Projects refs={props.refs} navState={navState} menu={menu} toggleMenu={toggleMenu}></Projects>                            
+                        <Projects refs={props.refs} navState={navState} setNavActive={setNavActive} menu={menu} toggleMenu={toggleMenu}></Projects>                            
                     </div>
                 {/* Contact */}
                     <div className='menu-lv1'>
-                        <Contact navState={navState} menu={menu} toggleMenu={toggleMenu}></Contact>
+                        <Contact navState={navState} setNavActive={setNavActive} menu={menu} toggleMenu={toggleMenu}></Contact>
+                    </div>
+                {/* Skills */}
+                    <div className='menu-lv1'>
+                        <Skills navState={navState} menu={menu} toggleMenu={toggleMenu}></Skills>
                     </div>
                 {/* Filler Item */}
                     <div className='menu-lv1'>

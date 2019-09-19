@@ -7,7 +7,7 @@ import './Nav.css'
 
 const Contact= (props)=> {
 
-let [isListDisplayed,setIsListDisplayed] = useState(true)
+let [isListDisplayed,setIsListDisplayed] = useState(false)
 // Let the Nav Bar know this menu has been selected
 
     //Check for changes to Nav Bar's currently set menu
@@ -17,13 +17,20 @@ let [isListDisplayed,setIsListDisplayed] = useState(true)
 
 //Keep track of which menu is currently seleced
 //Close Menus that aren't selected
-    function handleClick(){
-        if (!isListDisplayed){
-            props.toggleMenu('contact')
-        }else if(isListDisplayed){
-            props.toggleMenu('none')
-        }
+    // function handleClick(){
+    //     if (!isListDisplayed){
+    //         props.toggleMenu('contact')
+    //     }else if(isListDisplayed){
+    //         props.toggleMenu('none')
+    //     }
         
+    // }
+    function handleMouseOver(){
+        props.setNavActive()
+        props.toggleMenu('contact')
+    }
+    function handleMouseLeave(){
+        props.toggleMenu('none')
     }
     //Close contact menu if another element is active
     function checkMenu(){
@@ -41,9 +48,9 @@ let [isListDisplayed,setIsListDisplayed] = useState(true)
             {/* <div>{props.menu}</div> */}
             <div className='container'>
                 <div className='row'>
-                    <div className='col contact-menu' onClick={handleClick}>Contact
+                    <div className='col contact-menu' onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>Contact
                         {isListDisplayed
-                            ?<div className='container-fluid menu-lv1 child-project'>
+                            ?<div className='container-fluid menu-lv1 drop-menu'>
                                 <div className='nav-container'>
                                         <a href='https://www.linkedin.com/in/brazill-mitchell-42601188/' target='_blank' className='nav-container-special menu-lv2'>
                                             <div className='contact-label'>LinkedIn</div>

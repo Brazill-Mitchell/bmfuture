@@ -3,6 +3,7 @@ import { useTransition, animated } from 'react-spring'
 import ContactSide from './ContactSide.js'
 import ProjectsSide from './ProjectsSide.js'
 import Logo from './Logo.js'
+import fillerLogo from './images/fillerLogo.png'
 
 const NavSide = (props)=> {
 //Keep track of which menu is currently seleced
@@ -24,6 +25,10 @@ const NavSide = (props)=> {
             setNavState(false)
         }
     }
+    function setNavActive(){
+        props.updateSection('nav')
+        setNavState(true)
+    }
     function handleClick(){
         setNavState(true)
         props.onClick()
@@ -39,26 +44,28 @@ const NavSide = (props)=> {
     return(
         <div>
         {isNavCollapsed
-            ?<div className='nav-collapsed' onClick={toggleNav}>Nav</div>
-            
-            :<div className='nav-wrap-side' onClick={handleClick}>
-                {/* Filler Item */}
-                    <div className='nav-item'>
-                        <div toggleMenu={toggleMenu} onClick={toggleNav}>Menu Icon</div>
-                    </div>
-                {/* Projects */}
-                    <div className='nav-item'>
-                        <ProjectsSide refs={props.refs} navState={navState} menu={menu} toggleMenu={toggleMenu}></ProjectsSide>                            
-                    </div>
-                {/* Contact */}
-                    <div className='nav-item'>
-                        <ContactSide navState={navState} menu={menu} toggleMenu={toggleMenu}></ContactSide>
-                    </div>
-                {/* Filler Item */}
-                    <div className='nav-item'>
-                            <div toggleMenu={toggleMenu}>About</div>
-                    </div>
+            ?<div className='nav-wrap-side' onClick={handleClick}>
+            {/* Filler Item */}
+                <div className='nav-item'>
+                    <div toggleMenu={toggleMenu} onClick={toggleNav}>Menu Icon</div>
+                </div>
+            {/* Projects */}
+                <div className='nav-item'>
+                    <ProjectsSide refs={props.refs} navState={navState} setNavActive={setNavActive} menu={menu} toggleMenu={toggleMenu}></ProjectsSide>                            
+                </div>
+            {/* Contact */}
+                <div className='nav-item'>
+                    <ContactSide navState={navState} setNavActive={setNavActive} menu={menu} toggleMenu={toggleMenu}></ContactSide>
+                </div>
+            {/* Filler Item */}
+                <div className='nav-item'>
+                        <div toggleMenu={toggleMenu}>About</div>
+                </div>
             </div>
+            
+            :<div id='logo-container-side' onClick={toggleNav}><img id='logo' src={fillerLogo}/></div>
+            
+            
         }
         </div>
             
