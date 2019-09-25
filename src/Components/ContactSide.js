@@ -6,13 +6,7 @@ import './NavSide.css'
 
 const Contact= (props)=> {
 
-let [isListDisplayed,setIsListDisplayed] = useState(true)
-// Let the Nav Bar know this menu has been selected
-
-    //Check for changes to Nav Bar's currently set menu
-    useEffect(() => {
-        checkMenu()
-    })
+let [isListDisplayed,setIsListDisplayed] = useState(false)
 
 //Keep track of which menu is currently seleced
 //Close Menus that aren't selected
@@ -23,6 +17,8 @@ let [isListDisplayed,setIsListDisplayed] = useState(true)
     //         props.toggleMenu('none')
     //     }
     // }
+
+// Let the Nav Bar know this menu has been selected
     function handleMouseOver(){
         props.setNavActive()
         props.toggleMenu('contact')
@@ -30,7 +26,7 @@ let [isListDisplayed,setIsListDisplayed] = useState(true)
     function handleMouseLeave(){
         props.toggleMenu('none')
     }
-    //Close contact menu if another element is active
+//Close contact menu if another element is active
     function checkMenu(){
         if (props.menu != 'contact' || props.navState == false){
             setIsListDisplayed(false)
@@ -39,15 +35,19 @@ let [isListDisplayed,setIsListDisplayed] = useState(true)
             setIsListDisplayed(true)
         }
     }
+//Check for changes to Nav Bar's currently set menu
+        useEffect(() => {
+            checkMenu()
+        })
 
     return(
 
         <div>
             <div className='nav-item-container'>                    
-                <div className='menu-lv1' onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>Contact</div>
+                <div className='menu-lv1 nav-item' onMouseOver={handleMouseOver} >Contact</div>
                     <div>
                         {isListDisplayed
-                            ?<div className='drop-menu-side'>
+                            ?<div className='drop-menu-side' onMouseLeave={handleMouseLeave}>
                                 <div className='nav-container'>
                                         <a href='https://www.linkedin.com/in/brazill-mitchell-42601188/' target='_blank' className='nav-container-special menu-lv2'>
                                             <div className=''>LinkedIn</div>

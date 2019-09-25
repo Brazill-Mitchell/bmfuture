@@ -8,30 +8,22 @@ const Projects = (props)=> {
 
     // let projectList = ['Gecko Notes','Atomist','Connect X','Paint']
 let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','connectX'],['Paint','paint']]
-    let [menuItemStyle, setMenuItemStyle] = useState('col-12 mx-auto drop-menu')
 
-    //Close this menu if another menu is selected
-    //Close other menus when this menu is selected
-    // function handleClick(){
-    //     if (!isListDisplayed){
-    //         props.toggleMenu('projects')
-    //     }else if(isListDisplayed){
-    //         props.toggleMenu('none')
-    //     }
-        
-    // }
     function handleMouseOver(){
         props.setNavActive()
         props.toggleMenu('projects')
+        setIsListDisplayed(true)
+        console.log('mouseover')
     }
     function handleMouseLeave(){
         props.toggleMenu('none')
+        console.log('mouse leave')
     }
 
 //Jump to selected project
     function scrollToProject(project){
         try{
-                    window.scrollTo(0,(props.refs[project].current.offsetTop)+430)
+            window.scrollTo(0,(props.refs[project].current.offsetTop)+430)
         }catch(error){
             console.log("Could not scroll to element. \n" + error)
         }
@@ -43,12 +35,17 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
             setIsListDisplayed(false)
             
         }else if(props.menu == 'projects'){
-            setIsListDisplayed(true)
+            // setIsListDisplayed(true)
             
         }
     }
+    function test(event){
+        // console.log(event.target.dataset)
+    }
     useEffect(() => {
         checkMenu()
+        // window.addEventListener('onmouseleave',test(window.event))
+        // return(window.removeEventListener('onmouseleave',test(window.event)))
     })
 
     
@@ -71,7 +68,7 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
 
     const ProjectList = (props)=> {
         return(
-            <div className={menuItemStyle}>
+            <div className='col-12 mx-auto drop-menu'>
                 {/* 
                     Here is the section that should be animated
                     A toggle function controls the state for 'isListDisplayed 
@@ -80,7 +77,7 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
                     isListDisplayed
                     // This is what shows when the item is toggled on
                     ?    <animated.div className='nav-container' style={props} key={key}>
-                            <div className='nav-container-special'>
+                            <div className=''>
                                     <div className='col menu-lv2' onClick={()=> scrollToProject(project[1])}>
                                     {/* Continue Here */}
                                         <div>
@@ -106,8 +103,8 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
             <div className='container-fluid'>
                 <div className='row'>
                 {/* Projects */}
-                    <div className='col' onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>Projects
-                        <div className='container-fluid'>
+                    <div className='col nav-item' onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>Projects
+                        <div className='container-fluid' >
                             <div className='row'>
                             {/* Project List */}
                                 <ProjectList></ProjectList>

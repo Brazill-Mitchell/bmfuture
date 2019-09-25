@@ -7,7 +7,6 @@
     width: 110%;
 }
 .thumbnail{
-    width: 20%;
     border-radius: 2%;
     box-shadow: 0 2px 5px 0px rgba(0,0,0,.15);
     transition: box-shadow .2s ease-in-out;
@@ -22,4 +21,19 @@
     width: 60vw;
     border-bottom: 2px solid rgba(0,0,0,.15) ;
     border-radius: 10%;
+}
+@media only screen and (min-width: 1000px){
+    .thumbnail{
+        width: 15%;
+    }
+}
+@media only screen and (max-width: 1000px){
+    .thumbnail{
+        width: 15%;
+    }
+}
+@media only screen and (max-width: 600px){
+    .thumbnail{
+        width: 20%;
+    }
 }

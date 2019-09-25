@@ -3,7 +3,6 @@ import atomistLandingResponsiveImage from './images/atomist/atomistLandingRespon
 import pricingResponsiveImage from './images/atomist/pricingResponsive.jpg'
 import pricingImage from './images/atomist/pricing.jpg'
 import atomistLandingImage from './images/atomist/atomistLanding.jpg'
-import './Projects.css';
 
 let atomistLanding = {
   "image":atomistLandingImage,
@@ -54,11 +53,11 @@ const AtomistProject=forwardRef((props,ref)=> {
                 
               </div>
           {/* Description */}
-              <div className='col-sm-12 col-md-12 col-lg-6 my-auto'>
-                <span>
-                  {displayImageDescription}
-                </span>
-              </div>
+          <div className='project-desc-container my-auto col-sm-12 col-md-12 col-lg-6 mt-2'>
+            <div className='project-desc my-auto'>
+              {displayImageDescription}
+            </div>
+          </div>
           </div>
 
           {/* Thumbnails */}

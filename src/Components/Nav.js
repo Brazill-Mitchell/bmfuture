@@ -22,10 +22,10 @@ const Nav = (props)=> {
             setNavState(false)
         }
     }
-    function handleClick(){
-        setNavState(true)
-        props.onClick()
-    }
+    // function handleClick(){
+    //     setNavState(true)
+    //     props.onClick()
+    // }
     function setNavActive(){
         props.updateSection('nav')
         setNavState(true)
@@ -42,7 +42,7 @@ const Nav = (props)=> {
         
         
             <div className='container-fluid nav-wrap'>
-                <div className='row h-100' onClick={handleClick}>
+                <div className='row h-100'>
                     <Logo className=''/>
                     <div className='nav-spacer'></div>
                 {/* Filler Item */}

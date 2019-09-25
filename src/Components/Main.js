@@ -5,6 +5,7 @@ import Project from './Project.js'
 import Nav from './Nav.js'
 import NavSide from './NavSide.js'
 import phila from './images/phila.jpg'
+import { userInfo } from 'os';
 
 
 
@@ -13,9 +14,13 @@ const Main = ()=> {
 // Use Refs to navigate to each project section
     let refGecko = useRef(null)
     let refAtomist = useRef(null)
+    let refConnectX =useRef(null)
+    let refPaint = useRef(null)
     let refList = {
         'gecko':refGecko,
         'atomist':refAtomist,
+        'connectX':refConnectX,
+        'paint':refPaint
     }
 
     
@@ -26,21 +31,27 @@ const Main = ()=> {
     const mqList = [mediaSm,menuFullSize,mediaLg]
 
     let [isNavCollapsed,setIsNavCollapsed] = useState(false)
+// Manage which menu item is currently displayed
+    let [activeSection,setActiveSection] = useState('none')
     
+// Toggle the display mode of the Nav bar
     function toggleNav(){
          if (window.matchMedia(menuCollapseSize).matches){
-             setIsNavCollapsed(true)
-         }else{
+            if (!isNavCollapsed){
+                setIsNavCollapsed(true)
+            } 
+         }else if (isNavCollapsed){
              setIsNavCollapsed(false)
          }
-         console.log('toggle')
+        //  console.log('toggle')
     }
-
-    let [activeSection,setActiveSection] = useState('none')
+// Set the Nav bar as the active section
     function updateSection(element){
         setActiveSection(element)
         // console.log(activeSection)
-    }
+    }   
+
+
 
     let expanded = 'col-lg-2 col-md-3 col-sm-3'
 
@@ -50,10 +61,10 @@ const Main = ()=> {
         toggleNav()
         console.log("Handling Screen")
     }
-    // useEffect(() => { //Load
-    //     window.addEventListener('load',handleScreen)
-    //     return() => window.removeEventListener('load',handleScreen)
-    // })
+    useEffect(() => { //Load
+        window.addEventListener('load',handleScreen)
+        return() => window.removeEventListener('load',handleScreen)
+    })
     useEffect(() => { //Resize
         window.addEventListener('resize',handleScreen)
         return() => window.removeEventListener('resize',handleScreen)
@@ -102,11 +113,11 @@ const Main = ()=> {
             <div className='bg-container'><img className='bg-page' src={phila}/></div>
             <div className='container-fluid page-main'>
                 {isNavCollapsed
-                    ?<NavSide refs={refList} activeSection={activeSection} updateSection={updateSection} onClick={setNavActive} />
-                    :<Nav refs={refList} activeSection={activeSection} updateSection={updateSection} onClick={setNavActive} />
+                    ?<NavSide refs={refList} activeSection={activeSection} updateSection={updateSection} onClick={setNavActive} id='nav-z' />
+                    :<Nav refs={refList} activeSection={activeSection} updateSection={updateSection} onClick={setNavActive} id='nav-z' />
                 }
                 <div className='intro-top-spacer'></div>
-                <BodyWrapper />
+                <BodyWrapper id='body-wrapper'/>
             </div>
             
         </div>

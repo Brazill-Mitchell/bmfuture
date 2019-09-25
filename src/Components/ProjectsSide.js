@@ -9,7 +9,6 @@ const Projects = (props)=> {
 
     // let projectList = ['Gecko Notes','Atomist','Connect X','Paint']
 let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','connectX'],['Paint','paint']]
-    let [menuItemStyle, setMenuItemStyle] = useState('drop-menu-side')
 
     //Close this menu if another menu is selected
     //Close other menus when this menu is selected
@@ -46,19 +45,7 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
     }
     useEffect(() => {
         checkMenu()
-    })
-
-    
-//Make Nav Menu Responsive 
-    function handleCollapse(){
-        // setIsListDisplayed(false)
-        // collapseSize? console.log(collapseSize.window) : console.log(collapseSize.valueOf)
-    }
-
-    // useEffect(() => {
-    //     window.addEventListener('resize',handleCollapse)
-    //     return() => window.removeEventListener('resize',handleCollapse)
-    // },handleCollapse)
+    })  
 
     let dropMenuTransitions = useTransition(projectList, project => project, {
         from: {opacity:0},
@@ -68,7 +55,7 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
 
     const ProjectList = (props)=> {
         return(
-            <div className={menuItemStyle}>
+            <div className='drop-menu-side' onMouseLeave={handleMouseLeave}>
                 {/* 
                     Here is the section that should be animated
                     A toggle function controls the state for 'isListDisplayed 
@@ -100,7 +87,7 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
         
                 <div className='nav-item-container'>
                 {/* Projects */}
-                    <div className='menu-lv1' onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>Projects</div>
+                    <div className='menu-lv1 nav-item' onMouseOver={handleMouseOver}>Projects</div>
                             {/* Project List */}
                     <ProjectList></ProjectList>
                             

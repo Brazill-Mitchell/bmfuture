@@ -48,9 +48,9 @@ let [isListDisplayed,setIsListDisplayed] = useState(false)
             {/* <div>{props.menu}</div> */}
             <div className='container'>
                 <div className='row'>
-                    <div className='col contact-menu' onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>Contact
+                    <div className='col nav-item' onMouseOver={handleMouseOver}>Contact
                         {isListDisplayed
-                            ?<div className='container-fluid menu-lv1 drop-menu'>
+                            ?<div className='container-fluid drop-menu' onMouseLeave={handleMouseLeave}>
                                 <div className='nav-container'>
                                         <a href='https://www.linkedin.com/in/brazill-mitchell-42601188/' target='_blank' className='nav-container-special menu-lv2'>
                                             <div className='contact-label'>LinkedIn</div>

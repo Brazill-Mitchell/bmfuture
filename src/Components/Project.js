@@ -1,7 +1,9 @@
 import React, {useEffect} from 'react';
-import './Project.css';
 import Gecko from './Gecko.js'
 import Atomist from './Atomist.js'
+import ConnectX from './ConnectX.js'
+import Paint from './Paint.js'
+
 
 
 const Project =(props)=>{
@@ -24,6 +26,12 @@ const Project =(props)=>{
             <div className='spacer mt-3 mx-auto'></div>
             <div className='mt-5'>
                 <Atomist refs={props.refs}></Atomist>
+            </div>
+            <div className='mt-5'>
+                <ConnectX refs={props.refs}></ConnectX>
+            </div>
+            <div className='mt-5'>
+                <Paint refs={props.refs}></Paint>
             </div>
             <div className='spacer mt-3 mx-auto'></div>
 

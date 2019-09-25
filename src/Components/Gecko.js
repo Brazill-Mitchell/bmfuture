@@ -1,12 +1,10 @@
 import React, {useState,useRef,forwardRef} from 'react';
-import phila from './images/phila.jpg'
 import geckoLandingImage from './images/gecko/geckoLanding.jpg'
 import webPostImage from './images/gecko/webPost.jpg'
 import geckoMainImage from './images/gecko/geckoMain.jpg'
 import geckoResponsiveImage from './images/gecko/geckoResponsive.jpg'
 import signInImage from './images/gecko/signIn.jpg'
-
-import './Projects.css';
+import './Projects.css'
 
 let geckoLanding = {
   "image":geckoLandingImage,
@@ -48,7 +46,6 @@ const Gecko=forwardRef((props,ref)=> {
   return (
 
     <div ref={props.refs.gecko} id='gecko' className='container-fluid h-50 mt-3'>
-      {/* <div className='bg-container'><img className='bg-project' src={phila}/></div> */}
       <div className='row'>
 
       {/* Main Image */}

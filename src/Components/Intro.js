@@ -5,18 +5,6 @@ import ampitheater from './images/ampitheater.jpg'
 const Intro=()=>{
 
     return(
-        // <div className=''>
-        //     <div>
-        //         <div className='intro-img-container'>
-        //             <div className='my-auto bg-success intro-desc'>placeholder</div>
-
-        //             {/* <img className='intro-img' src={ampitheater}/> */}
-        //         </div>
-        //     </div>
-                    
-        //     <div className='intro-height-spacer'></div>
-
-        // </div>
         <div className=''>
             <div className='intro-design-container'>
                 <div className='intro-line-top'></div>
