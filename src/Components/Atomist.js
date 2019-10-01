@@ -6,7 +6,18 @@ import atomistLandingImage from './images/atomist/atomistLanding.jpg'
 
 let atomistLanding = {
   "image":atomistLandingImage,
-  "description":"Main Image Description"
+  "description":
+    <div className='desc'>
+      <div className='desc-normal'>This Cloned website was a Developer Team project as a part of Chingu, a community of growing developers.</div>
+      <span className='desc-head'>Key Aspects</span><br></br>
+      <span className='desc-head-2'>International Developer Team</span><br></br>
+      <span className='desc-normal'>Worked remotely with developers from Venezuela and Nicaragua</span><br></br>
+      <span className='desc-head-2'>Agile Principles</span><br></br>
+      <span className='desc-normal'>Utilized Agile workflow to optimize effectiveness in a team environment.</span><br></br>
+      <span className='desc-normal'>Self assigned tasks from a Backlog</span><br></br>
+      <span className='desc-normal'>Held Weekly Scrum meetings </span><br></br>
+      <span className='desc-normal'>Performed consistent project updates via Github</span><br></br>
+    </div>
 }
 let atomistLandingResponsive = {
   "image":atomistLandingResponsiveImage,
@@ -42,22 +53,28 @@ const AtomistProject=forwardRef((props,ref)=> {
   
   return (
 
-        <div ref={props.refs.atomist} id='atomist' className='container-fluid h-50 mt-3'>
-          <div className='row'>
+        <div ref={props.refs.atomist} id='atomist' className='container-fluid h-100 mt-3'>
+          <div className='row h-100'>
 
-          {/* Main Image */}
-              <div className='col-sm-12 col-md-12 col-lg-6'>
-              <a href='https://chingu-voyages.github.io/v8-toucans-team-04/' target='_blank'>
-                <img className='img-main mx-auto mb-3 w-75' src={displayImage}></img>
-              </a>
-                
-              </div>
-          {/* Description */}
-          <div className='project-desc-container my-auto col-sm-12 col-md-12 col-lg-6 mt-2'>
-            <div className='project-desc my-auto'>
-              {displayImageDescription}
+            <div className='desc-img-wrapper'>
+            
+
+
+            
             </div>
-          </div>
+            {/* Main Image */}
+              <div className='col-sm-12 col-md-12 col-lg-6'>
+                <a href='https://chingu-voyages.github.io/v8-toucans-team-04/' target='_blank'>
+                  <img className='img-main mx-auto mb-3 w-75' src={displayImage}></img>
+                </a>
+              </div>
+            {/* Description */}
+              <div className='project-desc-container my-auto col-sm-12 col-md-12 col-lg-6 mt-2'>
+                <div className='project-desc my-auto'>
+                  {displayImageDescription}
+                </div>
+              </div>
+
           </div>
 
           {/* Thumbnails */}

@@ -12,13 +12,30 @@
 .project-desc-container{
     color: white;
     background-color: rgba(255,255,255,.2);
-    height: 20vh;
+    /* Fix height & responsiveness of container here */
+    /* height: 20vh; */
+    height: 50%;;
     border-radius: 5px;
 }
 .project-desc{
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    flex: 1;
+}
+.desc-image-wrapper{
+    /* display: flex; */
+    /* flex-direction: column; */
+    height: 100%;
+}
+.desc-head{
+    font-size: 22px;
+}
+.desc-head-2{
+    font-size: 20px;
+}
+.desc-normal{
+    padding-bottom: 5px;
 }
 .intro-top-spacer{
     padding-bottom: 5%;
