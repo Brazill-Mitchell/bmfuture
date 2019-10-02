@@ -8,7 +8,47 @@ import './Projects.css'
 
 let geckoLanding = {
   "image":geckoLandingImage,
-  "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  "description":
+
+    <div className='desc'>
+      <div className='desc-title'>
+        Gecko Notes
+      </div>
+      <div className='desc-normal'>
+        Gecko Notes is a web based, mobile friendly note keeping app. It's simple interface makes it easy to store thoughts and ideas, and come back to them anytime, anywhere.
+      </div>
+      <div className='desc-head'>
+        Key Components:
+      </div>
+      <div className='desc-head-2'>
+        Firebase Authentication:
+      </div>
+      <div className='desc-normal'>
+        Sign up & Sign in with a few simple clicks
+      </div>
+      <div className='desc-head-2'>
+        Firebase Database:
+      </div>
+      <div className='desc-normal'>
+        Store user data in the cloud & update in real time
+      </div>
+      <div className='desc-head-2'>
+        SEO:
+      </div>
+      <div className='desc-normal'>
+        Display image & description in search results and link sharing
+      </div>
+      <a href='https://geckonotes.firebaseapp.com' target='blank_'>
+        <div className='desc-link'>Go: Gecko Notes
+          </div>
+      </a>
+        
+
+
+
+      
+    </div>
+
 }
 let signIn = {
   "image":signInImage,

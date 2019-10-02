@@ -6,7 +6,29 @@ import fullEmpty20Image from './images/connectX/fullEmpty20.jpg'
 
 let full8 = {
   "image":full8Image,
-  "description":"Sign In Image Description"
+  "description":
+  
+<div className='desc'>
+      <div className='desc-title'>
+      Connect X
+      </div>
+      <div className='desc-normal'>
+      This 2 player game is similar to Connect 4, except the players aren’t limited to 4. Any number of squares can be chosen as the winning amount, and the board can be set to any number of squares, making for a challenging and maybe impossible game of Connect X.
+      </div>
+      <div className='desc-head'>
+        Key Component:
+      </div>
+      <div className='desc-head-2'>
+        Consecutive Pattern Finding Algorithm:
+      </div>
+      <div className='desc-normal'>
+      This algorithm will find any desired number of ordered squares, so that the game is not limited to a four square match.
+      </div>
+      *See the algorithm here
+
+
+    </div>
+
 }
 let full14 = {
   "image":full14Image,

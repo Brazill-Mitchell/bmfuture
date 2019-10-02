@@ -4,13 +4,21 @@ import fullImage from './images/paint/full.jpg'
 import fullEmptyImage from './images/paint/fullEmpty.jpg'
 import paintStyleImage from './images/paint/paintStyle.jpg'
 
-let analysis = {
-  "image":analysisImage,
-  "description":"Sign In Image Description"
-}
 let full = {
   "image":fullImage,
-  "description":"Web Post Image Description"
+  "description":
+  <div className='desc'>
+    <div className='desc-title'>
+      Paint
+    </div>
+    <div className='desc-normal'>
+    This project is a simple paint application, created using the Canvas element. The user is able to choose the paint color, shape, and stroke size. They can even see an analysis of how the mouse’s position in the window relates to the canvas for an understanding of how the canvas functions.
+    </div>
+  </div>
+}
+let analysis = {
+  "image":analysisImage,
+  "description":"Analysis Image Description"
 }
 let fullEmpty = {
   "image":fullEmptyImage,
@@ -21,7 +29,7 @@ let paintStyle = {
   "description":"Responsive Image Description"
 }
 
-let paintThumbnailList = [analysis,full,fullEmpty,paintStyle]
+let paintThumbnailList = [full,analysis,fullEmpty,paintStyle]
 
 const Paint=forwardRef((props,ref)=> {
 
