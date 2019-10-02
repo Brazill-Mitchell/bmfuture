@@ -7,7 +7,8 @@ import atomistLandingImage from './images/atomist/atomistLanding.jpg'
 let atomistLanding = {
   "image":atomistLandingImage,
   "description":
-    <div className='desc'>
+    <div className='desc-wrapper'>
+      <div className='desc-title'>Atomist</div>
       <div className='desc-normal'>This Cloned website was a Developer Team project as a part of Chingu, a community of growing developers.</div>
       <span className='desc-head'>Key Aspects</span><br></br>
       <span className='desc-head-2'>International Developer Team</span><br></br>
@@ -21,15 +22,24 @@ let atomistLanding = {
 }
 let atomistLandingResponsive = {
   "image":atomistLandingResponsiveImage,
-  "description":"Landing Image Description"
+  "description":
+    <div className='desc-wrapper'>
+      Landing Image Description
+    </div>
 }
 let pricingResponsive = {
   "image":pricingResponsiveImage,
-  "description":"Pricing Responsive Image Description"
+  "description":
+    <div className='desc-wrapper'>
+      Pricing Responsive Image Description
+    </div>
 }
 let pricing = {
   "image":pricingImage,
-  "description":"Pricing Image Description"
+  "description":
+    <div className='desc-wrapper'>
+      Pricing Image Description"
+    </div>
 }
 
 let atomistThumbnailList = [atomistLandingResponsive,pricingResponsive,pricing]

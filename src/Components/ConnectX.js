@@ -8,12 +8,12 @@ let full8 = {
   "image":full8Image,
   "description":
   
-<div className='desc'>
+<div className='desc-wrapper'>
       <div className='desc-title'>
       Connect X
       </div>
       <div className='desc-normal'>
-      This 2 player game is similar to Connect 4, except the players aren’t limited to 4. Any number of squares can be chosen as the winning amount, and the board can be set to any number of squares, making for a challenging and maybe impossible game of Connect X.
+        This 2 player game is similar to Connect 4, except the players aren’t limited to 4. Any number of squares can be chosen as the winning amount, and the board can be set to any number of squares, making for a challenging and maybe impossible game of Connect X.
       </div>
       <div className='desc-head'>
         Key Component:
@@ -22,7 +22,7 @@ let full8 = {
         Consecutive Pattern Finding Algorithm:
       </div>
       <div className='desc-normal'>
-      This algorithm will find any desired number of ordered squares, so that the game is not limited to a four square match.
+        This algorithm will find any desired number of ordered squares, so that the game is not limited to a four square match.
       </div>
       *See the algorithm here
 
@@ -32,16 +32,25 @@ let full8 = {
 }
 let full14 = {
   "image":full14Image,
-  "description":"Web Post Image Description"
+  "description":
+    <div className='desc-wrapper'>
+      Web Post Image Description"
+    </div>
 }
 let full20 = {
   "image":full20Image,
-  "description":"Main Image Description"
-}
+  "description":
+    <div className='desc-wrapper'>
+      Main Image Description"
+    </div>
+  }
 let fullEmpty20 = {
   "image":fullEmpty20Image,
-  "description":"Responsive Image Description"
-}
+  "description":
+    <div className='desc-wrapper'>
+      Responsive Image Description"
+    </div>
+  }
 
 let connectXThumbnailList = [full8,full14,full20,fullEmpty20]
 

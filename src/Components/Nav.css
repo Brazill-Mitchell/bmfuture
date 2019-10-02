@@ -18,8 +18,10 @@ a , u {
     background-color: rgba(225,225,225,.45);
     /* Fix height & responsiveness of container here */
     /* height: 20vh; */
-    height: 50%;;
+    height: 350px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Description */
@@ -29,6 +31,11 @@ a , u {
     padding-top: 10px;
     padding-bottom: 10px;
     flex: 1;
+}
+.desc-wrapper{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .desc-title{
     font-size: 30px;

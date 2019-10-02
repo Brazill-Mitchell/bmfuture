@@ -7,26 +7,35 @@ import paintStyleImage from './images/paint/paintStyle.jpg'
 let full = {
   "image":fullImage,
   "description":
-  <div className='desc'>
+  <div className='desc-wrapper'>
     <div className='desc-title'>
       Paint
     </div>
     <div className='desc-normal'>
-    This project is a simple paint application, created using the Canvas element. The user is able to choose the paint color, shape, and stroke size. They can even see an analysis of how the mouse’s position in the window relates to the canvas for an understanding of how the canvas functions.
+      This project is a simple paint application, created using the Canvas element. The user is able to choose the paint color, shape, and stroke size. They can even see an analysis of how the mouse’s position in the window relates to the canvas for an understanding of how the canvas functions.
     </div>
   </div>
 }
 let analysis = {
   "image":analysisImage,
-  "description":"Analysis Image Description"
+  "description":
+    <div className='desc-wrapper'>
+      Analysis Image Description"
+    </div>
 }
 let fullEmpty = {
   "image":fullEmptyImage,
-  "description":"Main Image Description"
+  "description":
+    <div className='desc-wrapper'>
+      Main Image Description"
+    </div>
 }
 let paintStyle = {
   "image":paintStyleImage,
-  "description":"Responsive Image Description"
+  "description":
+    <div className='desc-wrapper'>
+      Responsive Image Description
+    </div>
 }
 
 let paintThumbnailList = [full,analysis,fullEmpty,paintStyle]

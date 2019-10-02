@@ -10,7 +10,7 @@ let geckoLanding = {
   "image":geckoLandingImage,
   "description":
 
-    <div className='desc'>
+    <div className='desc-wrapper'>
       <div className='desc-title'>
         Gecko Notes
       </div>
@@ -52,19 +52,31 @@ let geckoLanding = {
 }
 let signIn = {
   "image":signInImage,
-  "description":"Sign In Image Description"
+  "description":
+    <div className='desc-wrapper'>
+      Sign In Image Description
+    </div>
 }
 let webPost = {
   "image":webPostImage,
-  "description":"Web Post Image Description"
+  "description":
+    <div className='desc-wrapper'>
+      Web Post Image Description
+    </div>
 }
 let geckoMain = {
   "image":geckoMainImage,
-  "description":"Main Image Description"
+  "description":
+    <div className='desc-wrapper'>
+      Main Image Description
+    </div>
 }
 let geckoResponsive = {
   "image":geckoResponsiveImage,
-  "description":"Responsive Image Description"
+  "description":
+    <div className='desc-wrapper'>
+      Responsive Image Description
+    </div>
 }
 
 let geckoThumbnailList = [signIn,webPost,geckoMain,geckoResponsive]
