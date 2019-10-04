@@ -24,21 +24,45 @@ let atomistLandingResponsive = {
   "image":atomistLandingResponsiveImage,
   "description":
     <div className='desc-wrapper'>
-      Landing Image Description
+      <div className='desc-title'>
+        Atomist
+      </div>
+      <div className='desc-head-2'>
+        Responsive
+      </div>
+      <div className='desc-normal'>
+        Made the site responsive to any screen size.
+      </div>
     </div>
 }
 let pricingResponsive = {
   "image":pricingResponsiveImage,
   "description":
     <div className='desc-wrapper'>
-      Pricing Responsive Image Description
+      <div className='desc-title'>
+        Atomist
+      </div>
+      <div className='desc-head-2'>
+        Pricing Page
+      </div>
+      <div className='desc-normal'>
+        Built a Responsive Pricing Page and Navigation Bar using Bootstrap.
+      </div>
     </div>
 }
 let pricing = {
   "image":pricingImage,
   "description":
     <div className='desc-wrapper'>
-      Pricing Image Description"
+      <div className='desc-title'>
+        Atomist
+      </div>
+      <div className='desc-head-2'>
+        Pricing Page
+      </div>
+      <div className='desc-normal'>
+        Built a Responsive Pricing Page and Navigation Bar using Bootstrap.
+      </div>
     </div>
 }
 

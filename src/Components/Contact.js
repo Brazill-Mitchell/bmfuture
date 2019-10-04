@@ -48,29 +48,31 @@ let [isListDisplayed,setIsListDisplayed] = useState(false)
             {/* <div>{props.menu}</div> */}
             <div className='container'>
                 <div className='row'>
-                    <div className='col nav-item' onMouseOver={handleMouseOver}>Contact
+                    <div className='col nav-item' onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>Contact
                         {isListDisplayed
-                            ?<div className='container-fluid drop-menu' onMouseLeave={handleMouseLeave}>
-                                <div className='nav-container'>
-                                        <a href='https://www.linkedin.com/in/brazill-mitchell-42601188/' target='_blank' className='nav-container-special menu-lv2'>
-                                            <div className='contact-label'>LinkedIn</div>
-                                            <div className='contact-item'>
-                                                <img className='contact-img' src={linkedInImg}></img>
-                                            </div>
-                                        </a>
-                                        <a href='https://github.com/brazill91' target='_blank' className='nav-container-special menu-lv2'>
-                                            <div className='contact-label'>Github</div>
-                                            <div className='contact-item'>
-                                                <img className='contact-img' src={gitImg}></img>
-                                            </div>
-                                        </a>
-                                        <div className='nav-container-special menu-lv2'>
-                                            <div className='contact-label'>Email</div>
-                                            <div className='contact-item'>
-                                                <img className='contact-img' src={gmailImg}></img>
+                            ?<div className='container-fluid'>
+                                    <div className='row'>
+                                        <div className='col-12 mx-auto drop-menu'>
+                                            <a href='https://www.linkedin.com/in/brazill-mitchell-42601188/' target='_blank' className='nav-container menu-lv2 nav-container-special'>
+                                                <div className='contact-label'>LinkedIn</div>
+                                                <div className='contact-item'>
+                                                    <img className='contact-img' src={linkedInImg}></img>
+                                                </div>
+                                            </a>
+                                            <a href='https://github.com/brazill91' target='_blank' className='nav-container menu-lv2 nav-container-special'>
+                                                <div className='contact-label'>Github</div>
+                                                <div className='contact-item'>
+                                                    <img className='contact-img' src={gitImg}></img>
+                                                </div>
+                                            </a>
+                                            <div className='nav-container menu-lv2 nav-container-special'>
+                                                <div className='contact-label'>Email</div>
+                                                <div className='contact-item'>
+                                                    <img className='contact-img' src={gmailImg}></img>
+                                                </div>
                                             </div>
                                         </div>
-                                </div>
+                                    </div>
 
                             </div>
                                 

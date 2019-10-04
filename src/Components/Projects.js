@@ -85,8 +85,6 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
                                         </div>
                                         
                                     </div>
-                                
-                            
                             </div>
                         </animated.div>
                         

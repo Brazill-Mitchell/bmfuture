@@ -10,10 +10,7 @@ let geckoLanding = {
   "image":geckoLandingImage,
   "description":
 
-    <div className='desc-wrapper'>
-      <div className='desc-title'>
-        Gecko Notes
-      </div>
+    <div>
       <div className='desc-normal'>
         Gecko Notes is a web based, mobile friendly note keeping app. It's simple interface makes it easy to store thoughts and ideas, and come back to them anytime, anywhere.
       </div>
@@ -42,40 +39,54 @@ let geckoLanding = {
         <div className='desc-link'>Go: Gecko Notes
           </div>
       </a>
-        
-
-
-
-      
     </div>
-
 }
 let signIn = {
   "image":signInImage,
   "description":
-    <div className='desc-wrapper'>
-      Sign In Image Description
+    <div>
+      <div className='desc-head-2'>
+        Authentication
+      </div>
+      <div className='desc-normal'>
+        Sign in using an existing Gmail account.
+      </div>
     </div>
 }
 let webPost = {
   "image":webPostImage,
   "description":
-    <div className='desc-wrapper'>
-      Web Post Image Description
+    <div>
+      <div className='desc-head-2'>
+        SEO
+      </div>
+      <div className='desc-normal'>
+        Display app description and thumbnail in search results and link sharing.
+      </div>
     </div>
 }
 let geckoMain = {
   "image":geckoMainImage,
   "description":
-    <div className='desc-wrapper'>
-      Main Image Description
+    <div>
+      <div className='desc-head-2'>
+        Store & Edit Notes
+      </div>
+      <div className='desc-normal'>
+        Users can create, update, and remove notes from their personal database.
+      </div>
     </div>
 }
 let geckoResponsive = {
   "image":geckoResponsiveImage,
   "description":
-    <div className='desc-wrapper'>
-      Responsive Image Description
+    <div>
+      <div className='desc-head-2'>
+        Responsive
+      </div>
+      <div className='desc-normal'>
+        The web app can adjust to any screen size.
+      </div>
     </div>
 }
 
@@ -85,15 +96,21 @@ const Gecko=forwardRef((props,ref)=> {
 
   let [displayImage,setDisplayImage] = useState(geckoLandingImage)
   let [displayImageDescription,setDisplayImageDescription] = useState(geckoLanding.description)
+  let [isDefaultImage,setIsDefaultImage] = useState(true)
 
   function thumbnailHover(image){
     setDisplayImage(image.image)
     setDisplayImageDescription(image.description)
+    setIsDefaultImage(false)
+    
   }
   function imgDefault(){
     setDisplayImage(geckoLandingImage)
     setDisplayImageDescription(geckoLanding.description)
+    setIsDefaultImage(true)
   }
+
+
   
   return (
 
@@ -103,15 +120,28 @@ const Gecko=forwardRef((props,ref)=> {
       {/* Main Image */}
           <div className='col-sm-12 col-md-12 col-lg-6'>
             <a href='https://geckonotes.firebaseapp.com' target='_blank'>
-              <img className='img-main mx-auto w-75 mb-3' src={displayImage}></img>
+              <img className='img-main mx-auto w-75 mb-3' src={geckoLandingImage}></img>
             </a>
             
           </div>
       {/* Description */}
-          <div className='project-desc-container my-auto col-sm-12 col-md-12 col-lg-6 mt-2'>
-            <div className='project-desc my-auto'>
-              {displayImageDescription}
-            </div>
+          <div className='project-desc-container col-sm-12 col-md-12 col-lg-6 mt-2'>
+              <div className='project-desc'>
+                <div className='desc-title'>
+                  Gecko Notes
+                </div>
+                  {displayImageDescription}
+              </div>
+
+                {isDefaultImage
+                  ?<div></div>
+                  :<div className=''>
+                      <div>
+                        <img className='img-desc mx-auto mb-3' src={displayImage}></img>
+                      </div>
+                    </div>
+              }
+
           </div>
       </div>
 
