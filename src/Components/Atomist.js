@@ -8,7 +8,6 @@ let atomistLanding = {
   "image":atomistLandingImage,
   "description":
     <div className='desc-wrapper'>
-      <div className='desc-title'>Atomist</div>
       <div className='desc-normal'>This Cloned website was a Developer Team project as a part of Chingu, a community of growing developers.</div>
       <span className='desc-head'>Key Aspects</span><br></br>
       <span className='desc-head-2'>International Developer Team</span><br></br>
@@ -24,9 +23,6 @@ let atomistLandingResponsive = {
   "image":atomistLandingResponsiveImage,
   "description":
     <div className='desc-wrapper'>
-      <div className='desc-title'>
-        Atomist
-      </div>
       <div className='desc-head-2'>
         Responsive
       </div>
@@ -39,9 +35,6 @@ let pricingResponsive = {
   "image":pricingResponsiveImage,
   "description":
     <div className='desc-wrapper'>
-      <div className='desc-title'>
-        Atomist
-      </div>
       <div className='desc-head-2'>
         Pricing Page
       </div>
@@ -54,9 +47,6 @@ let pricing = {
   "image":pricingImage,
   "description":
     <div className='desc-wrapper'>
-      <div className='desc-title'>
-        Atomist
-      </div>
       <div className='desc-head-2'>
         Pricing Page
       </div>
@@ -72,15 +62,18 @@ const AtomistProject=forwardRef((props,ref)=> {
 
   let [displayImage,setDisplayImage] = useState(atomistLanding.image)
   let [displayImageDescription,setDisplayImageDescription] = useState(atomistLanding.description)
+  let [isDefaultImage,setIsDefaultImage] = useState(true)
 
 
   function thumbnailHover(thumbnail){
     setDisplayImage(thumbnail.image)
     setDisplayImageDescription(thumbnail.description)
+    setIsDefaultImage(false)
   }
   function imgDefault(){
     setDisplayImage(atomistLandingImage)
     setDisplayImageDescription(atomistLanding.description)
+    setIsDefaultImage(true)
   }
 
 
@@ -105,8 +98,17 @@ const AtomistProject=forwardRef((props,ref)=> {
             {/* Description */}
               <div className='project-desc-container my-auto col-sm-12 col-md-12 col-lg-6 mt-2'>
                 <div className='project-desc my-auto'>
-                  {displayImageDescription}
-                </div>
+                  <div className='desc-title'>Atomist</div>
+                    {displayImageDescription}
+                  </div>
+                  {isDefaultImage
+                  ?<div></div>
+                  :<div className=''>
+                      <div>
+                        <img className='img-desc mx-auto mb-3' src={displayImage}></img>
+                      </div>
+                    </div>
+                  }
               </div>
 
           </div>

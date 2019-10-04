@@ -140,7 +140,7 @@ const Gecko=forwardRef((props,ref)=> {
                         <img className='img-desc mx-auto mb-3' src={displayImage}></img>
                       </div>
                     </div>
-              }
+                }
 
           </div>
       </div>

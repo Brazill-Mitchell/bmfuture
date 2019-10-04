@@ -8,9 +8,8 @@ let full = {
   "image":fullImage,
   "description":
   <div className='desc-wrapper'>
-    <div className='desc-title'>
-      Paint
-    </div>
+    <div className='desc-head'>Key Aspects</div>
+    <div className='desc-head-2'>Canvas</div>
     <div className='desc-normal'>
       This project is a simple paint application, created using the Canvas element. The user is able to choose the paint color, shape, and stroke size. They can even see an analysis of how the mouse’s position in the window relates to the canvas for an understanding of how the canvas functions.
     </div>
@@ -38,20 +37,23 @@ let paintStyle = {
     </div>
 }
 
-let paintThumbnailList = [full,analysis,fullEmpty,paintStyle]
+let paintThumbnailList = [analysis,fullEmpty,paintStyle]
 
 const Paint=forwardRef((props,ref)=> {
 
   let [displayImage,setDisplayImage] = useState(fullImage)
   let [displayImageDescription,setDisplayImageDescription] = useState(full.description)
+  let [isDefaultImage,setIsDefaultImage] = useState(true)
 
   function thumbnailHover(image){
     setDisplayImage(image.image)
     setDisplayImageDescription(image.description)
+    setIsDefaultImage(false)
   }
   function imgDefault(){
     setDisplayImage(fullImage)
     setDisplayImageDescription(full.description)
+    setIsDefaultImage(true)
   }
   
   return (
@@ -69,8 +71,19 @@ const Paint=forwardRef((props,ref)=> {
       {/* Description */}
           <div className='project-desc-container my-auto col-sm-12 col-md-12 col-lg-6 mt-2'>
             <div className='project-desc my-auto'>
+              <div className='desc-title'>
+                Paint
+              </div>
               {displayImageDescription}
             </div>
+            {isDefaultImage
+                  ?<div></div>
+                  :<div className=''>
+                    <div>
+                      <img className='img-desc mx-auto mb-3' src={displayImage}></img>
+                    </div>
+                  </div>
+            }
           </div>
       </div>
 
