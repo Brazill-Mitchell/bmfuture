@@ -1,6 +1,8 @@
-.img-hidden{
-    visibility: hidden;
+.top-spacer{
+    height: 10vh;
+    top: 5vh;
 }
-.image-visible{
-    visibility: visible;
+.top-divider{
+    /* border-bottom: 2px solid rgba(0,0,0,.15); */
+    border-radius: 10%;
 }
