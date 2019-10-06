@@ -247,25 +247,6 @@ a , u {
     position: relative;
 }
 
-#nav-z{
-    position: relative;
-    margin-top: 20px;
-    z-index: 10;
-}
-.nav-wrap{
-    position:fixed;
-    width: 100%;
-    height: 5%;
-    z-index: 10;
-    background-color:rgb(66, 98, 110);
-    /* margin: 0px 10px 10px 10px; */
-    margin-right: 10px;
-    display: flex;
-    flex-direction: column;
-}
-.nav-spacer{
-    flex:1;
-}
 .menu-lv1{
     /* margin-left: 10px; */
     position: relative;
@@ -280,7 +261,7 @@ a , u {
 }
 .drop-menu{
     position: absolute;
-    background-image: linear-gradient(to right,rgba(66,98,110,1),rgba(66,98,110,.7));
+    background-image: linear-gradient(to right,rgba(49,107,146,1),rgba(49,107,146,.7));
     transform: translateY(var(--drop-menu-height));
     border-radius: 3px;
     padding-right: 5px;
@@ -310,7 +291,7 @@ a , u {
     position: absolute;
     left: 96%;
     transform: translateX(var(--drop-menu-side-width));
-    background-image: linear-gradient(to right,rgba(66,98,110,1),rgba(66,98,110,.7));
+    background-image: linear-gradient(to right,rgba(49,107,146,1),rgba(49,107,146,.7));
     border-radius: 3px;
     padding-right: 5px;
     padding-top: 2px;
@@ -353,15 +334,17 @@ a , u {
     width: 100%;
 }
 .menu-lv2{
+    width: 100%;
     margin-top: 5px;
     border-radius: 3%;
     transition: all .2s ease-in-out;
     flex: 1;
     white-space: nowrap;
-    color:rgba(8, 49, 88, 0.6);
+    color: rgba(49, 107, 146, 0.8);
     -webkit-text-stroke-width: .3px;
     border-radius: 3px;
     background-color: rgba(240,248,255,.8);
+    text-align: center;
 
 }
 .menu-lv2:hover{
@@ -419,6 +402,25 @@ a , u {
     width: var(--nav-collapsed-width);
     z-index: 100;
 } */
+#nav-z{
+    position: relative;
+    margin-top: 20px;
+    z-index: 10;
+}
+.nav-wrap{
+    position:fixed;
+    width: 100%;
+    height: 5%;
+    z-index: 10;
+    background-color:rgb(49, 107, 146);
+    /* margin: 0px 10px 10px 10px; */
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.nav-spacer{
+    flex:1;
+}
 .nav-wrap-side{
     position:fixed;
     top: var(--nav-side-from-top);
@@ -428,7 +430,7 @@ a , u {
     padding: 0px;
     color: white;
     font-weight: 500;
-    background-color:rgb(66, 98, 110);
+    background-color:rgb(49, 107, 146);
     border-radius: 5px;
     /* display: flex; */
     /* flex-direction: column; */

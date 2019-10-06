@@ -68,29 +68,28 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
 
     const ProjectList = (props)=> {
         return(
-            <div className='col-12 mx-auto drop-menu'>
-                {/* 
-                    Here is the section that should be animated
-                    A toggle function controls the state for 'isListDisplayed 
-                */}
-                {dropMenuTransitions.map(({item: project, key, props}) => 
-                    isListDisplayed
+            <div>
+                {isListDisplayed
                     // This is what shows when the item is toggled on
-                    ?    <animated.div className='nav-container' style={props} key={key}>
-                            <div className=''>
-                                    <div className='col menu-lv2' onClick={()=> scrollToProject(project[1])}>
-                                    {/* Continue Here */}
-                                        <div>
-                                            {project[0]}
+                    ? 
+                    <div className='col-12 mx-auto drop-menu'>
+                        {dropMenuTransitions.map(({item: project, key, props}) => 
+                            <div style={props} key={key}>
+                                <div className=''>
+                                        <div className='col menu-lv2' onClick={()=> scrollToProject(project[1])}>
+                                        {/* Continue Here */}
+                                            <div>
+                                                {project[0]}
+                                            </div>
+                                            
                                         </div>
-                                        
-                                    </div>
+                                </div>
                             </div>
-                        </animated.div>
-                        
+                        )}        
+                    </div>
                     // This is what shows when the item is toggled off
                     :<div></div>
-                )}             
+                }        
             </div>   
         )
     }
