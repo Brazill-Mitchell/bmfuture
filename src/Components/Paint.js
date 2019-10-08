@@ -13,6 +13,9 @@ let full = {
     <div className='desc-normal'>
       This project is a simple paint application, created using the Canvas element. The user is able to choose the paint color, shape, and stroke size. They can even see an analysis of how the mouse’s position in the window relates to the canvas for an understanding of how the canvas functions.
     </div>
+    <a href='https://brazill-mitchell.github.io/paint-app/' target='blank_'>
+        <div className='desc-link'>Go: Paint</div>
+    </a>
   </div>
 }
 let analysis = {
@@ -63,7 +66,7 @@ const Paint=forwardRef((props,ref)=> {
 
       {/* Main Image */}
           <div className='col-sm-12 col-md-12 col-lg-6'>
-            <a href='https://geckonotes.firebaseapp.com' target='_blank'>
+            <a href='https://brazill-mitchell.github.io/paint-app/' target='_blank'>
               <img className='img-main mx-auto w-75 mb-3' src={displayImage}></img>
             </a>
             

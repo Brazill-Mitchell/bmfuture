@@ -1,6 +1,4 @@
 import React from 'react'
-import profileImage from './images/profile-image.png'
-import ampitheater from './images/ampitheater.jpg'
 
 const Intro=()=>{
 

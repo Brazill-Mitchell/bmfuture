@@ -59,7 +59,10 @@ a , u {
     font-weight: 500;
 }
 .desc-link{
-    color: rgba(235,235,235,1);
+    color: rgb(49, 107, 146);
+    background-color: rgba(240,248,255,.6);
+    border-radius: 5px;
+    padding: 0 3px 0 3px;
     font-weight: 500;
     font-style: oblique;
     transition: all .2s ease-in-out;
@@ -67,7 +70,7 @@ a , u {
 }
 .desc-link:hover{
     transform: scale(1.05);
-    color: rgba(255,255,255,1);
+    background-color: rgba(240,248,255,.8);
 }
 
 /* Intro */
@@ -269,7 +272,8 @@ a , u {
     padding-bottom: 5px;
     animation: drop-menu .4s ease-in-out;
     animation-fill-mode: forwards;
-    width: 100%;
+    /* width: 100%; */
+    box-sizing: border-box;
     /* display: inline-block; */
     /* z-index: 5; */
 }
@@ -334,9 +338,10 @@ a , u {
     width: 100%;
 }
 .menu-lv2{
-    width: 100%;
+    /* width: 100%; */
     margin-top: 5px;
     border-radius: 3%;
+    box-sizing: border-box;
     transition: all .2s ease-in-out;
     flex: 1;
     white-space: nowrap;

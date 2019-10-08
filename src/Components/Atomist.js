@@ -17,6 +17,10 @@ let atomistLanding = {
       <span className='desc-normal'>Self assigned tasks from a Backlog</span><br></br>
       <span className='desc-normal'>Held Weekly Scrum meetings </span><br></br>
       <span className='desc-normal'>Performed consistent project updates via Github</span><br></br>
+      <a href='https://chingu-voyages.github.io/v8-toucans-team-04/' target='blank_'>
+        <div className='desc-link'>Go: Atomist
+          </div>
+      </a>
     </div>
 }
 let atomistLandingResponsive = {
@@ -110,7 +114,6 @@ const AtomistProject=forwardRef((props,ref)=> {
                     </div>
                   }
               </div>
-
           </div>
 
           {/* Thumbnails */}

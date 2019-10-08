@@ -59,18 +59,18 @@ let [isListDisplayed,setIsListDisplayed] = useState(false)
                                                     <img className='contact-img' src={linkedInImg}></img>
                                                 </div>
                                             </a>
-                                            <a href='https://github.com/brazill91' target='_blank' className='nav-container menu-lv2 nav-container-special'>
+                                            <a href='https://github.com/brazill-mitchell' target='_blank' className='nav-container menu-lv2 nav-container-special'>
                                                 <div className='contact-label'>Github</div>
                                                 <div className='contact-item'>
                                                     <img className='contact-img' src={gitImg}></img>
                                                 </div>
                                             </a>
-                                            <div className='nav-container menu-lv2 nav-container-special'>
+                                            {/* <div className='nav-container menu-lv2 nav-container-special'>
                                                 <div className='contact-label'>Email</div>
                                                 <div className='contact-item'>
                                                     <img className='contact-img' src={gmailImg}></img>
                                                 </div>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
 
