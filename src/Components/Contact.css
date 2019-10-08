@@ -1,0 +1,14 @@
+
+.contact-label{
+    /* flex: 1; */
+    margin-left: 3px;
+}
+.contact-img{
+    position: relative;
+    max-width: 20px;
+    flex: 1;
+    margin-left: 6px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+}

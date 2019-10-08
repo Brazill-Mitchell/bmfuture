@@ -1,37 +1,40 @@
-import React, {useState,useRef} from 'react';
-import './Project.css';
-import ScreenShot from './screenshot.js'
-import GeckoImages from './GeckoImages.js'
+import React, {useEffect} from 'react';
+import Gecko from './Gecko.js'
+import Atomist from './Atomist.js'
+import ConnectX from './ConnectX.js'
+import Paint from './Paint.js'
 
-const Project =()=>{
+
+
+const Project =(props)=>{
+
+    //Set the body as the active element and close the menus each time it is clicked
+    function setActive(){
+        props.setActiveElement('body')
+        console.log("Project: Active Element: " + props.isNavActive)
+    }
+
+    useEffect(() => {
+        // window.addEventListener('click',setActive)
+    })
+
     return(
-        <div>
-            <div className='container'>
-                <div className='row'>
-                    <div className='col'>
-                        <div className='container'>
-                            <div className='row'>
-
-                                {/* GIF */}
-                                <div className='col-sm-12 sol-md-8 col-lg-8'>
-                                <ScreenShot ></ScreenShot>
-                                </div>
-
-                                {/* Description */}
-                                <div className='col-sm-12 sol-md-4 col-lg-4 desc'>
-                                einiobno iernbodfbn osinofbnoidfnod bnoinsd fbsdfbdfb aererbsebrrb erbe srb serbsbererer esrbserbsreb serbreabaererbojopj ojopj ojo jpojop j oj ojpojpojpo jopjopjmopmj ojmpojmo mpompo einiobno iernbodfbn osinofbnoidfnod bnoinsd fbsdfbdfb aererbsebrrb erbe srb serbsbererer esrbserbsreb serbreabaererbojopj ojopj ojo jpojop j oj ojpojpojpo jopjopjmopmj ojmpojmo mpompoeiniobno iernbodfbn osinofbnoidfnod bnoinsd fbsdfbdfb aererbsebrrb erbe srb serbsbererer esrbserbsreb serbreabaererbojopj ojopj ojo jpojop j oj ojpojpojpo jopjopjmopmj ojmpojmo mpompoeiniobno iernbodfbn osinofbnoidfnod bnoinsd fbsdfbdfb aererbsebrrb erbe srb serbsbererer esrbserbsreb serbreabaererbojopj ojopj ojo jpojop j oj ojpojpojpo jopjopjmopmj ojmpojmo mpompo 
-                                </div>
-
-                            </div>
-                        </div>
-
-                        {/* Thumbnails */}
-                        <GeckoImages></GeckoImages>
-                        
-                    </div>
-                </div>
-
+        <div className=''>
+            <div>
+                <Gecko  refs={props.refs}></Gecko>
             </div>
+            <div className='spacer mt-3 mx-auto'></div>
+            <div className='mt-5'>
+                <Atomist refs={props.refs}></Atomist>
+            </div>
+            <div className='mt-5'>
+                <ConnectX refs={props.refs}></ConnectX>
+            </div>
+            <div className='mt-5'>
+                <Paint refs={props.refs}></Paint>
+            </div>
+            <div className='spacer mt-3 mx-auto'></div>
+
         </div>
     )
 }
