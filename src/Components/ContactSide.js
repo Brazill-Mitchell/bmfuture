@@ -55,7 +55,7 @@ let [isListDisplayed,setIsListDisplayed] = useState(false)
                                                 <img className='contact-img' src={linkedInImg}></img>
                                             </div>
                                         </a>
-                                        <a href='https://github.com/brazill91' target='_blank' className='nav-container-special menu-lv2'>
+                                        <a href='https://github.com/brazill-mitchell' target='_blank' className='nav-container-special menu-lv2'>
                                             <div className=''>Github</div>
                                             <div className=''>
                                                 <img className='contact-img' src={gitImg}></img>
