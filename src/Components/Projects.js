@@ -80,7 +80,7 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
             <div className='container-fluid'>
                 <div className='row'>
                 {/* Projects */}
-                    <div className='col-12 nav-item' onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>Projects
+                    <div className='nav-item' onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>Projects
                         <div className='container-fluid' >
                             <div className='row'>
                             {/* Project List */}
