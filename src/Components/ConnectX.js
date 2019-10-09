@@ -33,25 +33,40 @@ let full14 = {
   "image":full14Image,
   "description":
     <div className='desc-wrapper'>
-      Web Post Image Description"
+      <div className='desc-head-2'>
+        Reset
+      </div>
+      <div className='desc-normal'>
+        Reset the board anytime to a new size
+      </div>
     </div>
 }
 let full20 = {
   "image":full20Image,
   "description":
     <div className='desc-wrapper'>
-      Main Image Description
+      <div className='desc-head-2'>
+        Board Size
+      </div>
+      <div className='desc-normal'>
+        Set the suqare count  to any number. <br></br> More Squares = More to Connect
+      </div>
     </div>
   }
 let fullEmpty20 = {
   "image":fullEmpty20Image,
   "description":
     <div className='desc-wrapper'>
-      Responsive Image Description
+      <div className='desc-head-2'>
+        Diagnostics
+      </div>
+      <div className='desc-normal'>
+        Monitor mouse, click, and canvas positions for development purposes.
+      </div>
     </div>
   }
 
-let connectXThumbnailList = [full14,full20,fullEmpty20]
+let connectXThumbnailList = [full20,fullEmpty20,full14]
 
 const ConnectX=forwardRef((props,ref)=> {
 

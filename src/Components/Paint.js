@@ -22,25 +22,40 @@ let analysis = {
   "image":analysisImage,
   "description":
     <div className='desc-wrapper'>
-      Analysis Image Description"
+      <div className='desc-head-2'>
+        Window Position
+      </div>
+      <div className='desc-normal'>
+        See how the mouse position in the window relates to the canvas. 
+      </div>
     </div>
 }
 let fullEmpty = {
   "image":fullEmptyImage,
   "description":
     <div className='desc-wrapper'>
-      Main Image Description"
+      <div className='desc-head-2'>
+        Responsive
+      </div>
+      <div className='desc-normal'>
+        Resize the window to paint on any screen size(on desktop)
+      </div>
     </div>
 }
 let paintStyle = {
   "image":paintStyleImage,
   "description":
     <div className='desc-wrapper'>
-      Responsive Image Description
+      <div className='desc-head-2'>
+        Brush Select
+      </div>
+      <div className='desc-normal'>
+        Select your brush size and color
+      </div>
     </div>
 }
 
-let paintThumbnailList = [analysis,fullEmpty,paintStyle]
+let paintThumbnailList = [analysis,paintStyle,fullEmpty]
 
 const Paint=forwardRef((props,ref)=> {
 
@@ -91,7 +106,7 @@ const Paint=forwardRef((props,ref)=> {
       </div>
 
       {/* Thumbnails */}
-      <div className='row mt-3' onMouseLeave={imgDefault}>
+      <div className='row mt-3 thumbnail-container-tight' onMouseLeave={imgDefault}>
         {paintThumbnailList.map((thumbnail,i) =>(
           <div className='mx-auto thumbnail' onMouseOver={() => thumbnailHover(thumbnail)} key={i}>
             <img className='img' src={thumbnail.image}></img>
