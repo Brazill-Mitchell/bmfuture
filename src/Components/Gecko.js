@@ -39,6 +39,11 @@ let geckoLanding = {
         <div className='desc-link'>Go: Gecko Notes
           </div>
       </a>
+      <br></br>
+      <a href='https://github.com/chingu-voyages/v9-geckos-team-06' target='blank_'>
+        <div className='desc-link mt-1'>GitHub Repo
+          </div>
+      </a>
     </div>
 }
 let signIn = {

@@ -16,6 +16,10 @@ let full = {
     <a href='https://brazill-mitchell.github.io/paint-app/' target='blank_'>
         <div className='desc-link'>Go: Paint</div>
     </a>
+    <br></br>
+    <a href='https://github.com/Brazill-Mitchell/paint-app' target='blank_'>
+        <div className='desc-link mt-1'>GitHub Repo</div>
+    </a>
   </div>
 }
 let analysis = {

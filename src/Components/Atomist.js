@@ -4,6 +4,8 @@ import pricingResponsiveImage from './images/atomist/pricingResponsive.jpg'
 import pricingImage from './images/atomist/pricing.jpg'
 import atomistLandingImage from './images/atomist/atomistLanding.jpg'
 
+
+//Descriptions for each thumbnail
 let atomistLanding = {
   "image":atomistLandingImage,
   "description":
@@ -19,6 +21,11 @@ let atomistLanding = {
       <span className='desc-normal'>Performed consistent project updates via Github</span><br></br>
       <a href='https://chingu-voyages.github.io/v8-toucans-team-04/' target='blank_'>
         <div className='desc-link'>Go: Atomist
+          </div>
+      </a>
+      <br></br>
+      <a href='https://github.com/chingu-voyages/v8-toucans-team-04' target='blank_'>
+        <div className='desc-link mt-1'>GitHub Repo
           </div>
       </a>
     </div>
@@ -87,11 +94,7 @@ const AtomistProject=forwardRef((props,ref)=> {
         <div ref={props.refs.atomist} id='atomist' className='container-fluid h-100 mt-3'>
           <div className='row h-100'>
 
-            <div className='desc-img-wrapper'>
-            
-
-
-            
+            <div className='desc-img-wrapper'>            
             </div>
             {/* Main Image */}
               <div className='col-sm-12 col-md-12 col-lg-6'>

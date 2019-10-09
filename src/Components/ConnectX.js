@@ -26,6 +26,12 @@ let full8 = {
         <div className='desc-link'>Go: Connect X
           </div>
       </a>
+      <br></br>
+      <a href='https://github.com/Brazill-Mitchell/chingu' target='blank_'>
+        <div className='desc-link mt-1'>GitHub Repo
+          </div>
+      </a>
+      
     </div>
 
 }
