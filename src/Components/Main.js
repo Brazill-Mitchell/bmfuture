@@ -59,7 +59,6 @@ const Main = ()=> {
 //Once for initial render, then on each resize
     function handleScreen(){
         toggleNav()
-        console.log("Handling Screen")
     }
     useEffect(() => { //Load
         window.addEventListener('load',handleScreen)

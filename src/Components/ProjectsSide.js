@@ -1,5 +1,4 @@
 import React, {useState,useRef,useEffect} from 'react';
-// import {HashLink as Link} from 'react-router-hash-link'
 import { useTransition, animated } from 'react-spring'
 import './NavSide.css';
 
@@ -9,16 +8,6 @@ const Projects = (props)=> {
 
     // let projectList = ['Gecko Notes','Atomist','Connect X','Paint']
 let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','connectX'],['Paint','paint']]
-
-    //Close this menu if another menu is selected
-    //Close other menus when this menu is selected
-    // function handleClick(){
-    //     if (!isListDisplayed){
-    //         props.toggleMenu('projects')
-    //     }else if(isListDisplayed){
-    //         props.toggleMenu('none')
-    //     }
-    // }
     function handleMouseOver(){
         props.setNavActive()
         props.toggleMenu('projects')
@@ -27,12 +16,15 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
         props.toggleMenu('none')
     }
     
-    function getTargetId(){
-        console.log("Target")
-        return(
-            '#atomist'
-        )
+//Jump to selected project
+function scrollToProject(project){
+    try{
+        window.scrollTo(0,(props.refs[project].current.offsetTop))
+    }catch(error){
+        console.log("Could not scroll to element. \n" + error)
     }
+}
+
     //Close projects menu if another element is active
     function checkMenu(){
         if (props.menu != 'projects' || props.navState == false){
@@ -65,13 +57,11 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
                     // This is what shows when the item is toggled on
                     ?    <animated.div className='' style={props} key={key}>
                             <div className=''>
-                                <a href={getTargetId}>
-                                    <div className='col menu-lv2'>
+                                <div className='col menu-lv2' onClick={()=> scrollToProject(project[1])}>
+                                    <div className=''>
                                         {project[0]}
                                     </div>
-                                </a>
-                                
-                            
+                                </div>
                             </div>
                         </animated.div>
                         

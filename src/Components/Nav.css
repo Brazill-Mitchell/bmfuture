@@ -7,6 +7,7 @@
     --intro-space-from-top: 20px;
     --nav-side-from-top: 25%;
     --nav-collapsed-width: 20%;
+    --nav-collapsed-left: 5px;
 }
 
 a , u {
@@ -21,17 +22,11 @@ a , u {
     position: relative;
     padding-top: 10px;
     padding-bottom: 10px;
-    /* top: 50%;
-    transform: translateY(-50%); */
     color: rgb(255,255,255);
     background-color: rgba(225,225,225,.45);
-    /* Fix height & responsiveness of container here */
-    /* height: 20vh; */
-    height: 360px;
+    box-sizing: border-box;
+    min-height: 360px;
     border-radius: 5px;
-    /* display: flex;
-    flex-direction: column; */
-    /* display: inline-block; */
 }
 
 /* Description */
@@ -258,10 +253,10 @@ a , u {
     font-weight: 500;
     flex:1;
 }
-.child-project-hidden{
+/* .child-project-hidden{
     position: absolute;
     visibility: hidden;
-}
+} */
 .drop-menu{
     position: absolute;
     background-image: linear-gradient(to right,rgba(49,107,146,1),rgba(49,107,146,.7));
@@ -341,9 +336,9 @@ a , u {
     /* width: 100%; */
     margin-top: 5px;
     border-radius: 3%;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     transition: all .2s ease-in-out;
-    flex: 1;
+    /* flex: 1; */
     white-space: nowrap;
     color: rgba(49, 107, 146, 0.8);
     -webkit-text-stroke-width: .3px;
@@ -389,17 +384,26 @@ a , u {
     height: 100%;
 }
 #logo-side{
-    position: relative;
-    max-width: calc(var(--nav-collapsed-width) / 2);
+    position: relative; 
+    height: 5vh;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+    opacity: .1;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#logo-side:hover{
+    height: 6vh;
+    opacity: .8;
 }
 #logo-container-side{
-    /* position: relative; */
-    /* flex: 1;
-    height: 100%; */
     position: fixed;
     top: var(--nav-side-from-top);
     width: var(--nav-collapsed-width);
+    left: var(--nav-collapsed-left);
     z-index: 10;
+    transition: all .2s ease-in-out;
 }
 /* .nav-collapsed{
     position: fixed;
@@ -428,7 +432,8 @@ a , u {
 }
 .nav-wrap-side{
     position:fixed;
-    top: var(--nav-side-from-top);
+    top: 50%;
+    transform: translateY(-50%);
     width: var(--nav-collapsed-width);
     height: 50%;
     z-index: 100;
@@ -437,8 +442,7 @@ a , u {
     font-weight: 500;
     background-color:rgb(49, 107, 146);
     border-radius: 5px;
-    /* display: flex; */
-    /* flex-direction: column; */
+    opacity: .95;
 }
 
 

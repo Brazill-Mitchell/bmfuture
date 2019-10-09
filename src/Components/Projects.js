@@ -1,12 +1,10 @@
 import React, {useState,useRef,useEffect} from 'react';
-// import {HashLink as Link} from 'react-router-hash-link'
 import { useTransition, animated } from 'react-spring'
 
 const Projects = (props)=> {
 
     let [isListDisplayed, setIsListDisplayed] = useState(false)
 
-    // let projectList = ['Gecko Notes','Atomist','Connect X','Paint']
 let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','connectX'],['Paint','paint']]
 
     function handleMouseOver(){
@@ -20,10 +18,10 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
         console.log('mouse leave')
     }
 
-//Jump to selected project
+//Jump to selected projec
     function scrollToProject(project){
         try{
-            window.scrollTo(0,(props.refs[project].current.offsetTop)+430)
+            window.scrollTo(0,(props.refs[project].current.offsetTop))
         }catch(error){
             console.log("Could not scroll to element. \n" + error)
         }
@@ -35,30 +33,12 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
             setIsListDisplayed(false)
             
         }else if(props.menu == 'projects'){
-            // setIsListDisplayed(true)
             
         }
     }
-    function test(event){
-        // console.log(event.target.dataset)
-    }
     useEffect(() => {
         checkMenu()
-        // window.addEventListener('onmouseleave',test(window.event))
-        // return(window.removeEventListener('onmouseleave',test(window.event)))
     })
-
-    
-//Make Nav Menu Responsive 
-    function handleCollapse(){
-        // setIsListDisplayed(false)
-        // collapseSize? console.log(collapseSize.window) : console.log(collapseSize.valueOf)
-    }
-
-    // useEffect(() => {
-    //     window.addEventListener('resize',handleCollapse)
-    //     return() => window.removeEventListener('resize',handleCollapse)
-    // },handleCollapse)
 
     let dropMenuTransitions = useTransition(projectList, project => project, {
         from: {opacity:0},
@@ -72,7 +52,7 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
                 {isListDisplayed
                     // This is what shows when the item is toggled on
                     ? 
-                    <div className='col-12 mx-auto drop-menu'>
+                    <div className='drop-menu'>
                         {dropMenuTransitions.map(({item: project, key, props}) => 
                             <div style={props} key={key}>
                                 <div className=''>
@@ -100,7 +80,7 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
             <div className='container-fluid'>
                 <div className='row'>
                 {/* Projects */}
-                    <div className='col nav-item' onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>Projects
+                    <div className='col-12 nav-item' onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>Projects
                         <div className='container-fluid' >
                             <div className='row'>
                             {/* Project List */}

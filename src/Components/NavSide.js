@@ -3,7 +3,7 @@ import { useTransition, animated } from 'react-spring'
 import ContactSide from './ContactSide.js'
 import ProjectsSide from './ProjectsSide.js'
 import Logo from './Logo.js'
-import fillerLogo from './images/fillerLogo.png'
+import bmLogo from './images/bmfuture logo.jpg'
 
 const NavSide = (props)=> {
 //Keep track of which menu is currently seleced
@@ -47,7 +47,7 @@ const NavSide = (props)=> {
             ?<div className='nav-wrap-side' onClick={handleClick}>
             {/* Filler Item */}
                 <div className='nav-item'>
-                    <div toggleMenu={toggleMenu} onClick={toggleNav}>Menu Icon</div>
+                    <div toggleMenu={toggleMenu} onClick={toggleNav} style={{color: 'rgba(203,234,255,.6)'}}>Hide</div>
                 </div>
             {/* Projects */}
                 <div className='nav-item'>
@@ -58,12 +58,12 @@ const NavSide = (props)=> {
                     <ContactSide navState={navState} setNavActive={setNavActive} menu={menu} toggleMenu={toggleMenu}></ContactSide>
                 </div>
             {/* Filler Item */}
-                <div className='nav-item'>
+                <div className='nav-item' style={{color:'rgba(0,0,0,.2)'}}>
                         <div toggleMenu={toggleMenu}>About</div>
                 </div>
             </div>
             
-            :<div id='logo-container-side' onClick={toggleNav}><img id='logo' src={fillerLogo}/></div>
+            :<div id='logo-container-side' onClick={toggleNav}><img id='logo-side' src={bmLogo}/></div>
             
             
         }

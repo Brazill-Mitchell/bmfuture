@@ -1,12 +1,12 @@
 import React from 'react'
 import './Nav.css'
-import fillerLogo from './images/fillerLogo.png'
+import bmLogo from './images/bmfuture logo.jpg'
 
 
 const Logo= ()=> {
 
     return(
-        <div id='logo-container'><img id='logo' src={fillerLogo}/></div>
+        <div id='logo-container'><img id='logo' src={bmLogo}/></div>
     )
 }
 

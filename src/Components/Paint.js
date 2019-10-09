@@ -61,19 +61,19 @@ const Paint=forwardRef((props,ref)=> {
   
   return (
 
-    <div ref={props.refs.paint} id='paint' className='container-fluid h-50 mt-3'>
+    <div ref={props.refs.paint} id='paint' className='container-fluid mt-3'>
       <div className='row'>
 
       {/* Main Image */}
           <div className='col-sm-12 col-md-12 col-lg-6'>
             <a href='https://brazill-mitchell.github.io/paint-app/' target='_blank'>
-              <img className='img-main mx-auto w-75 mb-3' src={displayImage}></img>
+              <img className='img-main mx-auto w-75 mb-3' src={fullImage}></img>
             </a>
             
           </div>
       {/* Description */}
           <div className='project-desc-container my-auto col-sm-12 col-md-12 col-lg-6 mt-2'>
-            <div className='project-desc my-auto'>
+            <div className='project-desc'>
               <div className='desc-title'>
                 Paint
               </div>
