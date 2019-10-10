@@ -1,10 +1,10 @@
 .img{
     width: 100%;
     border-radius: 2%;
-    transition: width .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 .img:hover{
-    width: 110%;
+    transform: scale(1.05)
 }
 .thumbnail{
     border-radius: 2%;
@@ -12,11 +12,8 @@
     transition: box-shadow .2s ease-in-out;
 }
 .thumbnail:hover{
-    box-shadow: 0 5px 10px 0px rgba(0,0,0,.30);
+    box-shadow: 0 5px 10px 0px rgba(0,0,0,.50);
 }
-/* .thumbnail-container-tight{
-    padding: 0 20% 0 20%;
-} */
 .img-main{
     box-shadow: 0 0px 0px 0 rgba(0,0,0,0);
     border-radius: 1%;
@@ -28,11 +25,10 @@
 }
 .img-desc{
     width: 330px;
-    /* object-fit: contain; */
 }
 .spacer{
     width: 60vw;
-    border-bottom: 2px solid rgba(0,0,0,.15) ;
+    /* border-bottom: 2px solid rgba(0,0,0,.15) ; */
     border-radius: 10%;
 }
 @media only screen and (min-width: 1000px){

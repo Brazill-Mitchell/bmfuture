@@ -1,15 +1,14 @@
-import React, {useState,useRef,useEffect} from 'react';
-import { useTransition, animated } from 'react-spring'
+import React, {useState,useEffect} from 'react';
 import Contact from './Contact.js'
 import Projects from './Projects.js'
 import Skills from './Skills.js'
 import Logo from './Logo.js'
-import fillerLogo from './images/fillerLogo.png'
 
 
 const Nav = (props)=> {
-//Keep track of which menu is currently seleced
-//Close Menus that aren't selected
+// Keep track of which menu is currently seleced
+// Close Menus that aren't selected
+// Pass functions from main to communicate which menu is active
     let [navState,setNavState] = useState(false)
 
     let [menu,setMenu] = useState('none')
@@ -22,10 +21,6 @@ const Nav = (props)=> {
             setNavState(false)
         }
     }
-    // function handleClick(){
-    //     setNavState(true)
-    //     props.onClick()
-    // }
     function setNavActive(){
         props.updateSection('nav')
         setNavState(true)
@@ -33,9 +28,6 @@ const Nav = (props)=> {
 
     useEffect(() => {
         checkActiveSection()
-        // window.addEventListener('resize',handleCollapse)
-        // return() => window.removeEventListener('resize',handleCollapse)
-        // return()=> console.log("Use Effect Return")
     })
     
     return(

@@ -1,4 +1,4 @@
-import React, {useState,useRef,useEffect} from 'react';
+import React, {useState,useEffect} from 'react';
 import gitImg from '../images/GitHub-Mark.png'
 import linkedInImg from '../images/linkedin-icon.png'
 import gmailImg from '../images/gmail.png'
@@ -15,16 +15,6 @@ let [isListDisplayed,setIsListDisplayed] = useState(false)
         checkMenu()
     })
 
-//Keep track of which menu is currently seleced
-//Close Menus that aren't selected
-    // function handleClick(){
-    //     if (!isListDisplayed){
-    //         props.toggleMenu('contact')
-    //     }else if(isListDisplayed){
-    //         props.toggleMenu('none')
-    //     }
-        
-    // }
     function handleMouseOver(){
         props.setNavActive()
         props.toggleMenu('contact')
@@ -52,7 +42,7 @@ let [isListDisplayed,setIsListDisplayed] = useState(false)
                         {isListDisplayed
                             ?<div className='container-fluid'>
                                     <div className='row'>
-                                        <div className='col-12 mx-auto drop-menu'>
+                                        <div className='mx-auto drop-menu'>
                                             <a href='https://www.linkedin.com/in/brazill-mitchell-42601188/' target='_blank' className='nav-container menu-lv2 nav-container-special'>
                                                 <div className='contact-label'>LinkedIn</div>
                                                 <div className='contact-item'>

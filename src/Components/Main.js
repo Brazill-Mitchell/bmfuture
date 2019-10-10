@@ -11,7 +11,8 @@ import { userInfo } from 'os';
 
 const Main = ()=> {
 
-// Use Refs to navigate to each project section
+// Refs are connected to each Project Component
+// Use Refs to navigate to each project section via the Projects Menu
     let refGecko = useRef(null)
     let refAtomist = useRef(null)
     let refConnectX =useRef(null)
@@ -23,12 +24,18 @@ const Main = ()=> {
         'paint':refPaint
     }
 
-    
+// List of dimensions for Media Queries
     const mediaSm = '(min-width:400px)'
     const menuCollapseSize = '(max-width:600px)'
     const menuFullSize = '(min-width:800px)'
     const mediaLg = '(min-width:1200px)'
     const mqList = [mediaSm,menuFullSize,mediaLg]
+
+/* 
+Manipulate the Nav menu
+Determine whether or not it should be collapsed based on window size
+Signal when to close Nav Menus if other components become active
+ */
 
     let [isNavCollapsed,setIsNavCollapsed] = useState(false)
 // Manage which menu item is currently displayed
@@ -43,12 +50,10 @@ const Main = ()=> {
          }else if (isNavCollapsed){
              setIsNavCollapsed(false)
          }
-        //  console.log('toggle')
     }
 // Set the Nav bar as the active section
     function updateSection(element){
         setActiveSection(element)
-        // console.log(activeSection)
     }   
 
 

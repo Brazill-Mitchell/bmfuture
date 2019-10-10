@@ -1,12 +1,18 @@
-import React, {useState,useRef,forwardRef} from 'react';
+import React, {useState,forwardRef} from 'react';
 import geckoLandingImage from './images/gecko/geckoLanding.jpg'
 import webPostImage from './images/gecko/webPost.jpg'
 import geckoMainImage from './images/gecko/geckoMain.jpg'
 import geckoResponsiveImage from './images/gecko/geckoResponsive.jpg'
 import signInImage from './images/gecko/signIn.jpg'
+import githubImage from '../images/GitHub-Mark.png'
 import './Projects.css'
 
-let geckoLanding = {
+
+// Project Description
+// Each thumbnail with it's unique description is dynamically filled in
+// Description box content is changed when a thumbnail is hovered
+
+let geckoLanding = { // The primary/default description & image
   "image":geckoLandingImage,
   "description":
 
@@ -41,8 +47,12 @@ let geckoLanding = {
       </a>
       <br></br>
       <a href='https://github.com/chingu-voyages/v9-geckos-team-06' target='blank_'>
-        <div className='desc-link mt-1'>GitHub Repo
-          </div>
+          <div className='mx-auto mt-1 item-bg-wrap nav-container-special'>
+            <div className=''>
+                <img className='contact-img' src={githubImage}></img>
+            </div>
+            <div className=''>Repo</div>
+        </div> 
       </a>
     </div>
 }
@@ -95,21 +105,22 @@ let geckoResponsive = {
     </div>
 }
 
+// Add thumbnail objects to an array to be mapped
 let geckoThumbnailList = [signIn,webPost,geckoMain,geckoResponsive]
 
 const Gecko=forwardRef((props,ref)=> {
 
+  // Control the currently displayed image
   let [displayImage,setDisplayImage] = useState(geckoLandingImage)
   let [displayImageDescription,setDisplayImageDescription] = useState(geckoLanding.description)
   let [isDefaultImage,setIsDefaultImage] = useState(true)
 
-  function thumbnailHover(image){
+  function thumbnailHover(image){// Change the image
     setDisplayImage(image.image)
     setDisplayImageDescription(image.description)
     setIsDefaultImage(false)
-    
   }
-  function imgDefault(){
+  function imgDefault(){// Return to the default image
     setDisplayImage(geckoLandingImage)
     setDisplayImageDescription(geckoLanding.description)
     setIsDefaultImage(true)

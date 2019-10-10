@@ -3,6 +3,8 @@ import analysisImage from './images/paint/analysis.jpg'
 import fullImage from './images/paint/full.jpg'
 import fullEmptyImage from './images/paint/fullEmpty.jpg'
 import paintStyleImage from './images/paint/paintStyle.jpg'
+import githubImage from '../images/GitHub-Mark.png'
+
 
 let full = {
   "image":fullImage,
@@ -18,8 +20,13 @@ let full = {
     </a>
     <br></br>
     <a href='https://github.com/Brazill-Mitchell/paint-app' target='blank_'>
-        <div className='desc-link mt-1'>GitHub Repo</div>
-    </a>
+          <div className='mx-auto mt-1 item-bg-wrap nav-container-special'>
+            <div className=''>
+                <img className='contact-img' src={githubImage}></img>
+            </div>
+            <div className=''>Repo</div>
+        </div> 
+      </a>
   </div>
 }
 let analysis = {

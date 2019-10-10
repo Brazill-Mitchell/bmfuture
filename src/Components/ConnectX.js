@@ -3,6 +3,7 @@ import full8Image from './images/connectX/full8.jpg'
 import full14Image from './images/connectX/full14.jpg'
 import full20Image from './images/connectX/full20.jpg'
 import fullEmpty20Image from './images/connectX/fullEmpty20.jpg'
+import githubImage from '../images/GitHub-Mark.png'
 
 let full8 = {
   "image":full8Image,
@@ -28,8 +29,12 @@ let full8 = {
       </a>
       <br></br>
       <a href='https://github.com/Brazill-Mitchell/chingu' target='blank_'>
-        <div className='desc-link mt-1'>GitHub Repo
-          </div>
+          <div className='mx-auto mt-1 item-bg-wrap nav-container-special'>
+            <div className=''>
+                <img className='contact-img' src={githubImage}></img>
+            </div>
+            <div className=''>Repo</div>
+          </div> 
       </a>
       
     </div>

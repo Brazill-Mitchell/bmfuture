@@ -1,8 +1,6 @@
-import React, {useState,useRef,useEffect} from 'react';
-import { useTransition, animated } from 'react-spring'
+import React, {useState,useEffect} from 'react';
 import ContactSide from './ContactSide.js'
 import ProjectsSide from './ProjectsSide.js'
-import Logo from './Logo.js'
 import bmLogo from './images/bmfuture logo.jpg'
 
 const NavSide = (props)=> {
@@ -36,9 +34,6 @@ const NavSide = (props)=> {
 
     useEffect(() => {
         checkActiveSection()
-        // window.addEventListener('resize',handleCollapse)
-        // return() => window.removeEventListener('resize',handleCollapse)
-        // return()=> console.log("Use Effect Return")
     })
     
     return(
@@ -64,14 +59,8 @@ const NavSide = (props)=> {
             </div>
             
             :<div id='logo-container-side' onClick={toggleNav}><img id='logo-side' src={bmLogo}/></div>
-            
-            
         }
         </div>
-            
-
-        
-
     )
 }
 

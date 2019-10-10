@@ -3,6 +3,8 @@ import atomistLandingResponsiveImage from './images/atomist/atomistLandingRespon
 import pricingResponsiveImage from './images/atomist/pricingResponsive.jpg'
 import pricingImage from './images/atomist/pricing.jpg'
 import atomistLandingImage from './images/atomist/atomistLanding.jpg'
+import githubImage from '../images/GitHub-Mark.png'
+
 
 
 //Descriptions for each thumbnail
@@ -25,8 +27,12 @@ let atomistLanding = {
       </a>
       <br></br>
       <a href='https://github.com/chingu-voyages/v8-toucans-team-04' target='blank_'>
-        <div className='desc-link mt-1'>GitHub Repo
-          </div>
+        <div className='mx-auto mt-1 item-bg-wrap nav-container-special'>
+            <div className=''>
+                <img className='contact-img' src={githubImage}></img>
+            </div>
+            <div className=''>Repo</div>
+        </div> 
       </a>
     </div>
 }

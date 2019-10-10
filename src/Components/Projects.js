@@ -1,11 +1,14 @@
-import React, {useState,useRef,useEffect} from 'react';
-import { useTransition, animated } from 'react-spring'
+import React, {useState,useEffect} from 'react';
+import { useTransition} from 'react-spring'
 
+// Projects are added to a list and displayed dynamically
+// Component notifies nav bar when it is hovered to close other menus
+// Closes when other menus become active
 const Projects = (props)=> {
 
     let [isListDisplayed, setIsListDisplayed] = useState(false)
 
-let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','connectX'],['Paint','paint']]
+    let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','connectX'],['Paint','paint']]
 
     function handleMouseOver(){
         props.setNavActive()
@@ -18,7 +21,7 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
         console.log('mouse leave')
     }
 
-//Jump to selected projec
+    // Jump to selected project
     function scrollToProject(project){
         try{
             window.scrollTo(0,(props.refs[project].current.offsetTop))
@@ -27,7 +30,7 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
         }
     }
 
-    //Close projects menu if another element is active
+    // Close projects menu if another element is active
     function checkMenu(){
         if (props.menu != 'projects' || props.navState == false){
             setIsListDisplayed(false)
@@ -36,10 +39,11 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
             
         }
     }
+    // Listen for page changes to determine when to close menu
     useEffect(() => {
         checkMenu()
     })
-
+    // To Do: Populate the menu with projects using Transitions
     let dropMenuTransitions = useTransition(projectList, project => project, {
         from: {opacity:0},
         enter: {opacity:1},
@@ -56,13 +60,11 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
                         {dropMenuTransitions.map(({item: project, key, props}) => 
                             <div style={props} key={key}>
                                 <div className=''>
-                                        <div className='col menu-lv2' onClick={()=> scrollToProject(project[1])}>
-                                        {/* Continue Here */}
-                                            <div>
-                                                {project[0]}
-                                            </div>
-                                            
+                                    <div className='col menu-lv2' onClick={()=> scrollToProject(project[1])}>
+                                        <div>
+                                            {project[0]}
                                         </div>
+                                    </div>
                                 </div>
                             </div>
                         )}        
@@ -73,7 +75,6 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
             </div>   
         )
     }
-
 
     return(
         
@@ -86,7 +87,6 @@ let projectList = [['Gecko Notes','gecko'],['Atomist','atomist'],['Connect X','c
                             {/* Project List */}
                                 <ProjectList></ProjectList>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
