@@ -3,6 +3,11 @@
     border-radius: 2%;
     transition: all .2s ease-in-out;
 }
+.img-small{
+    width: 25%;
+    border-radius: 2%;
+    transition: all .2s ease-in-out;
+}
 .img:hover{
     transform: scale(1.05)
 }

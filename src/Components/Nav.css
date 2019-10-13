@@ -5,6 +5,7 @@
     --intro-width: 50vw;
     --intro-max-width: 600px;
     --intro-space-from-top: 20px;
+    --nav-top-height: 5%;
     --nav-side-from-top: 25%;
     --nav-collapsed-width: 20%;
     --nav-collapsed-left: 5px;
@@ -315,9 +316,6 @@ a , u {
     }
 }
 .nav-container{
-    /* display: flex;
-    flex-direction: column;
-    width: 100%; */ 
     box-sizing: border-box;
 }
 .nav-item-container{
@@ -380,9 +378,6 @@ a , u {
 #logo-container{
     position: absolute;
     flex: 1;
-    /* transform: translateY(-50%);
-    top: 50%; */
-    /* background-color: aqua; */
     height: 100%;
     left: 2px;
 }
@@ -402,7 +397,8 @@ a , u {
 }
 #logo-container-side{
     position: fixed;
-    top: var(--nav-side-from-top);
+    top: 22.5%;
+    height: auto;
     width: var(--nav-collapsed-width);
     left: var(--nav-collapsed-left);
     z-index: 10;
@@ -416,7 +412,7 @@ a , u {
 .nav-wrap{
     position:fixed;
     width: 100%;
-    height: 5%;
+    height: var(--nav-top-height);
     left: 0;
     z-index: 10;
     background-color:rgb(49, 107, 146);
@@ -430,10 +426,10 @@ a , u {
 }
 .nav-wrap-side{
     position:fixed;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 25%;
+    transform: translateY(-25%);
     width: var(--nav-collapsed-width);
-    height: 50%;
+    height: 25%;
     z-index: 100;
     padding: 0px;
     color: white;
@@ -441,6 +437,31 @@ a , u {
     background-color:rgb(49, 107, 146);
     border-radius: 5px;
     opacity: .95;
+}
+.skill-img-container{
+    position: relative;
+    width: 33%;
+}
+#skill-menu{
+    position: relative;
+    /* left: 50%;
+    transform: translateX(-50%); */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: rgba(240,248,255,.8);
+    /* padding: 0 5px 0 5px; */
+    margin: 5px 0px 5px 5px;
+}
+.skill-menu-wrapper{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color:rgb(49, 107, 146);
+    max-width: 200px;
+
 }
 
 

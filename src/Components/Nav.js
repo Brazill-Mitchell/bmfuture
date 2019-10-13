@@ -38,9 +38,9 @@ const Nav = (props)=> {
                     <Logo className=''/>
                     <div className='nav-spacer'></div>
                 {/* Filler Item */}
-                    <div className='menu-lv1'>
+                    {/* <div className='menu-lv1'>
                         <div toggleMenu={toggleMenu}>Home</div>
-                    </div>
+                    </div> */}
                 {/* Projects */}
                     <div className='menu-lv1'>
                         <Projects refs={props.refs} navState={navState} setNavActive={setNavActive} menu={menu} toggleMenu={toggleMenu}></Projects>                            
@@ -51,12 +51,12 @@ const Nav = (props)=> {
                     </div>
                 {/* Skills */}
                     <div className='menu-lv1'>
-                        <Skills navState={navState} menu={menu} toggleMenu={toggleMenu}></Skills>
+                        <Skills navState={navState} setNavActive={setNavActive} menu={menu} toggleMenu={toggleMenu}></Skills>
                     </div>
                 {/* Filler Item */}
-                    <div className='menu-lv1'>
+                    {/* <div className='menu-lv1'>
                             <div toggleMenu={toggleMenu}>About</div>
-                    </div>
+                    </div> */}
                     <div className='nav-spacer'></div>
                 </div>
             </div>

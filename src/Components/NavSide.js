@@ -4,25 +4,35 @@ import ProjectsSide from './ProjectsSide.js'
 import bmLogo from './images/bmfuture logo.jpg'
 
 const NavSide = (props)=> {
-//Keep track of which menu is currently seleced
-//Close Menus that aren't selected
-    let [navState,setNavState] = useState(false)
+/*Keep track of which menu is currently seleced
+Close Menus that aren't selected
+*/
 
+// Checks whether or not the Nav Bar is the active component
+    let [navState,setNavState] = useState(false)
+// Set which menu is currently open
     let [menu,setMenu] = useState('none')
     function toggleMenu(menu){
         setMenu(menu)
     }  
-// Handle Collapse
-    let [isNavCollapsed,setIsNavCollapsed] = useState(false)
+// Handle collapse of the Nav bar
+    let [isNavCollapsed,setIsNavCollapsed] = useState(true)
     function toggleNav(){
         setIsNavCollapsed(!isNavCollapsed)
     }
-    
+/* Checks to see if the Nav Bar is the active section.
+If the Body is active, the Nav bar will close
+*/
     function checkActiveSection(){
         if (props.activeSection != 'nav'){
             setNavState(false)
         }
     }
+    useEffect(() => {
+        checkActiveSection()
+    })
+
+// Sets Nav bar as the active component
     function setNavActive(){
         props.updateSection('nav')
         setNavState(true)
@@ -32,17 +42,18 @@ const NavSide = (props)=> {
         props.onClick()
     }
 
-    useEffect(() => {
-        checkActiveSection()
-    })
+    
     
     return(
         <div>
         {isNavCollapsed
-            ?<div className='nav-wrap-side' onClick={handleClick}>
+            ?<div id='logo-container-side' onClick={toggleNav}><img id='logo-side' src={bmLogo}/></div>
+            :<div className='nav-wrap-side' onClick={handleClick}>
             {/* Filler Item */}
                 <div className='nav-item'>
-                    <div toggleMenu={toggleMenu} onClick={toggleNav} style={{color: 'rgba(203,234,255,.6)'}}>Hide</div>
+                    <div className='img-small mx-auto' toggleMenu={toggleMenu} onClick={toggleNav}>
+                        <img className='img' src={bmLogo}></img>
+                    </div>
                 </div>
             {/* Projects */}
                 <div className='nav-item'>
@@ -52,14 +63,12 @@ const NavSide = (props)=> {
                 <div className='nav-item'>
                     <ContactSide navState={navState} setNavActive={setNavActive} menu={menu} toggleMenu={toggleMenu}></ContactSide>
                 </div>
-            {/* Filler Item */}
-                <div className='nav-item' style={{color:'rgba(0,0,0,.2)'}}>
-                        <div toggleMenu={toggleMenu}>About</div>
+            {/* Skills */}
+                <div className='nav-item'>
+                        <div toggleMenu={toggleMenu}>Skills</div>
                 </div>
             </div>
-            
-            :<div id='logo-container-side' onClick={toggleNav}><img id='logo-side' src={bmLogo}/></div>
-        }
+}
         </div>
     )
 }
