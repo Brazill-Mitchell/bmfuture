@@ -20,6 +20,8 @@ const Project =(props)=>{
 
     return(
         <div className=''>
+            <div className='projects-label'>Projects</div>
+            <div className='projects-label-subtitle'>This is a description of the projects section.</div>
             <div>
                 <Gecko  refs={props.refs}></Gecko>
             </div>

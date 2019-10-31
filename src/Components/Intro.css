@@ -1,0 +1,30 @@
+.bio-container{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    /* background-color: white; */
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    background-color: rgba(255,255,255,.2);
+}
+.bio-img{
+    width: 100%;
+}
+.bio-pic{
+    position: relative;
+    width: 200px;
+    margin-right: 150px;
+    /* background-color: wheat; */
+}
+.bio-text-holder{
+
+}
+.bio-text{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    /* font-weight: 500; */
+}
