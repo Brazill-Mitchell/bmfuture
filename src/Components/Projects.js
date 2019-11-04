@@ -32,10 +32,10 @@ const Projects = (props)=> {
 
     // Close projects menu if another element is active
     function checkMenu(){
-        if (props.menu != 'projects' || props.navState == false){
+        if (props.menu !== 'projects' || props.navState === false){
             setIsListDisplayed(false)
             
-        }else if(props.menu == 'projects'){
+        }else if(props.menu === 'projects'){
             
         }
     }

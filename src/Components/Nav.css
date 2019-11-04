@@ -14,6 +14,12 @@
 a , u {
     text-decoration: none !important;
 }
+.bg-text{
+    background-color: rgba(194, 208, 212, 0.45);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 5px 5px 5px 5px;
+}
 /* Description */
 .project-desc{
     position: relative;
@@ -25,7 +31,6 @@ a , u {
     padding-top: 10px;
     padding-bottom: 10px;
     color: rgb(255,255,255);
-    background-color: rgba(225,225,225,.45);
     box-sizing: border-box;
     min-height: 385px;
     border-radius: 5px;
@@ -419,31 +424,6 @@ a , u {
     background-color:rgb(49, 107, 146);
     border-radius: 5px;
     opacity: .95;
-}
-.skill-img-container{
-    position: relative;
-    width: 33%;
-}
-#skill-menu{
-    position: relative;
-    /* left: 50%;
-    transform: translateX(-50%); */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    background-color: rgba(240,248,255,.8);
-    /* padding: 0 5px 0 5px; */
-    margin: 5px 0px 5px 5px;
-}
-.skill-menu-wrapper{
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color:rgb(49, 107, 146);
-    max-width: 200px;
-
 }
 
 

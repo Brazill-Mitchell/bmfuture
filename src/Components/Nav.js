@@ -17,7 +17,7 @@ const Nav = (props)=> {
     }  
 
     function checkActiveSection(){
-        if (props.activeSection != 'nav'){
+        if (props.activeSection !== 'nav'){
             setNavState(false)
         }
     }

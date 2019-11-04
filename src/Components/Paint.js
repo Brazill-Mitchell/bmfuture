@@ -98,7 +98,7 @@ const Paint=forwardRef((props,ref)=> {
             
           </div>
       {/* Description */}
-          <div className='project-desc-container my-auto col-sm-12 col-md-12 col-lg-6 mt-2'>
+          <div className='project-desc-container bg-text my-auto col-sm-12 col-md-12 col-lg-6 mt-2'>
             <div className='project-desc'>
               <div className='desc-title'>
                 Paint

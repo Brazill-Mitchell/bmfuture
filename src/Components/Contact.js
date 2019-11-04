@@ -24,10 +24,10 @@ let [isListDisplayed,setIsListDisplayed] = useState(false)
     }
     //Close contact menu if another element is active
     function checkMenu(){
-        if (props.menu != 'contact' || props.navState == false){
+        if (props.menu !== 'contact' || props.navState === false){
             setIsListDisplayed(false)
             
-        }else if(props.menu == 'contact'){
+        }else if(props.menu === 'contact'){
             setIsListDisplayed(true)
         }
     }

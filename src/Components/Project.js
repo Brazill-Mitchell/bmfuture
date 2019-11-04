@@ -21,7 +21,7 @@ const Project =(props)=>{
     return(
         <div className=''>
             <div className='projects-label'>Projects</div>
-            <div className='projects-label-subtitle'>This is a description of the projects section.</div>
+            <div className='projects-label-subtitle w-75 mx-auto bg-text'><span>Below are projects that highlight the skills I've gained as a developer. Mouse over the thumbnails to see sample images and more info. Use the links in the description to view the project or visit the Github Repo.</span></div>
             <div>
                 <Gecko  refs={props.refs}></Gecko>
             </div>
