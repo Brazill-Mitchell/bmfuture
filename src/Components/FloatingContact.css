@@ -1,0 +1,49 @@
+.floating-contact-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 50px;
+    right: 50px;
+    height: 400px;
+    width: 400px;
+    background-color: var(--blue-light);
+    transition: .2s all ease-in-out;
+    opacity: .8;
+    border-radius: 5px;
+    z-index: 30;
+}
+.floating-content-wrapper{
+    height: 100%;
+    width: 100%;
+}
+.floating-contact{
+
+}
+
+.floating-contact-btn-close{
+    position: relative;
+    height: 20px;
+    width: 20px;
+    top: 10px;
+    margin-left: auto;
+    margin-right: 10px;
+    background-color: palegreen;
+    border-radius: var(--brad-5);
+}
+
+.floating-greeting{
+    margin-bottom: 20px;
+}
+
+.floating-input-email{
+    margin: 0 10px 20px 10px;
+    border-radius: var(--brad-5);
+}
+
+.floating-input-message{
+    margin: 0 10px 0 10px;
+    height: 50%;
+    border-radius: var(--brad-5);
+
+}
+

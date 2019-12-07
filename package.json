@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "nodemailer": "^6.3.1",
     "react": "^16.9.0",
     "react-dom": "^16.8.6",
     "react-router-hash-link": "^1.2.2",

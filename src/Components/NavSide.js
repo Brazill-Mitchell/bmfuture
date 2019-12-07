@@ -24,7 +24,7 @@ Close Menus that aren't selected
 If the Body is active, the Nav bar will close
 */
     function checkActiveSection(){
-        if (props.activeSection != 'nav'){
+        if (props.activeSection !== 'nav'){
             setNavState(false)
         }
     }
@@ -47,12 +47,12 @@ If the Body is active, the Nav bar will close
     return(
         <div>
         {isNavCollapsed
-            ?<div id='logo-container-side' onClick={toggleNav}><img id='logo-side' src={bmLogo}/></div>
+            ?<div id='logo-container-side' onClick={toggleNav}><img id='logo-side' src={bmLogo} alt=''/></div>
             :<div className='nav-wrap-side' onClick={handleClick}>
             {/* Filler Item */}
                 <div className='nav-item'>
                     <div className='img-small mx-auto' toggleMenu={toggleMenu} onClick={toggleNav}>
-                        <img className='img' src={bmLogo}></img>
+                        <img className='img' src={bmLogo} alt=''></img>
                     </div>
                 </div>
             {/* Projects */}

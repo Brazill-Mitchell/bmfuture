@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "brazill"
+    "default": "brazill",
+    "staging": "brazill-staging"
   }
 }

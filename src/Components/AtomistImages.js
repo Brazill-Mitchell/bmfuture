@@ -28,7 +28,7 @@ const GeckoImages=forwardRef((props,ref)=> {
           <div className='row'>
             {geckoThumbnailList.map(image =>(
               <div className='col-2'>
-                <img className='img-fluid mx-auto' src={image}></img>
+                <img className='img-fluid mx-auto' src={image} alt=''></img>
               </div>
             ))}
           </div>

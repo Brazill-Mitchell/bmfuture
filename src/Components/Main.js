@@ -4,6 +4,7 @@ import Intro from './Intro.js'
 import Project from './Project.js'
 import Nav from './Nav.js'
 import NavSide from './NavSide.js'
+import FloatingContact from './FloatingContact.js'
 import phila from './images/phila.jpg'
 import { userInfo } from 'os';
 
@@ -113,8 +114,9 @@ Signal when to close Nav Menus if other components become active
     }
     return (
         <div>
+            <FloatingContact></FloatingContact>
             {toggleNav}
-            <div className='bg-container'><img className='bg-page' src={phila}/></div>
+            <div className='bg-container'><img className='bg-page' src={phila} alt=''/></div>
             <div className='container-fluid page-main'>
                 {isNavCollapsed
                     ?<NavSide refs={refList} activeSection={activeSection} updateSection={updateSection} onClick={setNavActive} id='nav-z' />

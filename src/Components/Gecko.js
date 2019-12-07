@@ -49,7 +49,7 @@ let geckoLanding = { // The primary/default description & image
       <a href='https://github.com/chingu-voyages/v9-geckos-team-06' target='blank_'>
           <div className='mx-auto mt-1 item-bg-wrap nav-container-special'>
             <div className=''>
-                <img className='contact-img' src={githubImage}></img>
+                <img className='contact-img' src={githubImage} alt=''></img>
             </div>
             <div className=''>Repo</div>
         </div> 
@@ -136,12 +136,12 @@ const Gecko=forwardRef((props,ref)=> {
       {/* Main Image */}
           <div className='col-sm-12 col-md-12 col-lg-6'>
             <a href='https://geckonotes.firebaseapp.com' target='_blank'>
-              <img className='img-main mx-auto w-75 mb-3' src={geckoLandingImage}></img>
+              <img className='img-main mx-auto w-75 mb-3' src={geckoLandingImage} alt=''></img>
             </a>
             
           </div>
       {/* Description */}
-          <div className='project-desc-container col-sm-12 col-md-12 col-lg-6 mt-2'>
+          <div className='project-desc-container bg-text col-sm-12 col-md-12 col-lg-6 mt-2'>
               <div className='project-desc'>
                 <div className='desc-title'>
                   Gecko Notes
@@ -153,7 +153,7 @@ const Gecko=forwardRef((props,ref)=> {
                   ?<div></div>
                   :<div className=''>
                       <div>
-                        <img className='img-desc mx-auto mb-3' src={displayImage}></img>
+                        <img className='img-desc mx-auto mb-3' src={displayImage} alt=''></img>
                       </div>
                     </div>
                 }
@@ -165,7 +165,7 @@ const Gecko=forwardRef((props,ref)=> {
       <div className='row mt-3' onMouseLeave={imgDefault}>
         {geckoThumbnailList.map((thumbnail,i) =>(
           <div className='mx-auto thumbnail' onMouseOver={() => thumbnailHover(thumbnail)} key={i}>
-            <img className='img' src={thumbnail.image}></img>
+            <img className='img' src={thumbnail.image} alt=''></img>
           </div>        
         ))}
 

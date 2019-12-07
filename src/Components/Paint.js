@@ -22,7 +22,7 @@ let full = {
     <a href='https://github.com/Brazill-Mitchell/paint-app' target='blank_'>
           <div className='mx-auto mt-1 item-bg-wrap nav-container-special'>
             <div className=''>
-                <img className='contact-img' src={githubImage}></img>
+                <img className='contact-img' src={githubImage} alt=''></img>
             </div>
             <div className=''>Repo</div>
         </div> 
@@ -93,12 +93,12 @@ const Paint=forwardRef((props,ref)=> {
       {/* Main Image */}
           <div className='col-sm-12 col-md-12 col-lg-6'>
             <a href='https://brazill-mitchell.github.io/paint-app/' target='_blank'>
-              <img className='img-main mx-auto w-75 mb-3' src={fullImage}></img>
+              <img className='img-main mx-auto w-75 mb-3' src={fullImage} alt=''></img>
             </a>
             
           </div>
       {/* Description */}
-          <div className='project-desc-container my-auto col-sm-12 col-md-12 col-lg-6 mt-2'>
+          <div className='project-desc-container bg-text my-auto col-sm-12 col-md-12 col-lg-6 mt-2'>
             <div className='project-desc'>
               <div className='desc-title'>
                 Paint
@@ -109,7 +109,7 @@ const Paint=forwardRef((props,ref)=> {
                   ?<div></div>
                   :<div className=''>
                     <div>
-                      <img className='img-desc mx-auto mb-3' src={displayImage}></img>
+                      <img className='img-desc mx-auto mb-3' src={displayImage} alt=''></img>
                     </div>
                   </div>
             }
@@ -120,7 +120,7 @@ const Paint=forwardRef((props,ref)=> {
       <div className='row mt-3 thumbnail-container-tight' onMouseLeave={imgDefault}>
         {paintThumbnailList.map((thumbnail,i) =>(
           <div className='mx-auto thumbnail' onMouseOver={() => thumbnailHover(thumbnail)} key={i}>
-            <img className='img' src={thumbnail.image}></img>
+            <img className='img' src={thumbnail.image} alt=''></img>
           </div>        
         ))}
 
