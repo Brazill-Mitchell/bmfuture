@@ -6,12 +6,20 @@ import Nav from './Nav.js'
 import NavSide from './NavSide.js'
 import FloatingContact from './FloatingContact.js'
 import phila from './images/phila.jpg'
-import { userInfo } from 'os';
+// import { userInfo } from 'os';
 
+import OpenAnimator from './OpenAnimator.js'
+import { relative } from 'path';
 
 
 const Main = ()=> {
 
+    // Testing OpenAnimator
+    let itemHolder = []
+
+    for(let x = 0; x < 15; x++){
+        itemHolder.push(<div>Test item</div>)
+    }
 // Refs are connected to each Project Component
 // Use Refs to navigate to each project section via the Projects Menu
     let refGecko = useRef(null)
@@ -112,8 +120,43 @@ Signal when to close Nav Menus if other components become active
     function setNavActive(){
         updateSection('nav')
     }
+
+    // Animator test are
+
+    const animatorStyles = {
+        containerStyle: {
+            start: {
+
+            },
+            finish: {
+
+            }            
+        },
+        itemsStyle: {
+            start: {
+                position: 'relative',
+                width: 100 + 'px',
+                opacity: 0,
+                left: 300 + 'px',
+                color: 'blue'
+            },
+            finish: {
+                position: 'relative',
+                width: 100 + 'px',
+                opacity: 1,
+                left: 0,
+                color: 'red'
+            }
+        },
+        animationInterval: 100,
+        animationSpeed: .5
+
+    }
+
+
     return (
         <div>
+            <OpenAnimator animatorStyles={animatorStyles}  items={itemHolder}></OpenAnimator>
             <FloatingContact></FloatingContact>
             {toggleNav}
             <div className='bg-container'><img className='bg-page' src={phila} alt=''/></div>
