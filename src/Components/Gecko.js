@@ -135,7 +135,7 @@ const Gecko=forwardRef((props,ref)=> {
 
       {/* Main Image */}
           <div className='col-sm-12 col-md-12 col-lg-6'>
-            <a href='https://geckonotes.firebaseapp.com' target='_blank'>
+            <a href='https://geckonotes.firebaseapp.com' target='_blank' rel="noopener noreferrer">
               <img className='img-main mx-auto w-75 mb-3' src={geckoLandingImage} alt=''></img>
             </a>
             

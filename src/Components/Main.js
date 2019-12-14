@@ -1,4 +1,4 @@
-import React, {useState,useMedia,useEffect,useRef} from 'react';
+import React, {useState,useEffect,useRef} from 'react';
 import './Main.css';
 import Intro from './Intro.js'
 import Project from './Project.js'
@@ -9,7 +9,7 @@ import phila from './images/phila.jpg'
 // import { userInfo } from 'os';
 
 import OpenAnimator from './OpenAnimator.js'
-import { relative } from 'path';
+// import { relative } from 'path';
 
 
 const Main = ()=> {
@@ -34,11 +34,11 @@ const Main = ()=> {
     }
 
 // List of dimensions for Media Queries
-    const mediaSm = '(min-width:400px)'
+    // const mediaSm = '(min-width:400px)'
     const menuCollapseSize = '(max-width:600px)'
-    const menuFullSize = '(min-width:800px)'
-    const mediaLg = '(min-width:1200px)'
-    const mqList = [mediaSm,menuFullSize,mediaLg]
+    // const menuFullSize = '(min-width:800px)'
+    // const mediaLg = '(min-width:1200px)'
+    // const mqList = [mediaSm,menuFullSize,mediaLg]
 
 /* 
 Manipulate the Nav menu
@@ -67,7 +67,7 @@ Signal when to close Nav Menus if other components become active
 
 
 
-    let expanded = 'col-lg-2 col-md-3 col-sm-3'
+    // let expanded = 'col-lg-2 col-md-3 col-sm-3'
 
 // Match current screen size to list of sizes
 //Once for initial render, then on each resize

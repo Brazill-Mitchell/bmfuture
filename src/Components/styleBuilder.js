@@ -15,6 +15,6 @@ exports.styleBuilder = (style,speed)=>{
 
 
 
-    console.log(animationStyle)
+    // console.log(animationStyle)
     return(animationStyle)
 }

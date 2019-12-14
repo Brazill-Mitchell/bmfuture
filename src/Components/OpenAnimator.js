@@ -1,4 +1,4 @@
-import React, { Component,useState,createRef } from 'react'
+import React, { Component } from 'react'
 import styleBuilder from './styleBuilder.js'
 
 
@@ -14,7 +14,7 @@ const OpenAnimator = (props)=>{
     const animationStyle = styleBuilder.styleBuilder(props.animatorStyles,props.animatorStyles.animationSpeed)
 
 
-    const getProps = props
+    // const getProps = props
 
     const beginAnimation = (context) =>{
         context.setState({

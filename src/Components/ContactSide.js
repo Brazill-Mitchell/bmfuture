@@ -1,7 +1,7 @@
-import React, {useState,useRef,useEffect} from 'react';
+import React, {useState,useEffect} from 'react';
 import gitImg from '../images/GitHub-Mark.png'
 import linkedInImg from '../images/linkedin-icon.png'
-import gmailImg from '../images/gmail.png'
+// import gmailImg from '../images/gmail.png'
 import './NavSide.css'
 
 const Contact= (props)=> {
@@ -49,13 +49,13 @@ let [isListDisplayed,setIsListDisplayed] = useState(false)
                         {isListDisplayed
                             ?<div className='drop-menu-side' onMouseLeave={handleMouseLeave}>
                                 <div className='nav-container'>
-                                        <a href='https://www.linkedin.com/in/brazill-mitchell-42601188/' target='_blank' className='nav-container-special menu-lv2'>
+                                        <a href='https://www.linkedin.com/in/brazill-mitchell-42601188/' className='nav-container-special menu-lv2' target='_blank' rel="noopener noreferrer">
                                             <div className=''>LinkedIn</div>
                                             <div className=''>
                                                 <img className='contact-img' src={linkedInImg} alt=''></img>
                                             </div>
                                         </a>
-                                        <a href='https://github.com/brazill-mitchell' target='_blank' className='nav-container-special menu-lv2'>
+                                        <a href='https://github.com/brazill-mitchell' className='nav-container-special menu-lv2' target='_blank'  rel="noopener noreferrer">
                                             <div className=''>Github</div>
                                             <div className=''>
                                                 <img className='contact-img' src={gitImg} alt=''></img>

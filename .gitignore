@@ -21,6 +21,7 @@
 # mailer
 /mailer/nodemailer
 /mailer/mailer.zip
+/mailer/mail.js
 
 npm-debug.log*
 yarn-debug.log*

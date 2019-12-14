@@ -1,4 +1,4 @@
-import React, {useState,useRef,forwardRef} from 'react';
+import React, {useState,forwardRef} from 'react';
 import full8Image from './images/connectX/full8.jpg'
 import full14Image from './images/connectX/full14.jpg'
 import full20Image from './images/connectX/full20.jpg'
@@ -31,7 +31,7 @@ let full8 = {
       <a href='https://github.com/Brazill-Mitchell/chingu' target='blank_'>
           <div className='mx-auto mt-1 item-bg-wrap nav-container-special'>
             <div className=''>
-                <img className='contact-img' src={githubImage}></img>
+                <img className='contact-img' src={githubImage} alt=''></img>
             </div>
             <div className=''>Repo</div>
           </div> 
@@ -103,8 +103,8 @@ const ConnectX=forwardRef((props,ref)=> {
 
       {/* Main Image */}
           <div className='col-sm-12 col-md-12 col-lg-6'>
-            <a href='https://brazill-mitchell.github.io/chingu/' target='_blank'>
-              <img className='img-main mx-auto w-75 mb-3' src={full8Image}></img>
+            <a href='https://brazill-mitchell.github.io/chingu/' target='_blank' rel="noopener noreferrer">
+              <img className='img-main mx-auto w-75 mb-3' src={full8Image} alt=''></img>
             </a>
             
           </div>
@@ -120,7 +120,7 @@ const ConnectX=forwardRef((props,ref)=> {
             ?<div></div>
             :<div className=''>
                 <div>
-                  <img className='img-desc mx-auto mb-3' src={displayImage}></img>
+                  <img className='img-desc mx-auto mb-3' src={displayImage} alt=''></img>
                 </div>
               </div>
             }
@@ -132,7 +132,7 @@ const ConnectX=forwardRef((props,ref)=> {
       <div className='row mt-3' onMouseLeave={imgDefault}>
         {connectXThumbnailList.map((thumbnail,i) =>(
           <div className='mx-auto thumbnail' onMouseOver={() => thumbnailHover(thumbnail)} key={i}>
-            <img className='img' src={thumbnail.image}></img>
+            <img className='img' src={thumbnail.image} alt=''></img>
           </div>        
         ))}
 
