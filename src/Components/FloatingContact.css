@@ -1,24 +1,54 @@
 .floating-contact-container{
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     bottom: 50px;
     right: 50px;
-    height: 400px;
-    width: 400px;
+    height: 50px;
+    width: 50px;
+    opacity: .8;
     background-color: var(--blue-light);
     transition: .2s all ease-in-out;
-    opacity: .8;
     border-radius: 5px;
     z-index: 30;
+}
+.floating-contact-container-collapsed{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    bottom: 50px;
+    right: 50px;
+    height: 50px;
+    width: 50px;
+    background-color: var(--blue-light);
+    transition: .2s all ease-in-out;
+    border-radius: 5px;
+    z-index: 30;
+    animation-name: glow;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+}
+@keyframes glow{
+    0%{
+        opacity: .2;
+    }
+    50%{
+        opacity: .6;
+    }
+    100%{
+        opacity: .2;
+    }
 }
 .floating-content-wrapper{
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: green;
 }
-.floating-contact{
+/* .floating-contact{
 
-}
+} */
 
 .floating-contact-btn-close{
     position: relative;
@@ -33,6 +63,7 @@
 
 .floating-greeting{
     margin-bottom: 20px;
+    font-weight: 500;
 }
 
 .floating-input-email{
@@ -44,6 +75,14 @@
     margin: 0 10px 0 10px;
     height: 50%;
     border-radius: var(--brad-5);
-
+}
+.btn-send{
+    position: relative;
+    align-self: center;
+    width: 65px;
+    margin-top: 20px;
+    color: white;
+    font-weight: 600;
+    background-color: var(--blue-dark);
 }
 

@@ -1,4 +1,4 @@
-import React, {useState,useRef,forwardRef} from 'react';
+import React, {useState,forwardRef} from 'react';
 import analysisImage from './images/paint/analysis.jpg'
 import fullImage from './images/paint/full.jpg'
 import fullEmptyImage from './images/paint/fullEmpty.jpg'

@@ -9,6 +9,23 @@
     margin-top: 10px;
     /* background-color: rgba(255,255,255,.2); */
 }
+.intro-attached{
+
+}
+.intro-detached{
+    position: absolute;
+    margin-top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    opacity: .8;
+    border-radius: 10px;
+    background-color: var(--blue-light);
+    z-index: 30;
+}
+.intro-detached-text{
+    margin: 20px 20px 20px 20px;
+}
 .bio-img{
     width: 100%;
 }

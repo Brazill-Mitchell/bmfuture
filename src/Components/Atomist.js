@@ -1,4 +1,4 @@
-import React, {useState,useEffect,forwardRef} from 'react';
+import React, {useState,forwardRef} from 'react';
 import atomistLandingResponsiveImage from './images/atomist/atomistLandingResponsive.jpg'
 import pricingResponsiveImage from './images/atomist/pricingResponsive.jpg'
 import pricingImage from './images/atomist/pricing.jpg'
@@ -29,7 +29,7 @@ let atomistLanding = {
       <a href='https://github.com/chingu-voyages/v8-toucans-team-04' target='blank_'>
         <div className='mx-auto mt-1 item-bg-wrap nav-container-special'>
             <div className=''>
-                <img className='contact-img' src={githubImage}></img>
+                <img className='contact-img' src={githubImage} alt=''></img>
             </div>
             <div className=''>Repo</div>
         </div> 
@@ -118,7 +118,7 @@ const AtomistProject=forwardRef((props,ref)=> {
                   ?<div></div>
                   :<div className=''>
                       <div>
-                        <img className='img-desc mx-auto mb-3' src={displayImage}></img>
+                        <img className='img-desc mx-auto mb-3' src={displayImage} alt=''></img>
                       </div>
                     </div>
                   }
@@ -129,7 +129,7 @@ const AtomistProject=forwardRef((props,ref)=> {
           <div className='row mt-3' onMouseLeave={imgDefault}>
               {atomistThumbnailList.map((thumbnail,i) =>(
                 <div className='mx-auto thumbnail' onMouseOver={() => thumbnailHover(thumbnail)} key={i}>
-                  <img className='img' src={thumbnail.image}></img>
+                  <img className='img' src={thumbnail.image} alt=''></img>
                 </div>
               ))}
           </div>

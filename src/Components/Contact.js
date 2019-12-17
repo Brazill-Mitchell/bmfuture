@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import gitImg from '../images/GitHub-Mark.png'
 import linkedInImg from '../images/linkedin-icon.png'
-import gmailImg from '../images/gmail.png'
+// import gmailImg from '../images/gmail.png'
 import './Contact.css'
 import './Nav.css'
 

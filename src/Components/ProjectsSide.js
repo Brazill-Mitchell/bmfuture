@@ -1,4 +1,4 @@
-import React, {useState,useRef,useEffect} from 'react';
+import React, {useState,useEffect} from 'react';
 import { useTransition, animated } from 'react-spring'
 import './NavSide.css';
 

@@ -9,10 +9,10 @@ import Paint from './Paint.js'
 const Project =(props)=>{
 
     //Set the body as the active element and close the menus each time it is clicked
-    function setActive(){
-        props.setActiveElement('body')
-        console.log("Project: Active Element: " + props.isNavActive)
-    }
+    // function setActive(){
+    //     props.setActiveElement('body')
+    //     console.log("Project: Active Element: " + props.isNavActive)
+    // }
 
     useEffect(() => {
         // window.addEventListener('click',setActive)
