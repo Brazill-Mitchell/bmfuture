@@ -24,6 +24,10 @@ const FloatingContact = ()=>{
     function updateMessageText(e){
         setMessageText(e.target.value)
     }
+    function sendMessage(){
+        setEmailText('')
+        setMessageText('')
+    }
 
     function openMenu(){
         if (!menuDisplay){
@@ -63,7 +67,7 @@ const FloatingContact = ()=>{
         <div className='floating-greeting'>Get in Touch</div>,
         <input className='floating-input-email' placeholder='Email' value={emailText} onChange={updateEmailText}></input>,
         <input className='floating-input-message' placeholder='Type a message here' value={messageText} onChange={updateMessageText}></input>,
-        <button className='btn-send'>Send</button>
+        <button className='btn-send' onClick={sendMessage}>Send</button>
         ]
 
     return(

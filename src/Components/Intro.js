@@ -1,10 +1,33 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useState,useEffect } from 'react'
 import profilePic from './images/profile-image.png'
 import './Intro.css'
+const manager = require('./manager.js')
 
-const Intro=()=>{
+const Intro=(props)=>{
 
     const [introDetached,setIntroDetached] = useState(true)
+    const [introPreview,setIntroPreview] = useState(true)
+
+    function handleLayout(screenSize){
+        if(screenSize === manager.responsive.xl){
+            if ( introDetached ){
+                setIntroDetached(false)
+            }else if(screenSize === manager.responsive.computer || screenSize === manager.responsive.tablet || screenSize === manager.responsive.mobile){
+                setIntroDetached(true)
+            }
+        }
+    }
+
+    function hideIntro(){
+        setIntroPreview(true)
+    }
+    function showIntro(){
+        setIntroPreview(false)
+    }
+
+    useEffect(()=>{
+        handleLayout(props.screenSize)
+    },[props.screenSize])
 
     class IntroNormal extends Component{
         
@@ -20,11 +43,15 @@ const Intro=()=>{
             )
         }
     }
-    class IntroDetached extends Component{
+    const IntroDetached = ()=> {
         
-        render(){
-            return(
-                <div className='intro-detached'>
+        return(
+            <div>
+                {introPreview
+                ?<div id='about-me' onClick={showIntro}>About Me</div>
+                :<div className='intro-detached'>
+                    <div className='floating-contact-btn-close' onClick={hideIntro}></div>
+                    <div className='click-catcher'></div>
                     <div className='intro-detached-text'>
                         My name is Brazill.<br></br>
                         I'm a self taught React developer with experience in software development, including Java and Android. 
@@ -35,8 +62,10 @@ const Intro=()=>{
                         Today, my goal is to become someone who can reach other people who aren't aware of all their options, and help guide them in the right direction to achieve their goals, whether they be tech related or other.
                     </div>
                 </div>
-            )
-        }
+                }
+                
+            </div>
+        )
     }
 
     return(
