@@ -6,7 +6,7 @@ const manager = require('./manager.js')
 const Intro=(props)=>{
 
     const [introDetached,setIntroDetached] = useState(true)
-    const [introPreview,setIntroPreview] = useState(true)
+    // const [introPreview,setIntroPreview] = useState(true)
 
     function handleLayout(screenSize){
         if(screenSize === manager.responsive.xl){
@@ -19,10 +19,10 @@ const Intro=(props)=>{
     }
 
     function hideIntro(){
-        setIntroPreview(true)
+        props.setDetachedIntroShown(false)
     }
     function showIntro(){
-        setIntroPreview(false)
+        props.setDetachedIntroShown(true)
     }
 
     useEffect(()=>{
@@ -47,21 +47,24 @@ const Intro=(props)=>{
         
         return(
             <div>
-                {introPreview
-                ?<div id='about-me' onClick={showIntro}>About Me</div>
-                :<div className='intro-detached'>
-                    <div className='floating-contact-btn-close' onClick={hideIntro}></div>
-                    <div className='click-catcher'></div>
-                    <div className='intro-detached-text'>
-                        My name is Brazill.<br></br>
-                        I'm a self taught React developer with experience in software development, including Java and Android. 
-                        I earned a Bachelor's in Communications from Penn State University. 
-                        Growing up, a career path as a developer had never been presented as an option, but I've always had the analytical mindset of one.
-                        When I realized my passion for science and modern technology outweighed my great interest in art and cinema, I decided it was time to make the transition into technology. 
-                        With little guidance, I researched intently and began teaching myself to code. 
-                        Today, my goal is to become someone who can reach other people who aren't aware of all their options, and help guide them in the right direction to achieve their goals, whether they be tech related or other.
+                {props.detachedIntroShown
+                ?<div>
+                    <div class='about-me-container'><div id='about-me-selected'>About Me</div></div>
+                    <div className='intro-detached' onClick = {console.log('clicked intro box')}>
+                        <div className='floating-contact-btn-close' onClick={hideIntro}></div>
+                        <div className='intro-detached-text'>
+                            My name is Brazill.<br></br>
+                            I'm a self taught React developer with experience in software development, including Java and Android. 
+                            I earned a Bachelor's in Communications from Penn State University. 
+                            Growing up, a career path as a developer had never been presented as an option, but I've always had the analytical mindset of one.
+                            When I realized my passion for science and modern technology outweighed my great interest in art and cinema, I decided it was time to make the transition into technology. 
+                            With little guidance, I researched intently and began teaching myself to code. 
+                            Today, my goal is to become someone who can reach other people who aren't aware of all their options, and help guide them in the right direction to achieve their goals, whether they be tech related or other.
+                        </div>
                     </div>
-                </div>
+                    </div>
+                :<div class='about-me-container'><div id='about-me' onClick = {e => {e.stopPropagation(); showIntro(); console.log('clicked about me')}}>About Me</div></div>
+
                 }
                 
             </div>

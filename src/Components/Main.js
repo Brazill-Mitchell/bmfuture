@@ -41,13 +41,21 @@ Determine whether or not it should be collapsed based on window size
 Signal when to close Nav Menus if other components become active
 */
 
-let [isNavCollapsed,setIsNavCollapsed] = useState(false)
+// let [isNavCollapsed,setIsNavCollapsed] = useState(false)
 // Manage which menu item is currently displayed
 let [activeSection,setActiveSection] = useState('none')
 // Set the Nav bar as the active section
 function updateSection(element){
     setActiveSection(element)
 }   
+
+// Handle clicks outside Detached Intro box
+
+const [detachedIntroShown,setDetachedIntroShown] = useState(false)
+
+function closeDetachedIntro(){
+    setDetachedIntroShown(false)
+}
 
 // Responsive
 window.addEventListener('resize', checkScreenSize)
@@ -76,11 +84,6 @@ useEffect(() => {
 },[])
 
 
-
-
-
-// let expanded = 'col-lg-2 col-md-3 col-sm-3'
-
 //Give the body an onClick Handler
 const BodyWrapper= (props)=> {
     return(
@@ -95,15 +98,19 @@ const Body= (props)=> {
     function setBodyActive(){
         updateSection('body')
     }
+    function handleBodyClicks(){
+        setBodyActive()
+        closeDetachedIntro()
+    }
     return(
-    <div onClick={setBodyActive}>
+    <div onClick={handleBodyClicks}>
         {/* <div className='row top-spacer'></div> */}
         <div className='row'>
             <div className='col-10 top-divider mx-auto'></div>
         </div>
         <div className='row'>
             <div className='col-12'>
-                <Intro screenSize={screenSize}></Intro>
+                <Intro screenSize={screenSize} detachedIntroShown={detachedIntroShown} setDetachedIntroShown={setDetachedIntroShown}></Intro>
             </div>
         </div>
             <div className='row'>                   
