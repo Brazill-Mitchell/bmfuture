@@ -1,16 +1,45 @@
-.skill-img-container{
-    position: relative;
-    width: 35px;
+.skill-menu-container{
+    cursor: pointer;
+    max-width: 300px;
+    /* background-color: greenyellow; */
+}
+.skills-drop-menu{
+    position: absolute;
+    background-image: linear-gradient(to right,rgba(49,107,146,1),rgba(49,107,146,.7));
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 3px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    animation: skills-drop-menu .4s ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes skills-drop-menu{
+    0%{
+        opacity: .3;
+
+        z-index: -5;
+    }
+    99%{
+        z-index: -5;
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%, 0);
+        z-index: 1;
+    }
 }
 #skills-holder{
     position: relative;
+    max-width: 200px;
     top: 6px;
+    left: 50%;
+    transform: translateX(-50%) ;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* width: 100%; */
-    max-width: 200px;
     background-color: rgba(240,248,255,.8);
     border-radius: 5px;
     padding-bottom: 5px;
@@ -18,17 +47,9 @@
     cursor: pointer;
 
 }
-.skill-menu-wrapper{
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color:rgb(49, 107, 146);
-    max-width: 200px;
-}
-.skill-menu-container{
-    cursor: pointer;
-    max-width: 300px;
+.skill-img-container{
+    position: relative;
+    width: 35px;
 }
 .drop-menu-label{
     color: rgba(49, 107, 146, 0.8);

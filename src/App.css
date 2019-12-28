@@ -1,9 +1,12 @@
+:root{
+  --blue-dark: rgb(49,107,146);
+  --blue-light: rgb(240,248,255);
+  --brad-5: 5px;
+}
+
 .desc{
   word-wrap: normal;
 }
-
-
-
 
 .App {
   text-align: center;

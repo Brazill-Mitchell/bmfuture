@@ -1,4 +1,4 @@
-import React, {useState,useRef,useEffect} from 'react';
+import React, {useState,useEffect} from 'react';
 import { useTransition, animated } from 'react-spring'
 import './NavSide.css';
 
@@ -27,10 +27,10 @@ function scrollToProject(project){
 
     //Close projects menu if another element is active
     function checkMenu(){
-        if (props.menu != 'projects' || props.navState == false){
+        if (props.menu !== 'projects' || props.navState === false){
             setIsListDisplayed(false)
             
-        }else if(props.menu == 'projects'){
+        }else if(props.menu === 'projects'){
             setIsListDisplayed(true)
             
         }

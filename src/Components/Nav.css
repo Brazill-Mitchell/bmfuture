@@ -85,11 +85,6 @@ a , u {
     background-color: rgba(240,248,255,.8);
     transform: scale(1.1);
 }
-
-/* Intro */
-#intro{
-    /* z-index: -10; */
-}
 .intro-wrapper{
     position: relative;
     width: 70%;
@@ -259,7 +254,7 @@ a , u {
     padding-bottom: 5px;
     animation: drop-menu .4s ease-in-out;
     animation-fill-mode: forwards;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     
 }
 @keyframes drop-menu{
@@ -403,10 +398,10 @@ a , u {
     left: 0;
     z-index: 10;
     background-color:rgb(49, 107, 146);
-    /* margin: 0px 10px 10px 10px; */
     margin-right: 10px;
     display: flex;
     flex-direction: column;
+    z-index: 30;
 }
 .nav-spacer{
     flex:1;

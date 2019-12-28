@@ -6,7 +6,7 @@ import bmLogo from './images/bmfuture logo.jpg'
 const Logo= ()=> {
 
     return(
-        <div id='logo-container'><img id='logo' src={bmLogo}/></div>
+        <div id='logo-container'><img id='logo' src={bmLogo} alt=''/></div>
     )
 }
 

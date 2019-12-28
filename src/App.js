@@ -1,9 +1,9 @@
-import React, {useState,useRef} from 'react';
+import React from 'react';
 import './App.css';
 import Main from './Components/Main.js'
-import Atomist from './Components/Atomist.js'
 
 function App() {
+
   return (
     <div className="App">
 

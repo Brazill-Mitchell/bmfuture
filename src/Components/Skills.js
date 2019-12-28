@@ -46,33 +46,33 @@ const Skills=(props)=>{
         <div onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
             <div className='skill-menu-container'>Skills</div>
             {isMenuDisplayed
-                ?<div className='drop-menu'>
+                ?<div className='skills-drop-menu'>
                     <div id='skills-holder'>
                         <div className='w-100 mb-2'><span className='drop-menu-label'>Developer</span></div>
                         <div className='skill-img-container'>
-                            <img className='img skill-img' src={webDevImg}></img>
+                            <img className='img skill-img' src={webDevImg} alt=''></img>
                         </div>
                         <div className='skill-img-container'>
-                            <img className='img skill-img' src={androidImg}></img>
+                            <img className='img skill-img' src={androidImg} alt=''></img>
                         </div>
                         <div className='skill-img-container'>
-                            <img className='img skill-img' src={reactImg}></img>
+                            <img className='img skill-img' src={reactImg} alt=''></img>
                         </div>
                         <div className='skill-img-container'>
-                            <img className='img skill-img' src={javaImg}></img>
+                            <img className='img skill-img' src={javaImg} alt=''></img>
                         </div>
-                        <div className='skill-img-container'>
-                            <img className='img skill-img' src={excelImg}></img>
-                        </div>
+                        {/* <div className='skill-img-container'>
+                            <img className='img skill-img' src={excelImg} alt=''></img>
+                        </div> */}
                         <div className='w-100 mb-2'><span className='drop-menu-label'>Multimedia</span></div>
                         <div className='skill-img-container'>
-                            <img className='img skill-img' src={aeImg}></img>
+                            <img className='img skill-img' src={aeImg} alt=''></img>
                         </div>
                         <div className='skill-img-container'>
-                            <img className='img skill-img' src={premiereImg}></img>
+                            <img className='img skill-img' src={premiereImg} alt=''></img>
                         </div>
                         <div className='skill-img-container'>
-                            <img className='img skill-img' src={photoshopImg}></img>
+                            <img className='img skill-img' src={photoshopImg} alt=''></img>
                         </div>
                     </div>
                 </div>

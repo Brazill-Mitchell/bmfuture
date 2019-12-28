@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import gitImg from '../images/GitHub-Mark.png'
 import linkedInImg from '../images/linkedin-icon.png'
-import gmailImg from '../images/gmail.png'
+// import gmailImg from '../images/gmail.png'
 import './Contact.css'
 import './Nav.css'
 
@@ -43,22 +43,22 @@ let [isListDisplayed,setIsListDisplayed] = useState(false)
                             ?<div className='container-fluid'>
                                     <div className='row'>
                                         <div className='mx-auto drop-menu'>
-                                            <a href='https://www.linkedin.com/in/brazill-mitchell-42601188/' target='_blank' className='nav-container menu-lv2 nav-container-special'>
+                                            <a href='https://www.linkedin.com/in/brazill-mitchell-42601188/' className='nav-container menu-lv2 nav-container-special' target='_blank' rel="noopener noreferrer">
                                                 <div className='contact-label'>LinkedIn</div>
                                                 <div className='contact-item'>
-                                                    <img className='contact-img' src={linkedInImg}></img>
+                                                    <img className='contact-img' src={linkedInImg} alt=''></img>
                                                 </div>
                                             </a>
-                                            <a href='https://github.com/brazill-mitchell' target='_blank' className='nav-container menu-lv2 nav-container-special'>
+                                            <a href='https://github.com/brazill-mitchell' target='_blank' rel="noopener noreferrer"className='nav-container menu-lv2 nav-container-special'>
                                                 <div className='contact-label'>Github</div>
                                                 <div className='contact-item'>
-                                                    <img className='contact-img' src={gitImg}></img>
+                                                    <img className='contact-img' src={gitImg} alt=''></img>
                                                 </div>
                                             </a>
                                             {/* <div className='nav-container menu-lv2 nav-container-special'>
-                                                <div className='contact-label'>Email</div>
-                                                <div className='contact-item'>
-                                                    <img className='contact-img' src={gmailImg}></img>
+                                                <div className='contact-label'>Contact</div>
+                                                <div className='contact-img'>
+                                                    <div className='nav-item-contact-btn'></div>
                                                 </div>
                                             </div> */}
                                         </div>
