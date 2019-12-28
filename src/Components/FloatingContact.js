@@ -9,7 +9,7 @@ const FloatingContact = ()=>{
     const [menuDisplay,setMenuDisplay] = useState(false)
     const [menuFields,setMenuFields] = useState(false)
     const [floatingContactClass,setFloatingCOntactClass] = useState('floating-contact-container-collapsed')
-    const [menuContentClass,setMenuContentClass] = useState()
+    // const [menuContentClass,setMenuContentClass] = useState()
     
     // Menu Content
     const [emailText,setEmailText] = useState('')

@@ -56,9 +56,9 @@ let [isListDisplayed,setIsListDisplayed] = useState(false)
                                                 </div>
                                             </a>
                                             {/* <div className='nav-container menu-lv2 nav-container-special'>
-                                                <div className='contact-label'>Email</div>
-                                                <div className='contact-item'>
-                                                    <img className='contact-img' src={gmailImg} alt=''></img>
+                                                <div className='contact-label'>Contact</div>
+                                                <div className='contact-img'>
+                                                    <div className='nav-item-contact-btn'></div>
                                                 </div>
                                             </div> */}
                                         </div>

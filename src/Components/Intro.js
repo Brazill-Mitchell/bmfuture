@@ -50,7 +50,7 @@ const Intro=(props)=>{
                 {props.detachedIntroShown
                 ?<div>
                     <div class='about-me-container'><div id='about-me-selected'>About Me</div></div>
-                    <div className='intro-detached' onClick = {console.log('clicked intro box')}>
+                    <div className='intro-detached' onClick = {e => {e.stopPropagation(); console.log('clicked intro box')}}>
                         <div className='floating-contact-btn-close' onClick={hideIntro}></div>
                         <div className='intro-detached-text'>
                             My name is Brazill.<br></br>
@@ -62,7 +62,7 @@ const Intro=(props)=>{
                             Today, my goal is to become someone who can reach other people who aren't aware of all their options, and help guide them in the right direction to achieve their goals, whether they be tech related or other.
                         </div>
                     </div>
-                    </div>
+                </div>
                 :<div class='about-me-container'><div id='about-me' onClick = {e => {e.stopPropagation(); showIntro(); console.log('clicked about me')}}>About Me</div></div>
 
                 }

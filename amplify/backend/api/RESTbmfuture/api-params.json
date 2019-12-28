@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/landingPage",
+            "lambdaFunction": "bmfuture6147b5fe",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "RESTbmfuture",
+    "apiName": "RESTbmfuture",
+    "functionArns": [
+        {
+            "lambdaFunction": "bmfuture6147b5fe"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-bmfuture-deployment-110802-authRole",
+        "unAuthRoleName": "amplify-bmfuture-deployment-110802-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "bmfuture6147b5fe",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

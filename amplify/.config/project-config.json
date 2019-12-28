@@ -1,0 +1,17 @@
+{
+    "projectName": "bmfuture",
+    "version": "3.0",
+    "frontend": "javascript",
+    "javascript": {
+        "framework": "react",
+        "config": {
+            "SourceDir": "C:\\Users\\Dahrquetheus II\\Desktop\\brazill\\src",
+            "DistributionDir": "build",
+            "BuildCommand": "npm build",
+            "StartCommand": "npm start"
+        }
+    },
+    "providers": [
+        "awscloudformation"
+    ]
+}

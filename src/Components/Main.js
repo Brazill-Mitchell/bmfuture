@@ -161,6 +161,10 @@ function setNavActive(){
 
 return (
     <div>
+        {/* Dim the page when the detached intro is displayed */}
+        {detachedIntroShown
+        ?<div className='page-dimmer-container'><div className='page-dimmer' onClick={closeDetachedIntro}></div></div>
+        :<div></div>}
         {/* <OpenAnimator animatorStyles={animatorStyles}  items={itemHolder}></OpenAnimator> */}
         <FloatingContact></FloatingContact>
         {/* {toggleNav} */}

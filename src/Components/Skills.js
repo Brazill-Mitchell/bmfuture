@@ -46,7 +46,7 @@ const Skills=(props)=>{
         <div onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
             <div className='skill-menu-container'>Skills</div>
             {isMenuDisplayed
-                ?<div className='drop-menu'>
+                ?<div className='skills-drop-menu'>
                     <div id='skills-holder'>
                         <div className='w-100 mb-2'><span className='drop-menu-label'>Developer</span></div>
                         <div className='skill-img-container'>
@@ -61,9 +61,9 @@ const Skills=(props)=>{
                         <div className='skill-img-container'>
                             <img className='img skill-img' src={javaImg} alt=''></img>
                         </div>
-                        <div className='skill-img-container'>
+                        {/* <div className='skill-img-container'>
                             <img className='img skill-img' src={excelImg} alt=''></img>
-                        </div>
+                        </div> */}
                         <div className='w-100 mb-2'><span className='drop-menu-label'>Multimedia</span></div>
                         <div className='skill-img-container'>
                             <img className='img skill-img' src={aeImg} alt=''></img>

@@ -96,3 +96,15 @@
     /* -ms-user-select: none; IE10+/Edge */
     user-select: none;
 }
+.page-dimmer-container{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+}
+.page-dimmer{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.6);
+    z-index: 25;
+}
