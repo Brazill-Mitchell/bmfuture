@@ -72,9 +72,10 @@
 }
 
 .floating-input-message{
-    margin: 0 10px 0 10px;
     height: 50%;
+    margin: 0 10px 0 10px;
     border-radius: var(--brad-5);
+    
 }
 .btn-send{
     position: relative;

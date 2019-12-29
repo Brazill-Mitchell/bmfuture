@@ -38,10 +38,10 @@ function getLeftSide(){
 }
 
 // Retrieve chunks from the right side and concatenate them into a string
-function getRightSide(){
+// function getRightSide(){
 
-    let rightString = ''
+//     let rightString = ''
 
-    return rightString
+//     return rightString
 
-}
+// }

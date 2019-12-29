@@ -1,7 +1,8 @@
 import React, { useState,useRef} from 'react'
-import OpenAnimator from './OpenAnimator.js'
+// import OpenAnimator from './OpenAnimator.js'
 import './FloatingContact.css'
 import gmail from './images/gmail.png'
+const messageSender = require('./messageSender.js').http
 
 const FloatingContact = ()=>{
 
@@ -13,6 +14,7 @@ const FloatingContact = ()=>{
     
     // Menu Content
     const [emailText,setEmailText] = useState('')
+    const [subjectText,setSubjectText] = useState('')
     const [messageText,setMessageText] = useState('')
     const [mailDisplay,setMailDisplay] = useState(true)
 
@@ -25,8 +27,23 @@ const FloatingContact = ()=>{
         setMessageText(e.target.value)
     }
     function sendMessage(){
-        setEmailText('')
-        setMessageText('')
+        if(emailText.length !== 0 && messageText.length !== 0){//TODO: check for email format
+            messageSender(emailText,'subject',messageText)
+            console.log('Message sent')
+            setEmailText('')
+            setMessageText('')
+        }else{//TODO: prompt user to enter email, subject, or message
+            if(emailText.length === 0){
+                console.log('Please enter your email')
+            }
+            if(messageText.length === 0){
+                console.log('Please enter a subject')
+            }
+            if(subjectText.length === 0){
+                console.log('Please type a message')
+            }
+        }
+        
     }
 
     function openMenu(){
@@ -66,7 +83,7 @@ const FloatingContact = ()=>{
         [<div className='floating-contact-btn-close' onClick={closeMenu}></div>,
         <div className='floating-greeting'>Get in Touch</div>,
         <input className='floating-input-email' placeholder='Email' value={emailText} onChange={updateEmailText}></input>,
-        <input className='floating-input-message' placeholder='Type a message here' value={messageText} onChange={updateMessageText}></input>,
+        <textarea className='floating-input-message' placeholder='Type a message here' value={messageText} onChange={updateMessageText}></textarea>,
         <button className='btn-send' onClick={sendMessage}>Send</button>
         ]
 

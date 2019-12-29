@@ -52,6 +52,7 @@ function updateSection(element){
 // Handle clicks outside Detached Intro box
 
 const [detachedIntroShown,setDetachedIntroShown] = useState(false)
+const [dimmerShown,setDimmerShown] = useState(false)
 
 function closeDetachedIntro(){
     setDetachedIntroShown(false)
@@ -110,7 +111,7 @@ const Body= (props)=> {
         </div>
         <div className='row'>
             <div className='col-12'>
-                <Intro screenSize={screenSize} detachedIntroShown={detachedIntroShown} setDetachedIntroShown={setDetachedIntroShown}></Intro>
+                <Intro screenSize={screenSize} detachedIntroShown={detachedIntroShown} setDetachedIntroShown={setDetachedIntroShown} dimmerShown={dimmerShown} setDimmerShown={setDimmerShown}></Intro>
             </div>
         </div>
             <div className='row'>                   
@@ -162,7 +163,7 @@ function setNavActive(){
 return (
     <div>
         {/* Dim the page when the detached intro is displayed */}
-        {detachedIntroShown
+        {dimmerShown
         ?<div className='page-dimmer-container'><div className='page-dimmer' onClick={closeDetachedIntro}></div></div>
         :<div></div>}
         {/* <OpenAnimator animatorStyles={animatorStyles}  items={itemHolder}></OpenAnimator> */}

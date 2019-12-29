@@ -64,9 +64,9 @@ If the Body is active, the Nav bar will close
                     <ContactSide navState={navState} setNavActive={setNavActive} menu={menu} toggleMenu={toggleMenu}></ContactSide>
                 </div>
             {/* Skills */}
-                <div className='nav-item'>
+                {/* <div className='nav-item'>
                         <div toggleMenu={toggleMenu}>Skills</div>
-                </div>
+                </div> */}
             </div>
 }
         </div>
