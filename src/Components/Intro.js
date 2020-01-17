@@ -9,11 +9,14 @@ const Intro=(props)=>{
     // const [introPreview,setIntroPreview] = useState(true)
 
     function handleLayout(screenSize){
+        console.log('Handle Screen')
         if(screenSize === manager.responsive.xl){
             if ( introDetached ){
                 setIntroDetached(false)
+                console.log(screenSize)
             }else if(screenSize === manager.responsive.computer || screenSize === manager.responsive.tablet || screenSize === manager.responsive.mobile){
                 setIntroDetached(true)
+                console.log(screenSize)
             }
         }
     }
@@ -23,6 +26,14 @@ const Intro=(props)=>{
     }
     function showIntro(){
         props.setDetachedIntroShown(true)
+    }
+// Jump to Connect X 
+    function scrollToProject(project){
+        try{
+            window.scrollTo(0,(props.refs['connectX'].current.offsetTop))
+        }catch(error){
+            console.log("Could not scroll to element. \n" + error)
+        }
     }
 
     useEffect(()=>{
@@ -42,11 +53,15 @@ const Intro=(props)=>{
                 <div className='intro-attached'>
                         My name is Brazill.<br></br>
                     I'm a self taught React developer with experience in software development, including Java and Android. 
-                    I earned a Bachelor's in Communications from Penn State University. 
-                    Growing up, a career path as a developer had never been presented as an option, but I've always had the analytical mindset of one.
-                    When I realized my passion for science and modern technology outweighed my great interest in art and cinema, I decided it was time to make the transition into technology. 
-                    With little guidance, I researched intently and began teaching myself to code. 
-                    Today, my goal is to become someone who can reach other people who aren't aware of all their options, and help guide them in the right direction to achieve their goals, whether they be tech related or other.
+                    I'm one of those devs who prefers using the command line when I can. 
+                    <br></br>
+                    I enjoy learning APIs to integrate to my projects.
+                    The contact form on this page uses some code hosted on AWS Lambda & API Gateway to send me emails from visitors (<span class='intro-click-here' onClick={props.toggleContactDisplay}>Try it</span>).  
+                    <br></br>
+                    I use Firebase to host projects, including this one.
+                    Although I'm a React Developer, I also enjoy creating more complex logic, like <span class='intro-click-here' onClick={()=> {scrollToProject('connectX')}}>ConnectX</span>.
+                    <br></br><br></br>
+                    **Note: This site is under constant construction. If you spot something, feel free to let me know!
                 </div>
             )
         }

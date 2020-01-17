@@ -1,12 +1,13 @@
-import React, { useState,useRef} from 'react'
+import React, { useState,useEffect,useRef} from 'react'
 // import OpenAnimator from './OpenAnimator.js'
 import './FloatingContact.css'
 import gmail from './images/gmail.png'
 const messageSender = require('./messageSender.js').http
 
-const FloatingContact = ()=>{
+const FloatingContact = (props) =>{
 
     const refFloatMenu = useRef(null)
+    // Menu and menu fields are rendered with separate timing for better animation visual
     const [menuDisplay,setMenuDisplay] = useState(false)
     const [menuFields,setMenuFields] = useState(false)
     const [floatingContactClass,setFloatingCOntactClass] = useState('floating-contact-container-collapsed')
@@ -16,7 +17,8 @@ const FloatingContact = ()=>{
     const [emailText,setEmailText] = useState('')
     const [subjectText,setSubjectText] = useState('')
     const [messageText,setMessageText] = useState('')
-    const [mailDisplay,setMailDisplay] = useState(true)
+    const [mailIconDisplay,setIconMailDisplay] = useState(true)
+    const [isMessageSentShown,setMessageSentDialogue] = useState(false)
 
     // Manage Form Input
     function updateEmailText(e){
@@ -32,6 +34,7 @@ const FloatingContact = ()=>{
             console.log('Message sent')
             setEmailText('')
             setMessageText('')
+            showMessageSentDialogue()
         }else{//TODO: prompt user to enter email, subject, or message
             if(emailText.length === 0){
                 console.log('Please enter your email')
@@ -46,9 +49,24 @@ const FloatingContact = ()=>{
         
     }
 
+    function showMessageSentDialogue(){
+        setMessageSentDialogue(true)
+        setTimeout(() => {
+            setMessageSentDialogue(false)
+        }, 3000);
+    }
+
+    const MessageSent = () => {
+
+        return(
+            <div class='message-sent'>Thanks, I'll get back to you soon!</div>
+        )
+
+    }
+
     function openMenu(){
         if (!menuDisplay){
-            setMailDisplay(false)
+            setIconMailDisplay(false)
             setMenuDisplay(true)
             setFloatingCOntactClass('floating-contact-container')
             expandMenu()
@@ -64,7 +82,7 @@ const FloatingContact = ()=>{
             collapseMenu()
             setMenuFields(false)
             setTimeout(() => {
-                setMailDisplay(true)
+                setIconMailDisplay(true)
             }, 200);
         }
     }
@@ -78,13 +96,31 @@ const FloatingContact = ()=>{
         refFloatMenu.current.style.width = 50 + 'px'
         refFloatMenu.current.style.height = 50 + 'px'
     }
+// Handle the Contact Form when 'Try It' button is pressed
+    function toggleContactFromIntro(){
+        console.log('Toggle Contact: ' + props.isFloatingContactDisplayed)
+        if(props.isFloatingContactDisplayed){
+            openMenu()
+        }else{
+            closeMenu()
+        }
+    }
+
+    useEffect(()=>{
+        toggleContactFromIntro()
+    },[props.isFloatingContactDisplayed])
+    
     
     const menuContent = 
         [<div className='floating-contact-btn-close' onClick={closeMenu}></div>,
         <div className='floating-greeting'>Get in Touch</div>,
-        <input className='floating-input-email' placeholder='Email' value={emailText} onChange={updateEmailText}></input>,
+        <input className='floating-input-email' placeholder='My Email' value={emailText} onChange={updateEmailText}></input>,
         <textarea className='floating-input-message' placeholder='Type a message here' value={messageText} onChange={updateMessageText}></textarea>,
-        <button className='btn-send' onClick={sendMessage}>Send</button>
+        <button className='btn-send' onClick={sendMessage}>Send</button>,
+        <div>{isMessageSentShown
+            ?<MessageSent></MessageSent>
+            :<div></div>
+        }</div>
         ]
 
     return(
@@ -94,7 +130,7 @@ const FloatingContact = ()=>{
             {menuFields
                 ?menuContent
                 :<div></div>}
-            {mailDisplay
+            {mailIconDisplay
                 ?<img className='img' src={gmail} alt=''></img>
                 :<div></div>}
         </div>

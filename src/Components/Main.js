@@ -58,6 +58,13 @@ function closeDetachedIntro(){
     setDetachedIntroShown(false)
 }
 
+// Handle FloatingContact Display
+const [isFloatingContactDisplayed,setFloatingContactDisplay] = useState(false)
+
+function toggleContactDisplay(){
+    setFloatingContactDisplay(!isFloatingContactDisplayed)
+}
+
 // Responsive
 window.addEventListener('resize', checkScreenSize)
 
@@ -67,7 +74,7 @@ function checkScreenSize(){
     for (let x  = 0; x < mediaList.length; x++){
         if(window.matchMedia(mediaList[x][1]).matches){
             setScreenSize(mediaList[x][0])
-            // console.log(mediaList[x][0])
+            console.log('Main: ' + screenSize)
             return
         }
     }
@@ -111,7 +118,7 @@ const Body= (props)=> {
         </div>
         <div className='row'>
             <div className='col-12'>
-                <Intro screenSize={screenSize} detachedIntroShown={detachedIntroShown} setDetachedIntroShown={setDetachedIntroShown} dimmerShown={dimmerShown} setDimmerShown={setDimmerShown}></Intro>
+                <Intro refs={refList} screenSize={screenSize} detachedIntroShown={detachedIntroShown} setDetachedIntroShown={setDetachedIntroShown} dimmerShown={dimmerShown} setDimmerShown={setDimmerShown} toggleContactDisplay={toggleContactDisplay}></Intro>
             </div>
         </div>
             <div className='row'>                   
@@ -167,7 +174,7 @@ return (
         ?<div className='page-dimmer-container'><div className='page-dimmer' onClick={closeDetachedIntro}></div></div>
         :<div></div>}
         {/* <OpenAnimator animatorStyles={animatorStyles}  items={itemHolder}></OpenAnimator> */}
-        <FloatingContact></FloatingContact>
+        <FloatingContact isFloatingContactDisplayed={isFloatingContactDisplayed} toggleContactDisplay={toggleContactDisplay}></FloatingContact>
         {/* {toggleNav} */}
         <div className='bg-container'><img className='bg-page' src={phila} alt=''/></div>
         <div className='container-fluid page-main'>

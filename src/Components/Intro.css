@@ -26,6 +26,13 @@
 .intro-detached-text{
     margin: 20px 20px 20px 20px;
 }
+.intro-click-here{
+    font-weight: 500;
+    color: var(--blue-dark);
+}
+.intro-click-here:hover{
+    cursor: pointer;
+}
 .bio-img{
     width: 100%;
 }
