@@ -30,8 +30,8 @@ const FloatingContact = (props) =>{
     }
     function sendMessage(){
         if(emailText.length !== 0 && messageText.length !== 0){//TODO: check for email format
-            messageSender(emailText,'subject',messageText)
-            console.log('Message sent')
+            messageSender(emailText,'Message from BMFuture',messageText)
+            console.log('Message sent. Email: ' + emailText + '\r\n Message: ' + messageText)
             setEmailText('')
             setMessageText('')
             showMessageSentDialogue()
@@ -53,6 +53,7 @@ const FloatingContact = (props) =>{
         setMessageSentDialogue(true)
         setTimeout(() => {
             setMessageSentDialogue(false)
+            closeMenu()
         }, 3000);
     }
 
