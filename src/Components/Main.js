@@ -44,31 +44,33 @@ Signal when to close Nav Menus if other components become active
 // let [isNavCollapsed,setIsNavCollapsed] = useState(false)
 // Manage which menu item is currently displayed
 let [activeSection,setActiveSection] = useState('none')
-// Set the Nav bar as the active section
+// Set the last clicked area as the active section
 function updateSection(element){
     setActiveSection(element)
 }   
-
-// Handle clicks outside Detached Intro box
-
-const [detachedIntroShown,setDetachedIntroShown] = useState(false)
-const [dimmerShown,setDimmerShown] = useState(false)
-
-function closeDetachedIntro(){
-    setDetachedIntroShown(false)
-}
-
 // Handle FloatingContact Display
 const [isFloatingContactDisplayed,setFloatingContactDisplay] = useState(false)
 
 function toggleContactDisplay(){
     setFloatingContactDisplay(!isFloatingContactDisplayed)
 }
+    /* Responsive */
+    
+let mediaList = [
+    ['mobile','(max-width: 500px)'],
+    ['tablet','(max-width: 800px)'],
+    ['computer','(max-width: 1400px)'],
+    ['xl', '(min-width: 1400px)']
+]
 
-// Responsive
 window.addEventListener('resize', checkScreenSize)
-
 const [screenSize,setScreenSize] = useState('computer')
+
+/* Check and, if necessary, update the current screen display mode 
+each time the screen is resized */
+useEffect(() => {
+    checkScreenSize()
+},[])
 
 function checkScreenSize(){
     for (let x  = 0; x < mediaList.length; x++){
@@ -79,18 +81,26 @@ function checkScreenSize(){
         }
     }
 }
+// Handle clicks outside Detached Intro box
 
-let mediaList = [
-    ['mobile','(max-width: 500px)'],
-    ['tablet','(max-width: 800px)'],
-    ['computer','(max-width: 1400px)'],
-    ['xl', '(min-width: 1400px)']
-]
+const [detachedIntroShown,setDetachedIntroShown] = useState(false)
 
-useEffect(() => {
-    checkScreenSize()
-},[])
+function closeDetachedIntro(){
+    setDetachedIntroShown(false)
+}
 
+// Close the Dimmer when the screen is returned to a larger view
+const [dimmerShown,setDimmerShown] = useState(false)
+useEffect(()=>{
+    handleDimmer()
+},[screenSize])
+function handleDimmer(){
+    // console.log('Handle Dimmer: ' + screenSize)
+    if(screenSize === 'xl'){
+        setDimmerShown(false)
+        // console.log('Dimmer Shown: ' + dimmerShown)
+    }
+}
 
 //Give the body an onClick Handler
 const BodyWrapper= (props)=> {
