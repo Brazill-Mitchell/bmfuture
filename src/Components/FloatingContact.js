@@ -4,7 +4,7 @@ import './FloatingContact.css'
 import gmail from './images/gmail.png'
 const messageSender = require('./messageSender.js').http
 
-const FloatingContact = (props) =>{
+const FloatingContact=(props)=>{
 
     const refFloatMenu = useRef(null)
     // Menu and menu fields are rendered with separate timing for better animation visual
@@ -89,8 +89,10 @@ const FloatingContact = (props) =>{
     }
 
     function expandMenu(){
-        refFloatMenu.current.style.width = 400 + 'px'
+        refFloatMenu.current.style.width = 
+        props.screenSize === 'mobile' ? 80 + '%' : 400 + 'px'
         refFloatMenu.current.style.height = 400 + 'px'
+        // refFloatMenu.current.style.
     }
 
     function collapseMenu(){
@@ -107,9 +109,17 @@ const FloatingContact = (props) =>{
         }
     }
 
+    // useEffect(()=>{
+        // toggleContactFromIntro()
+    // },[props.isFloatingContactDisplayed])
+
+    // Chance Display mode for desired Screen Sizes
+    function test(print){
+        console.log(print)
+    }
     useEffect(()=>{
-        toggleContactFromIntro()
-    },[props.isFloatingContactDisplayed])
+        test(props.screenSize)
+    },[props.screenSize])
     
     
     const menuContent = 

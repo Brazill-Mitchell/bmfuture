@@ -76,7 +76,7 @@ function checkScreenSize(){
     for (let x  = 0; x < mediaList.length; x++){
         if(window.matchMedia(mediaList[x][1]).matches){
             setScreenSize(mediaList[x][0])
-            console.log('Main: ' + screenSize)
+            // console.log('Main: ' + screenSize)
             return
         }
     }
@@ -112,13 +112,15 @@ const BodyWrapper= (props)=> {
         </div>
     )}
 
-const Body= (props)=> {
+const Body= ()=> {
     function setBodyActive(){
         updateSection('body')
     }
     function handleBodyClicks(){
         setBodyActive()
         closeDetachedIntro()
+        // setFloatingContactDisplay(false)
+        console.log('Body Clicked')
     }
     return(
     <div onClick={handleBodyClicks}>
@@ -184,7 +186,7 @@ return (
         ?<div className='page-dimmer-container'><div className='page-dimmer' onClick={closeDetachedIntro}></div></div>
         :<div></div>}
         {/* <OpenAnimator animatorStyles={animatorStyles}  items={itemHolder}></OpenAnimator> */}
-        <FloatingContact isFloatingContactDisplayed={isFloatingContactDisplayed} toggleContactDisplay={toggleContactDisplay}></FloatingContact>
+        <FloatingContact screenSize={screenSize} isFloatingContactDisplayed={isFloatingContactDisplayed} toggleContactDisplay={toggleContactDisplay} ></FloatingContact>
         {/* {toggleNav} */}
         <div className='bg-container'><img className='bg-page' src={phila} alt=''/></div>
         <div className='container-fluid page-main'>

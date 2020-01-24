@@ -9,7 +9,7 @@ const Intro=(props)=>{
     // const [introPreview,setIntroPreview] = useState(true)
 
     function handleLayout(screenSize){
-        console.log('Handle Screen')
+        // console.log('Handle Screen: ' + screenSize)
         if(screenSize === manager.responsive.xl){
             if ( introDetached ){
                 setIntroDetached(false)
@@ -18,7 +18,7 @@ const Intro=(props)=>{
             hideIntro()
         }else if(screenSize === manager.responsive.computer || screenSize === manager.responsive.tablet || screenSize === manager.responsive.mobile){
                 setIntroDetached(true)
-                console.log(screenSize)
+                // console.log(screenSize)
             }
     }
 
