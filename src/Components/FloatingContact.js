@@ -106,9 +106,9 @@ const FloatingContact=(props)=>{
         // if (props.isUpdateFromContact === false){
             // console.log('Toggle Contact: ' + props.isFloatingContactDisplayed)
             if(props.isFloatingContactDisplayed){
-                closeMenu()
-            }else{
                 openMenu()
+            }else{
+                closeMenu()
             }
         // }
     }
@@ -127,7 +127,7 @@ const FloatingContact=(props)=>{
     
     
     const menuContent = 
-        [<div className='floating-contact-btn-close' onClick={()=>{props.toggleContactDisplay();console.log('Close Clicked')}}></div>,
+        [<div className='floating-contact-btn-close' onClick={()=>{props.toggleContactDisplay(true,false);console.log('Close Clicked')}}></div>,
         <div className='floating-greeting'>Get in Touch</div>,
         <input className='floating-input-email' placeholder='My Email' value={emailText} onChange={updateEmailText}></input>,
         <textarea className='floating-input-message' placeholder='Type a message here' value={messageText} onChange={updateMessageText}></textarea>,
@@ -147,7 +147,7 @@ const FloatingContact=(props)=>{
             onClick={
                 menuFields 
                     ? ()=>{}
-                    :()=>{props.toggleContactDisplay(true)}
+                    :()=>{props.toggleContactDisplay(true,true)}
                 
             } 
             onBlur={()=>console.log('Blur')}>

@@ -66,7 +66,7 @@ const Intro=(props)=>{
                     I'm one of those devs who prefers using the command line when I can. 
                     <br></br>
                     I enjoy learning APIs to integrate to my projects.
-                    The contact form on this page uses some code hosted on AWS Lambda & API Gateway to send me emails from visitors (<span class='intro-click-here' onClick={()=>{props.toggleContactDisplay(false)}}>Try it</span>).  
+                    The contact form on this page uses some code hosted on AWS Lambda & API Gateway to send me emails from visitors (<span class='intro-click-here' onClick={()=>{props.toggleContactDisplay(false,!props.isFloatingContactDisplayed)}}>Try it</span>).  
                     <br></br>
                     I use Firebase to host projects, including this one.
                     Although I'm a React Developer, I also enjoy creating more complex logic, like <span class='intro-click-here' onClick={()=> {scrollToProject('connectX')}}>ConnectX</span>.
@@ -92,7 +92,7 @@ const Intro=(props)=>{
                     I'm one of those devs who prefers using the command line when I can. 
                     <br></br>
                     I enjoy learning APIs to integrate to my projects.
-                    The contact form on this page uses some code hosted on AWS Lambda & API Gateway to send me emails from visitors (<span class='intro-click-here' onClick={()=>{props.toggleContactDisplay(false)}}>Try it</span>).  
+                    The contact form on this page uses some code hosted on AWS Lambda & API Gateway to send me emails from visitors (<span class='intro-click-here' onClick={()=>{props.toggleContactDisplay(false,!props.isFloatingContactDisplayed)}}>Try it</span>).  
                     <br></br>
                     I use Firebase to host projects, including this one.
                     Although I'm a React Developer, I also enjoy creating more complex logic, like <span class='intro-click-here' onClick={()=> {scrollToProject('connectX')}}>ConnectX</span>.

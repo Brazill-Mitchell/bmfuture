@@ -52,11 +52,11 @@ function updateSection(element){
 const [isFloatingContactDisplayed,setFloatingContactDisplay] = useState(false)
 const [isUpdateFromContact,setUpdateIsFromContact] = useState(false)
 
-function toggleContactDisplay(isFromContact){
+function toggleContactDisplay(isFromContact,isDisplayed){
     if (isUpdateFromContact !== isFromContact){
         setUpdateIsFromContact(isFromContact)
     }
-    setFloatingContactDisplay(!isFloatingContactDisplayed)
+    setFloatingContactDisplay(isDisplayed)
     console.log('Displayed:' + isFloatingContactDisplayed)
     console.log('From Contact: ' + isUpdateFromContact)
 }
@@ -136,7 +136,17 @@ const Body= ()=> {
         </div>
         <div className='row'>
             <div className='col-12'>
-                <Intro screenSize={screenSize} refs={refList} detachedIntroShown={detachedIntroShown} setDetachedIntroShown={setDetachedIntroShown} dimmerShown={dimmerShown} setDimmerShown={setDimmerShown} toggleContactDisplay={toggleContactDisplay} isUpdateFromContact={isUpdateFromContact}></Intro>
+                <Intro 
+                    screenSize={screenSize} 
+                    refs={refList} 
+                    detachedIntroShown={detachedIntroShown} 
+                    setDetachedIntroShown={setDetachedIntroShown} 
+                    dimmerShown={dimmerShown} 
+                    setDimmerShown={setDimmerShown} 
+                    toggleContactDisplay={toggleContactDisplay} 
+                    isUpdateFromContact={isUpdateFromContact} 
+                    isFloatingContactDisplayed={isFloatingContactDisplayed}>
+                </Intro>
             </div>
         </div>
             <div className='row'>                   
