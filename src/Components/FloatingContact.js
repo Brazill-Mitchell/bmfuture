@@ -10,7 +10,7 @@ const FloatingContact=(props)=>{
     // Menu and menu fields are rendered with separate timing for better animation visual
     const [menuDisplay,setMenuDisplay] = useState(false)
     const [menuFields,setMenuFields] = useState(false)
-    const [floatingContactClass,setFloatingCOntactClass] = useState('floating-contact-container-collapsed')
+    const [floatingContactClass,setFloatingContactClass] = useState('floating-contact-container-collapsed')
     // const [menuContentClass,setMenuContentClass] = useState()
     
     // Menu Content
@@ -69,23 +69,25 @@ const FloatingContact=(props)=>{
         if (!menuDisplay){
             setIconMailDisplay(false)
             setMenuDisplay(true)
-            setFloatingCOntactClass('floating-contact-container')
+            setFloatingContactClass('floating-contact-container')
             expandMenu()
             setTimeout(() => {
                 setMenuFields(true)
             }, 200);
         }
+        // props.toggleContactDisplay(true)
     }
     function closeMenu(){
         if (menuDisplay){
             setMenuDisplay(false)
-            setFloatingCOntactClass('floating-contact-container-collapsed')
+            setFloatingContactClass('floating-contact-container-collapsed')
             collapseMenu()
             setMenuFields(false)
             setTimeout(() => {
                 setIconMailDisplay(true)
             }, 200);
         }
+        // props.toggleContactDisplay(true)
     }
 
     function expandMenu(){
@@ -101,17 +103,19 @@ const FloatingContact=(props)=>{
     }
 // Handle the Contact Form when 'Try It' button is pressed
     function toggleContactFromIntro(){
-        console.log('Toggle Contact: ' + props.isFloatingContactDisplayed)
-        if(props.isFloatingContactDisplayed){
-            openMenu()
-        }else{
-            closeMenu()
-        }
+        // if (props.isUpdateFromContact === false){
+            // console.log('Toggle Contact: ' + props.isFloatingContactDisplayed)
+            if(props.isFloatingContactDisplayed){
+                closeMenu()
+            }else{
+                openMenu()
+            }
+        // }
     }
 
-    // useEffect(()=>{
-        // toggleContactFromIntro()
-    // },[props.isFloatingContactDisplayed])
+    useEffect(()=>{
+        toggleContactFromIntro()
+    },[props.isFloatingContactDisplayed])
 
     // Chance Display mode for desired Screen Sizes
     function test(print){
@@ -123,7 +127,7 @@ const FloatingContact=(props)=>{
     
     
     const menuContent = 
-        [<div className='floating-contact-btn-close' onClick={closeMenu}></div>,
+        [<div className='floating-contact-btn-close' onClick={()=>{props.toggleContactDisplay();console.log('Close Clicked')}}></div>,
         <div className='floating-greeting'>Get in Touch</div>,
         <input className='floating-input-email' placeholder='My Email' value={emailText} onChange={updateEmailText}></input>,
         <textarea className='floating-input-message' placeholder='Type a message here' value={messageText} onChange={updateMessageText}></textarea>,
@@ -137,7 +141,16 @@ const FloatingContact=(props)=>{
     return(
         // <OpenAnimator items={menuContent} ref={refFloatMenu} className='floating-contact-container' onClick={toggleMenu}>
         // </OpenAnimator>
-        <div ref={refFloatMenu} className={floatingContactClass} onClick={openMenu} onBlur={()=>console.log('Blur')}>
+        <div 
+            ref={refFloatMenu} 
+            className={floatingContactClass} 
+            onClick={
+                menuFields 
+                    ? ()=>{}
+                    :()=>{props.toggleContactDisplay(true)}
+                
+            } 
+            onBlur={()=>console.log('Blur')}>
             {menuFields
                 ?menuContent
                 :<div></div>}

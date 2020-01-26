@@ -5,20 +5,29 @@ const manager = require('./manager.js')
 
 const Intro=(props)=>{
 
+    
+    const [introDetachedClass, setIntroDetachedClass] = useState('intro-detached')
     const [introDetached,setIntroDetached] = useState(false)
-    // const [introPreview,setIntroPreview] = useState(true)
-
     function handleLayout(screenSize){
         // console.log('Handle Screen: ' + screenSize)
-        if(screenSize === manager.responsive.xl){
+        if(screenSize === manager.responsive.xl || screenSize === manager.responsive.computer){
             if ( introDetached ){
                 setIntroDetached(false)
-                console.log(screenSize)
+                // console.log(screenSize)
             }
             hideIntro()
-        }else if(screenSize === manager.responsive.computer || screenSize === manager.responsive.tablet || screenSize === manager.responsive.mobile){
+        }else if(screenSize === manager.responsive.tablet || screenSize === manager.responsive.mobile){
                 setIntroDetached(true)
-                // console.log(screenSize)
+            }
+            // Handle Intro Detached for Mobile
+            if(screenSize === 'mobile'){
+                if (introDetachedClass !== 'intro-detached-mobile'){
+                    setIntroDetachedClass('intro-detached-mobile')
+                }
+            }else{
+                if (introDetachedClass !== 'intro-detached'){
+                    setIntroDetachedClass('intro-detached')
+                }
             }
     }
 
@@ -57,7 +66,7 @@ const Intro=(props)=>{
                     I'm one of those devs who prefers using the command line when I can. 
                     <br></br>
                     I enjoy learning APIs to integrate to my projects.
-                    The contact form on this page uses some code hosted on AWS Lambda & API Gateway to send me emails from visitors (<span class='intro-click-here' onClick={props.toggleContactDisplay}>Try it</span>).  
+                    The contact form on this page uses some code hosted on AWS Lambda & API Gateway to send me emails from visitors (<span class='intro-click-here' onClick={()=>{props.toggleContactDisplay(false)}}>Try it</span>).  
                     <br></br>
                     I use Firebase to host projects, including this one.
                     Although I'm a React Developer, I also enjoy creating more complex logic, like <span class='intro-click-here' onClick={()=> {scrollToProject('connectX')}}>ConnectX</span>.
@@ -75,7 +84,7 @@ const Intro=(props)=>{
                 ?<div>
                    {props.setDimmerShown(true)}
                     <div class='about-me-container'><div id='about-me-selected'>About Me</div></div>
-                    <div className='intro-detached' onClick = {e => {e.stopPropagation(); console.log('clicked intro box')}}>
+                    <div className={introDetachedClass} onClick = {e => {e.stopPropagation()}}>
                         <div className='floating-contact-btn-close' onClick={hideIntro}></div>
                         <div className='intro-detached-text'>
                         My name is Brazill.<br></br>
@@ -83,7 +92,7 @@ const Intro=(props)=>{
                     I'm one of those devs who prefers using the command line when I can. 
                     <br></br>
                     I enjoy learning APIs to integrate to my projects.
-                    The contact form on this page uses some code hosted on AWS Lambda & API Gateway to send me emails from visitors (<span class='intro-click-here' onClick={props.toggleContactDisplay}>Try it</span>).  
+                    The contact form on this page uses some code hosted on AWS Lambda & API Gateway to send me emails from visitors (<span class='intro-click-here' onClick={()=>{props.toggleContactDisplay(false)}}>Try it</span>).  
                     <br></br>
                     I use Firebase to host projects, including this one.
                     Although I'm a React Developer, I also enjoy creating more complex logic, like <span class='intro-click-here' onClick={()=> {scrollToProject('connectX')}}>ConnectX</span>.
@@ -94,7 +103,7 @@ const Intro=(props)=>{
                 </div>
                 :<div class='about-me-container'>
                     {props.setDimmerShown(false)}
-                    <div id='about-me' onClick = {e => {e.stopPropagation(); showIntro(); console.log('clicked about me')}}>About Me</div>
+                    <div id='about-me' onClick = {e => {e.stopPropagation(); showIntro()}}>About Me</div>
                 </div>
 
                 }

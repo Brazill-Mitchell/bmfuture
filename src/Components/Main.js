@@ -50,9 +50,15 @@ function updateSection(element){
 }   
 // Handle FloatingContact Display
 const [isFloatingContactDisplayed,setFloatingContactDisplay] = useState(false)
+const [isUpdateFromContact,setUpdateIsFromContact] = useState(false)
 
-function toggleContactDisplay(){
+function toggleContactDisplay(isFromContact){
+    if (isUpdateFromContact !== isFromContact){
+        setUpdateIsFromContact(isFromContact)
+    }
     setFloatingContactDisplay(!isFloatingContactDisplayed)
+    console.log('Displayed:' + isFloatingContactDisplayed)
+    console.log('From Contact: ' + isUpdateFromContact)
 }
     /* Responsive */
     
@@ -120,7 +126,7 @@ const Body= ()=> {
         setBodyActive()
         closeDetachedIntro()
         // setFloatingContactDisplay(false)
-        console.log('Body Clicked')
+        // console.log('Body Clicked')
     }
     return(
     <div onClick={handleBodyClicks}>
@@ -130,7 +136,7 @@ const Body= ()=> {
         </div>
         <div className='row'>
             <div className='col-12'>
-                <Intro refs={refList} screenSize={screenSize} detachedIntroShown={detachedIntroShown} setDetachedIntroShown={setDetachedIntroShown} dimmerShown={dimmerShown} setDimmerShown={setDimmerShown} toggleContactDisplay={toggleContactDisplay}></Intro>
+                <Intro screenSize={screenSize} refs={refList} detachedIntroShown={detachedIntroShown} setDetachedIntroShown={setDetachedIntroShown} dimmerShown={dimmerShown} setDimmerShown={setDimmerShown} toggleContactDisplay={toggleContactDisplay} isUpdateFromContact={isUpdateFromContact}></Intro>
             </div>
         </div>
             <div className='row'>                   
@@ -186,7 +192,7 @@ return (
         ?<div className='page-dimmer-container'><div className='page-dimmer' onClick={closeDetachedIntro}></div></div>
         :<div></div>}
         {/* <OpenAnimator animatorStyles={animatorStyles}  items={itemHolder}></OpenAnimator> */}
-        <FloatingContact screenSize={screenSize} isFloatingContactDisplayed={isFloatingContactDisplayed} toggleContactDisplay={toggleContactDisplay} ></FloatingContact>
+        <FloatingContact screenSize={screenSize} isFloatingContactDisplayed={isFloatingContactDisplayed} toggleContactDisplay={toggleContactDisplay} isUpdateFromContact={isUpdateFromContact}></FloatingContact>
         {/* {toggleNav} */}
         <div className='bg-container'><img className='bg-page' src={phila} alt=''/></div>
         <div className='container-fluid page-main'>
