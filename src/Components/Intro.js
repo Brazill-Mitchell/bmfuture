@@ -12,12 +12,16 @@ const Intro=(props)=>{
         // console.log('Handle Screen: ' + screenSize)
         if(screenSize === manager.responsive.xl || screenSize === manager.responsive.computer){
             if ( introDetached ){
-                setIntroDetached(false)
+                if (introDetached !== false){
+                    setIntroDetached(false)
+                }
                 // console.log(screenSize)
             }
             hideIntro()
         }else if(screenSize === manager.responsive.tablet || screenSize === manager.responsive.mobile){
-                setIntroDetached(true)
+                if (introDetached !== true){
+                    setIntroDetached(true)
+                }
             }
             // Handle Intro Detached for Mobile
             if(screenSize === 'mobile'){
@@ -66,10 +70,10 @@ const Intro=(props)=>{
                     I'm one of those devs who prefers using the command line when I can. 
                     <br></br>
                     I enjoy learning APIs to integrate to my projects.
-                    The contact form on this page uses some code hosted on AWS Lambda & API Gateway to send me emails from visitors (<span class='intro-click-here' onClick={()=>{props.toggleContactDisplay(false,!props.isFloatingContactDisplayed)}}>Try it</span>).  
+                    The contact form on this page uses some code hosted on AWS Lambda & API Gateway to send me emails from visitors (<span className='intro-click-here' onClick={()=>{props.toggleContactDisplay(false,!props.isFloatingContactDisplayed)}}>Try it</span>).  
                     <br></br>
                     I use Firebase to host projects, including this one.
-                    Although I'm a React Developer, I also enjoy creating more complex logic, like <span class='intro-click-here' onClick={()=> {scrollToProject('connectX')}}>ConnectX</span>.
+                    Although I'm a React Developer, I also enjoy creating more complex logic, like <span className='intro-click-here' onClick={()=> {scrollToProject('connectX')}}>ConnectX</span>.
                     <br></br><br></br>
                     **Note: This site is under constant construction. If you spot something, feel free to let me know!
                 </div>
@@ -83,7 +87,7 @@ const Intro=(props)=>{
                 {props.detachedIntroShown
                 ?<div>
                    {props.setDimmerShown(true)}
-                    <div class='about-me-container'><div id='about-me-selected'>About Me</div></div>
+                    <div className='about-me-container'><div id='about-me-selected'>About Me</div></div>
                     <div className={introDetachedClass} onClick = {e => {e.stopPropagation()}}>
                         <div className='floating-contact-btn-close' onClick={hideIntro}></div>
                         <div className='intro-detached-text'>
@@ -92,16 +96,16 @@ const Intro=(props)=>{
                     I'm one of those devs who prefers using the command line when I can. 
                     <br></br>
                     I enjoy learning APIs to integrate to my projects.
-                    The contact form on this page uses some code hosted on AWS Lambda & API Gateway to send me emails from visitors (<span class='intro-click-here' onClick={()=>{props.toggleContactDisplay(false,!props.isFloatingContactDisplayed)}}>Try it</span>).  
+                    The contact form on this page uses some code hosted on AWS Lambda & API Gateway to send me emails from visitors (<span className='intro-click-here' onClick={()=>{props.toggleContactDisplay(false,!props.isFloatingContactDisplayed)}}>Try it</span>).  
                     <br></br>
                     I use Firebase to host projects, including this one.
-                    Although I'm a React Developer, I also enjoy creating more complex logic, like <span class='intro-click-here' onClick={()=> {scrollToProject('connectX')}}>ConnectX</span>.
+                    Although I'm a React Developer, I also enjoy creating more complex logic, like <span className='intro-click-here' onClick={()=> {scrollToProject('connectX')}}>ConnectX</span>.
                     <br></br><br></br>
                     **Note: This site is under constant construction. If you spot something, feel free to let me know!
                         </div>
                     </div>
                 </div>
-                :<div class='about-me-container'>
+                :<div className='about-me-container'>
                     {props.setDimmerShown(false)}
                     <div id='about-me' onClick = {e => {e.stopPropagation(); showIntro()}}>About Me</div>
                 </div>

@@ -41,12 +41,13 @@ Determine whether or not it should be collapsed based on window size
 Signal when to close Nav Menus if other components become active
 */
 
-// let [isNavCollapsed,setIsNavCollapsed] = useState(false)
 // Manage which menu item is currently displayed
 let [activeSection,setActiveSection] = useState('none')
 // Set the last clicked area as the active section
 function updateSection(element){
-    setActiveSection(element)
+    if  (activeSection !== element){
+        setActiveSection(element)
+    }
 }   
 // Handle FloatingContact Display
 const [isFloatingContactDisplayed,setFloatingContactDisplay] = useState(false)
@@ -60,6 +61,17 @@ function toggleContactDisplay(isFromContact,isDisplayed){
     console.log('Displayed:' + isFloatingContactDisplayed)
     console.log('From Contact: ' + isUpdateFromContact)
 }
+
+// Handle clicks outside Detached Intro box
+
+const [detachedIntroShown,setDetachedIntroShown] = useState(false)
+
+function closeDetachedIntro(){
+    if (detachedIntroShown !== false){
+        setDetachedIntroShown(false)
+    }
+}
+
     /* Responsive */
     
 let mediaList = [
@@ -81,18 +93,13 @@ useEffect(() => {
 function checkScreenSize(){
     for (let x  = 0; x < mediaList.length; x++){
         if(window.matchMedia(mediaList[x][1]).matches){
-            setScreenSize(mediaList[x][0])
+            if (screenSize !== mediaList[x][0]){
+                setScreenSize(mediaList[x][0])
+            }
             // console.log('Main: ' + screenSize)
             return
         }
     }
-}
-// Handle clicks outside Detached Intro box
-
-const [detachedIntroShown,setDetachedIntroShown] = useState(false)
-
-function closeDetachedIntro(){
-    setDetachedIntroShown(false)
 }
 
 // Close the Dimmer when the screen is returned to a larger view
@@ -103,7 +110,9 @@ useEffect(()=>{
 function handleDimmer(){
     // console.log('Handle Dimmer: ' + screenSize)
     if(screenSize === 'xl'){
-        setDimmerShown(false)
+        if (dimmerShown !== false){
+            setDimmerShown(false)
+        }
         // console.log('Dimmer Shown: ' + dimmerShown)
     }
 }
@@ -129,40 +138,40 @@ const Body= ()=> {
         // console.log('Body Clicked')
     }
     return(
-    <div onClick={handleBodyClicks}>
-        {/* <div className='row top-spacer'></div> */}
-        <div className='row'>
-            <div className='col-10 top-divider mx-auto'></div>
-        </div>
-        <div className='row'>
-            <div className='col-12'>
-                <Intro 
-                    screenSize={screenSize} 
-                    refs={refList} 
-                    detachedIntroShown={detachedIntroShown} 
-                    setDetachedIntroShown={setDetachedIntroShown} 
-                    dimmerShown={dimmerShown} 
-                    setDimmerShown={setDimmerShown} 
-                    toggleContactDisplay={toggleContactDisplay} 
-                    isUpdateFromContact={isUpdateFromContact} 
-                    isFloatingContactDisplayed={isFloatingContactDisplayed}>
-                </Intro>
+        <div onClick={handleBodyClicks}>
+            {/* <div className='row top-spacer'></div> */}
+            <div className='row'>
+                <div className='col-10 top-divider mx-auto'></div>
             </div>
-        </div>
-            <div className='row'>                   
-                
-                <div className='col'>
-                    <Project refs={refList}/>
+            <div className='row'>
+                <div className='col-12'>
+                    <Intro 
+                        screenSize={screenSize} 
+                        refs={refList} 
+                        detachedIntroShown={detachedIntroShown} 
+                        setDetachedIntroShown={setDetachedIntroShown} 
+                        dimmerShown={dimmerShown} 
+                        setDimmerShown={setDimmerShown} 
+                        toggleContactDisplay={toggleContactDisplay} 
+                        isUpdateFromContact={isUpdateFromContact} 
+                        isFloatingContactDisplayed={isFloatingContactDisplayed}>
+                    </Intro>
                 </div>
             </div>
-    </div>
+                <div className='row'>                   
+                    
+                    <div className='col'>
+                        <Project refs={refList}/>
+                    </div>
+                </div>
+        </div>
 )}
 
 function setNavActive(){
     updateSection('nav')
 }
 
-// Animator test are
+// Animator test
 
 // const animatorStyles = {
 //     containerStyle: {

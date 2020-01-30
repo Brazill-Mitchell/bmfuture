@@ -60,7 +60,7 @@ const FloatingContact=(props)=>{
     const MessageSent = () => {
 
         return(
-            <div class='message-sent'>Thanks, I'll get back to you soon!</div>
+            <div className='message-sent'>Thanks, I'll get back to you soon!</div>
         )
 
     }
@@ -96,12 +96,10 @@ const FloatingContact=(props)=>{
         refFloatMenu.current.style.height = 400 + 'px'
         // refFloatMenu.current.style.
     }
-
     function collapseMenu(){
         refFloatMenu.current.style.width = 50 + 'px'
         refFloatMenu.current.style.height = 50 + 'px'
     }
-// Handle the Contact Form when 'Try It' button is pressed
     function toggleContactFromIntro(){
         // if (props.isUpdateFromContact === false){
             // console.log('Toggle Contact: ' + props.isFloatingContactDisplayed)
@@ -112,17 +110,13 @@ const FloatingContact=(props)=>{
             }
         // }
     }
-
     useEffect(()=>{
         toggleContactFromIntro()
     },[props.isFloatingContactDisplayed])
 
     // Chance Display mode for desired Screen Sizes
-    function test(print){
-        console.log(print)
-    }
     useEffect(()=>{
-        test(props.screenSize)
+        // test(props.screenSize)
     },[props.screenSize])
     
     
