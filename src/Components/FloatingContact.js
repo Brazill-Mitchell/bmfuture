@@ -75,7 +75,6 @@ const FloatingContact=(props)=>{
                 setMenuFields(true)
             }, 200);
         }
-        // props.toggleContactDisplay(true)
     }
     function closeMenu(){
         if (menuDisplay){
@@ -87,22 +86,18 @@ const FloatingContact=(props)=>{
                 setIconMailDisplay(true)
             }, 200);
         }
-        // props.toggleContactDisplay(true)
     }
 
     function expandMenu(){
         refFloatMenu.current.style.width = 
         props.screenSize === 'mobile' ? 80 + '%' : 400 + 'px'
         refFloatMenu.current.style.height = 400 + 'px'
-        // refFloatMenu.current.style.
     }
     function collapseMenu(){
         refFloatMenu.current.style.width = 50 + 'px'
         refFloatMenu.current.style.height = 50 + 'px'
     }
     function toggleContactFromIntro(){
-        // if (props.isUpdateFromContact === false){
-            // console.log('Toggle Contact: ' + props.isFloatingContactDisplayed)
             if(props.isFloatingContactDisplayed){
                 openMenu()
             }else{
@@ -115,9 +110,9 @@ const FloatingContact=(props)=>{
     },[props.isFloatingContactDisplayed])
 
     // Chance Display mode for desired Screen Sizes
-    useEffect(()=>{
-        // test(props.screenSize)
-    },[props.screenSize])
+    // useEffect(()=>{
+    //     // test(props.screenSize)
+    // },[props.screenSize])
     
     
     const menuContent = 

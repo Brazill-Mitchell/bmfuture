@@ -14,7 +14,7 @@ import phila from './images/phila.jpg'
 
 const Main = ()=> {
 
-
+// console.log('Rendered Main')
 
 // // Testing OpenAnimator
 // let itemHolder = []
@@ -58,8 +58,8 @@ function toggleContactDisplay(isFromContact,isDisplayed){
         setUpdateIsFromContact(isFromContact)
     }
     setFloatingContactDisplay(isDisplayed)
-    console.log('Displayed:' + isFloatingContactDisplayed)
-    console.log('From Contact: ' + isUpdateFromContact)
+    // console.log('Displayed:' + isFloatingContactDisplayed)
+    // console.log('From Contact: ' + isUpdateFromContact)
 }
 
 // Handle clicks outside Detached Intro box
@@ -208,16 +208,33 @@ return (
     <div>
         {/* Dim the page when the detached intro is displayed */}
         {dimmerShown
-        ?<div className='page-dimmer-container'><div className='page-dimmer' onClick={closeDetachedIntro}></div></div>
+        ?<div className='page-dimmer-container'>
+            <div className='page-dimmer' onClick={closeDetachedIntro}></div>
+        </div>
         :<div></div>}
         {/* <OpenAnimator animatorStyles={animatorStyles}  items={itemHolder}></OpenAnimator> */}
-        <FloatingContact screenSize={screenSize} isFloatingContactDisplayed={isFloatingContactDisplayed} toggleContactDisplay={toggleContactDisplay} isUpdateFromContact={isUpdateFromContact}></FloatingContact>
+        <FloatingContact 
+            screenSize={screenSize} 
+            isFloatingContactDisplayed={isFloatingContactDisplayed} 
+            toggleContactDisplay={toggleContactDisplay} 
+            isUpdateFromContact={isUpdateFromContact}>
+        </FloatingContact>
         {/* {toggleNav} */}
         <div className='bg-container'><img className='bg-page' src={phila} alt=''/></div>
         <div className='container-fluid page-main'>
             { screenSize === 'mobile' 
-                ? <NavSide refs={refList} activeSection={activeSection} updateSection={updateSection} onClick={setNavActive} id='nav-z' />
-                :<Nav refs={refList} activeSection={activeSection} updateSection={updateSection} onClick={setNavActive} id='nav-z' />
+                ? <NavSide 
+                refs={refList} 
+                    activeSection={activeSection} 
+                    updateSection={updateSection} 
+                    onClick={setNavActive} 
+                    id='nav-z' />
+                :<Nav 
+                    refs={refList} 
+                    activeSection={activeSection}
+                    updateSection={updateSection} 
+                    onClick={setNavActive} 
+                    id='nav-z' />
             }
             
             <div className='intro-top-spacer'></div>

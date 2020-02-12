@@ -1,21 +1,21 @@
-import React, { Component, useState,useEffect } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import profilePic from './images/profile-image.png'
 import './Intro.css'
 const manager = require('./manager.js')
 
 const Intro=(props)=>{
 
-    
+    console.log('Intro Rendered')
     const [introDetachedClass, setIntroDetachedClass] = useState('intro-detached')
     const [introDetached,setIntroDetached] = useState(false)
     function handleLayout(screenSize){
-        // console.log('Handle Screen: ' + screenSize)
+        console.log('Handle Screen: ' + screenSize)
         if(screenSize === manager.responsive.xl || screenSize === manager.responsive.computer){
             if ( introDetached ){
                 if (introDetached !== false){
                     setIntroDetached(false)
                 }
-                // console.log(screenSize)
+                console.log(screenSize)
             }
             hideIntro()
         }else if(screenSize === manager.responsive.tablet || screenSize === manager.responsive.mobile){
@@ -27,19 +27,23 @@ const Intro=(props)=>{
             if(screenSize === 'mobile'){
                 if (introDetachedClass !== 'intro-detached-mobile'){
                     setIntroDetachedClass('intro-detached-mobile')
+                    console.log('handle detached mobile')
                 }
             }else{
                 if (introDetachedClass !== 'intro-detached'){
                     setIntroDetachedClass('intro-detached')
+                    console.log('handle detached mobile')
                 }
             }
     }
 
     function hideIntro(){
         props.setDetachedIntroShown(false)
+        console.log('hide intro')
     }
     function showIntro(){
         props.setDetachedIntroShown(true)
+        console.log('show intro')
     }
 // Jump to Connect X 
     function scrollToProject(project){
@@ -51,6 +55,7 @@ const Intro=(props)=>{
     }
 
     useEffect(()=>{
+        console.log('Intro UseEffect')
         handleLayout(props.screenSize)
     },[props.screenSize])
 
